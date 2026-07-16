@@ -1,213 +1,67 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import { supabase } from './supabase'
 
-const emojis = { Regular: '👼', Secret: '✨', Robby: '🤖', Limited: '💫', Custom: '🎨' }
-
-export default function App() {
-  const [session, setSession] = useState(null)
-  const [loading, setLoading] = useState(true)
-
-  useEffect(() => {
-    supabase.auth.getSession().then(({ data }) => {
-      setSession(data.session)
-      setLoading(false)
-    })
-    const { data } = supabase.auth.onAuthStateChange((_event, next) => setSession(next))
-    return () => data.subscription.unsubscribe()
-  }, [])
-
-  if (loading) return <div className="center">Opening Collector Vault…</div>
-  return session ? <Dashboard session={session} /> : <Auth />
+export default function App(){
+  const [session,setSession]=useState(null)
+  const [loading,setLoading]=useState(true)
+  useEffect(()=>{
+    supabase.auth.getSession().then(({data})=>{setSession(data.session);setLoading(false)})
+    const {data}=supabase.auth.onAuthStateChange((_e,s)=>setSession(s))
+    return ()=>data.subscription.unsubscribe()
+  },[])
+  if(loading) return <div className="center">Opening Collector Vault…</div>
+  return session ? <Catalog session={session}/> : <Auth/>
 }
 
-function Auth() {
-  const [mode, setMode] = useState('signup')
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const [message, setMessage] = useState('')
-  const [busy, setBusy] = useState(false)
-
-  async function submit(e) {
-    e.preventDefault()
-    setMessage('')
-    setBusy(true)
-    const result = mode === 'signup'
-      ? await supabase.auth.signUp({ email, password })
-      : await supabase.auth.signInWithPassword({ email, password })
+function Auth(){
+  const [mode,setMode]=useState('signup'),[email,setEmail]=useState(''),[password,setPassword]=useState(''),[message,setMessage]=useState(''),[busy,setBusy]=useState(false)
+  async function submit(e){
+    e.preventDefault(); setBusy(true); setMessage('')
+    const r=mode==='signup'?await supabase.auth.signUp({email,password}):await supabase.auth.signInWithPassword({email,password})
     setBusy(false)
-    if (result.error) setMessage(result.error.message)
-    else if (mode === 'signup') setMessage('Account created. Check your email if confirmation is enabled.')
+    if(r.error)setMessage(r.error.message); else if(mode==='signup')setMessage('Account created. Check your email if confirmation is enabled.')
   }
-
-  return (
-    <main className="auth">
-      <section className="brand">
-        <p className="eyebrow">COLLECT • TRACK • TRADE</p>
-        <h1>Collector Vault</h1>
-        <p>Your collection, ISO list, duplicates, and trades in one place.</p>
-      </section>
-      <form className="panel" onSubmit={submit}>
-        <h2>{mode === 'signup' ? 'Create your vault' : 'Welcome back'}</h2>
-        <label>Email<input type="email" value={email} onChange={e=>setEmail(e.target.value)} required /></label>
-        <label>Password<input type="password" minLength="6" value={password} onChange={e=>setPassword(e.target.value)} required /></label>
-        {message && <p className="message">{message}</p>}
-        <button className="primary" disabled={busy}>{busy ? 'Please wait…' : mode === 'signup' ? 'Create account' : 'Sign in'}</button>
-        <button type="button" className="link" onClick={()=>setMode(mode==='signup'?'login':'signup')}>
-          {mode === 'signup' ? 'Already have an account? Sign in' : 'Need an account? Sign up'}
-        </button>
-      </form>
-    </main>
-  )
+  return <main className="auth"><section className="brand"><p className="eyebrow">COLLECT • TRACK • TRADE</p><h1>Collector Vault</h1><p>Your Sonny Angel collection, ISO list, duplicates, and trades in one place.</p></section><form className="panel" onSubmit={submit}><h2>{mode==='signup'?'Create your vault':'Welcome back'}</h2><label>Email<input type="email" value={email} onChange={e=>setEmail(e.target.value)} required/></label><label>Password<input type="password" minLength="6" value={password} onChange={e=>setPassword(e.target.value)} required/></label>{message&&<p className="message">{message}</p>}<button className="primary" disabled={busy}>{busy?'Please wait…':mode==='signup'?'Create account':'Sign in'}</button><button type="button" className="link" onClick={()=>setMode(mode==='signup'?'login':'signup')}>{mode==='signup'?'Already have an account? Sign in':'Need an account? Sign up'}</button></form></main>
 }
 
-function Dashboard({ session }) {
-  const [items, setItems] = useState([])
-  const [filter, setFilter] = useState('all')
-  const [search, setSearch] = useState('')
-  const [formOpen, setFormOpen] = useState(false)
-  const [editing, setEditing] = useState(null)
-  const [notice, setNotice] = useState('')
-
-  useEffect(() => { load() }, [])
-
-  async function load() {
-    const { data, error } = await supabase.from('collection_items').select('*').order('series').order('name')
-    if (error) setNotice(error.message)
-    else setItems(data || [])
+function Catalog({session}){
+  const [figures,setFigures]=useState([]),[states,setStates]=useState({}),[query,setQuery]=useState(''),[filter,setFilter]=useState('all'),[seriesFilter,setSeriesFilter]=useState('all'),[notice,setNotice]=useState('')
+  useEffect(()=>{load()},[])
+  async function load(){
+    const [{data:cats,error:e1},{data:user,error:e2}]=await Promise.all([
+      supabase.from('figures').select('id,name,rarity,sort_order,series:series_id(id,name,category,sort_order,brand:brand_id(name))').eq('active',true),
+      supabase.from('user_figures').select('*').eq('user_id',session.user.id)
+    ])
+    if(e1||e2){setNotice((e1||e2).message);return}
+    setFigures((cats||[]).sort((a,b)=>(a.series.sort_order-b.series.sort_order)||(a.sort_order-b.sort_order)))
+    const map={}; (user||[]).forEach(x=>map[x.figure_id]=x); setStates(map)
   }
-
-  async function save(values) {
-    const payload = { ...values, user_id: session.user.id }
-    const result = editing
-      ? await supabase.from('collection_items').update(payload).eq('id', editing.id)
-      : await supabase.from('collection_items').insert(payload)
-    if (result.error) setNotice(result.error.message)
-    else {
-      setNotice(editing ? 'Updated.' : 'Added.')
-      setEditing(null)
-      setFormOpen(false)
-      load()
-    }
+  async function toggle(fig,field){
+    const cur=states[fig.id]||{owned:false,quantity:0,wishlist:false,for_trade:false,favorite:false}
+    const next={...cur,[field]:!cur[field]}
+    if(field==='owned')next.quantity=next.owned?Math.max(1,next.quantity||0):0
+    const payload={user_id:session.user.id,figure_id:fig.id,owned:next.owned,quantity:next.quantity||0,wishlist:next.wishlist,for_trade:next.for_trade,favorite:next.favorite||false,notes:next.notes||null}
+    const {data,error}=await supabase.from('user_figures').upsert(payload,{onConflict:'user_id,figure_id'}).select().single()
+    if(error)setNotice(error.message); else setStates(s=>({...s,[fig.id]:data}))
   }
-
-  async function toggle(item, field) {
-    const update = { [field]: !item[field] }
-    if (field === 'owned') update.quantity = update.owned ? Math.max(1, item.quantity || 0) : 0
-    const { error } = await supabase.from('collection_items').update(update).eq('id', item.id)
-    if (error) setNotice(error.message)
-    else setItems(list => list.map(x => x.id === item.id ? { ...x, ...update } : x))
-  }
-
-  async function remove(id) {
-    if (!confirm('Delete this collectible?')) return
-    const { error } = await supabase.from('collection_items').delete().eq('id', id)
-    if (error) setNotice(error.message)
-    else load()
-  }
-
-  const shown = useMemo(() => items.filter(i => {
-    const text = `${i.name} ${i.series} ${i.brand || ''}`.toLowerCase().includes(search.toLowerCase())
-    const status = filter === 'all' || (filter === 'missing' ? !i.owned : filter === 'trade' ? i.for_trade : i[filter])
-    return text && status
-  }), [items, filter, search])
-
-  const groups = shown.reduce((a,i) => ((a[i.series] ||= []).push(i), a), {})
-  const owned = items.filter(i=>i.owned).length
-  const pct = items.length ? Math.round((owned/items.length)*100) : 0
-
-  return (
-    <div className="shell">
-      <header>
-        <div><p className="eyebrow">MY COLLECTION</p><h1>Collector Vault</h1></div>
-        <button className="signout" onClick={()=>supabase.auth.signOut()}>Sign out</button>
-      </header>
-
-      <section className="stats">
-        <Stat value={`${owned}/${items.length}`} label="Collected" />
-        <Stat value={`${pct}%`} label="Complete" />
-        <Stat value={items.filter(i=>i.wishlist).length} label="ISO" />
-        <Stat value={items.filter(i=>i.for_trade).length} label="Trade" />
-      </section>
-
-      <input className="search" placeholder="Search figures, brands, or series…" value={search} onChange={e=>setSearch(e.target.value)} />
-
-      <nav className="tabs">
-        {['all','owned','wishlist','trade','missing'].map(f => (
-          <button key={f} className={filter===f?'active':''} onClick={()=>setFilter(f)}>
-            {f==='wishlist'?'ISO':f[0].toUpperCase()+f.slice(1)}
-          </button>
-        ))}
-      </nav>
-
-      {!shown.length && <section className="empty"><div>📦</div><h2>No collectibles here yet</h2><p>Add your first item with the pink button.</p></section>}
-
-      {Object.entries(groups).map(([series, group]) => (
-        <section className="series" key={series}>
-          <div className="series-title"><h2>{series}</h2><span>{group.filter(i=>i.owned).length} owned</span></div>
-          <div className="grid">
-            {group.map(item => (
-              <article className="card" key={item.id}>
-                <button className="body" onClick={()=>{setEditing(item);setFormOpen(true)}}>
-                  <div className="art">{emojis[item.rarity] || '👼'}</div>
-                  <div className="copy">
-                    <div className="row"><h3>{item.name}{item.quantity>1?` ×${item.quantity}`:''}</h3><span>{item.rarity}</span></div>
-                    <p>{item.brand || 'User Added'} • {item.series}</p>
-                    {item.notes && <small>{item.notes}</small>}
-                  </div>
-                </button>
-                <div className="actions">
-                  <button className={item.owned?'on':''} onClick={()=>toggle(item,'owned')}>✓ Owned</button>
-                  <button className={item.wishlist?'on':''} onClick={()=>toggle(item,'wishlist')}>♡ ISO</button>
-                  <button className={item.for_trade?'on':''} onClick={()=>toggle(item,'for_trade')}>⇄ Trade</button>
-                  <button onClick={()=>remove(item.id)}>×</button>
-                </div>
-              </article>
-            ))}
-          </div>
-        </section>
-      ))}
-
-      <button className="fab" onClick={()=>{setEditing(null);setFormOpen(true)}}>＋</button>
-      {formOpen && <ItemForm item={editing} close={()=>{setEditing(null);setFormOpen(false)}} save={save} />}
-      {notice && <div className="notice" onClick={()=>setNotice('')}>{notice}</div>}
-    </div>
-  )
-}
-
-function Stat({value,label}) {
-  return <div className="stat"><strong>{value}</strong><span>{label}</span></div>
-}
-
-function ItemForm({ item, close, save }) {
-  const [name,setName]=useState(item?.name || '')
-  const [series,setSeries]=useState(item?.series || '')
-  const [brand,setBrand]=useState(item?.brand || 'User Added')
-  const [rarity,setRarity]=useState(item?.rarity || 'Regular')
-  const [quantity,setQuantity]=useState(item?.quantity || 0)
-  const [notes,setNotes]=useState(item?.notes || '')
-
-  function submit(e) {
-    e.preventDefault()
-    const qty = Number(quantity)
-    save({
-      name:name.trim(), series:series.trim(), brand:brand.trim(), rarity,
-      quantity:qty, owned:qty>0, wishlist:item?.wishlist || false,
-      for_trade:item?.for_trade || false, notes:notes.trim()
-    })
-  }
-
-  return <div className="overlay">
-    <form className="modal" onSubmit={submit}>
-      <div className="modal-head"><h2>{item?'Edit collectible':'Add collectible'}</h2><button type="button" onClick={close}>×</button></div>
-      <label>Name<input value={name} onChange={e=>setName(e.target.value)} required /></label>
-      <label>Series<input value={series} onChange={e=>setSeries(e.target.value)} required /></label>
-      <label>Brand<input value={brand} onChange={e=>setBrand(e.target.value)} /></label>
-      <div className="twocol">
-        <label>Type<select value={rarity} onChange={e=>setRarity(e.target.value)}>{['Regular','Secret','Robby','Limited','Custom'].map(x=><option key={x}>{x}</option>)}</select></label>
-        <label>Quantity<input type="number" min="0" max="99" value={quantity} onChange={e=>setQuantity(e.target.value)} /></label>
-      </div>
-      <label>Notes<textarea rows="3" value={notes} onChange={e=>setNotes(e.target.value)} /></label>
-      <button className="primary">Save collectible</button>
-    </form>
+  const seriesNames=[...new Set(figures.map(f=>f.series.name))]
+  const visible=useMemo(()=>figures.filter(f=>{
+    const st=states[f.id]||{}
+    const q=`${f.name} ${f.series.name}`.toLowerCase().includes(query.toLowerCase())
+    const fs=seriesFilter==='all'||f.series.name===seriesFilter
+    const ok=filter==='all'||(filter==='missing'?!st.owned:filter==='trade'?st.for_trade:filter==='wishlist'?st.wishlist:st.owned)
+    return q&&fs&&ok
+  }),[figures,states,query,filter,seriesFilter])
+  const grouped=visible.reduce((a,f)=>((a[f.series.name]||=[]).push(f),a),{})
+  const owned=figures.filter(f=>states[f.id]?.owned).length, pct=figures.length?Math.round(owned/figures.length*100):0
+  return <div className="shell">
+    <header><div><p className="eyebrow">MY COLLECTION</p><h1>Collector Vault</h1><small>Sonny Angel catalog beta</small></div><button className="signout" onClick={()=>supabase.auth.signOut()}>Sign out</button></header>
+    <section className="stats"><Stat v={`${owned}/${figures.length}`} l="Collected"/><Stat v={`${pct}%`} l="Complete"/><Stat v={figures.filter(f=>states[f.id]?.wishlist).length} l="ISO"/><Stat v={figures.filter(f=>states[f.id]?.for_trade).length} l="Trade"/></section>
+    <section className="tools"><input placeholder="Search figures or series…" value={query} onChange={e=>setQuery(e.target.value)}/><select value={seriesFilter} onChange={e=>setSeriesFilter(e.target.value)}><option value="all">All series</option>{seriesNames.map(s=><option key={s}>{s}</option>)}</select></section>
+    <nav className="tabs">{[['all','All'],['owned','Owned'],['wishlist','ISO'],['trade','Trade'],['missing','Missing']].map(([k,l])=><button key={k} className={filter===k?'active':''} onClick={()=>setFilter(k)}>{l}</button>)}</nav>
+    {Object.entries(grouped).map(([name,list])=>{const count=list.filter(f=>states[f.id]?.owned).length;return <section className="series" key={name}><div className="series-title"><div><h2>{name}</h2><p>{list[0].series.category}</p></div><span>{count}/{list.length} owned</span></div><div className="grid">{list.map(f=>{const st=states[f.id]||{};return <article className="card" key={f.id}><div className="art">👼</div><div className="copy"><h3>{f.name}{st.quantity>1?` ×${st.quantity}`:''}</h3><p>{f.rarity}</p></div><div className="actions"><button className={st.owned?'on':''} onClick={()=>toggle(f,'owned')}>✓ Owned</button><button className={st.wishlist?'on':''} onClick={()=>toggle(f,'wishlist')}>♡ ISO</button><button className={st.for_trade?'on':''} onClick={()=>toggle(f,'for_trade')}>⇄ Trade</button></div></article>})}</div></section>})}
+    {!visible.length&&<div className="empty">No figures match this view.</div>}
+    {notice&&<div className="notice" onClick={()=>setNotice('')}>{notice}</div>}
   </div>
 }
+function Stat({v,l}){return <div className="stat"><strong>{v}</strong><span>{l}</span></div>}
