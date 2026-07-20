@@ -5,7 +5,7 @@ import './SellerPage.css'
 import OrdersDetailed from '../components/OrdersDetailed'
 import LiveWheel from '../components/LiveWheel'
 
-const tabs = [['overview','Overview'],['orders','Purchase orders'],['suppliers','Suppliers'],['sales','Whatnot sales'],['wheel','Live wheel'],['marketing','Launch studio']]
+const tabs = [['overview','Overview'],['orders','Purchase orders'],['suppliers','Suppliers'],['sales','Whatnot sales'],['wheel','Giveaway draw'],['marketing','Launch studio']]
 const money = value => new Intl.NumberFormat('en-US',{style:'currency',currency:'USD'}).format(Number(value||0))
 const today = new Date().toISOString().slice(0,10)
 

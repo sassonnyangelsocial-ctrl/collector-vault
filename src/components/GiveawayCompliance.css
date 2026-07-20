@@ -1,0 +1,11 @@
+.giveaway-notice{margin-bottom:16px;border:1px solid #e9b94f;border-radius:18px;background:#fff7dc;padding:16px 18px;color:#604711}
+.giveaway-notice strong{display:block;font-size:1rem}
+.giveaway-notice p{margin:5px 0 0;line-height:1.5}
+.wheel-controls input{width:100%}
+.wheel-controls>label{margin-bottom:12px}
+.wheel-controls .rules-field{min-height:100px}
+.certify-row{display:grid!important;grid-template-columns:20px 1fr!important;align-items:start;border:1px solid #efbfd0;border-radius:14px;background:#fff5f8;padding:12px;color:#5b3b48!important;font-size:.82rem;line-height:1.45}
+.certify-row input{width:18px;margin-top:2px}
+.draw-hint{display:block;max-width:360px;margin-top:10px;color:var(--muted)}
+.draw-error{color:#9d294d}
+.winner-history small{display:block;color:var(--muted);margin-top:2px}
