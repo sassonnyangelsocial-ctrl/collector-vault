@@ -26,7 +26,9 @@ export default function CollectionPage({ session, view = 'dashboard', onNavigate
   useEffect(() => {
     async function load() {
       const [{ data: catalog, error: catalogError }, { data: userRows, error: userError }] = await Promise.all([
-        supabase.from('figures').select('id,name,rarity,image_url,series:series_id(name)').eq('active', true).order('sort_order'),
+        supabase.from('figures')
+          .select('id,name,rarity,edition_type,image_url,image_source_url,image_verified_at,series:series_id!inner(name,active,source_url,verified_at),market_values:figure_market_values(estimated_value,low_value,high_value,currency,as_of_date,confidence,methodology,source_urls)')
+          .eq('active', true).eq('series.active', true).order('sort_order'),
         supabase.from('user_figures').select('*').eq('user_id', session.user.id),
       ])
       if (catalogError || userError) setError((catalogError || userError).message)
