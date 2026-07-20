@@ -3,8 +3,9 @@ import { supabase } from '../lib/supabase'
 import CollectionPage from './CollectionPage'
 import AdminPage from './AdminPage'
 import AlertsPage from './AlertsPage'
+import SellerPage from './SellerPage'
 
-const NAV_ITEMS = [['dashboard', 'Dashboard'], ['collection', 'Collection'], ['wishlist', 'Wishlist'], ['iso', 'ISO'], ['diso', 'DISO'], ['trade', 'Trades'], ['alerts', 'Alerts']]
+const NAV_ITEMS = [['dashboard', 'Dashboard'], ['collection', 'Collection'], ['wishlist', 'Wishlist'], ['iso', 'ISO'], ['diso', 'DISO'], ['trade', 'Trades'], ['alerts', 'Alerts'], ['seller', 'Seller Pro']]
 
 export default function HomePage({ session }) {
   const [isAdmin, setIsAdmin] = useState(false)
@@ -19,6 +20,6 @@ export default function HomePage({ session }) {
       <button className="brand-button" onClick={() => setView('dashboard')}>Collector Vault</button>
       <div className="nav-actions">{NAV_ITEMS.map(([id, label]) => <button key={id} className={view === id ? 'active' : ''} onClick={() => setView(id)}>{label}</button>)}{isAdmin && <button className={view === 'admin' ? 'active' : ''} onClick={() => setView('admin')}>Admin</button>}<button onClick={() => supabase.auth.signOut()}>Sign out</button></div>
     </nav>
-    {view === 'admin' && isAdmin ? <AdminPage /> : view === 'alerts' ? <AlertsPage /> : <CollectionPage session={session} view={view} onNavigate={setView} />}
+    {view === 'admin' && isAdmin ? <AdminPage /> : view === 'alerts' ? <AlertsPage /> : view === 'seller' ? <SellerPage session={session} /> : <CollectionPage session={session} view={view} onNavigate={setView} />}
   </>
 }
