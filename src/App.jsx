@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { supabase } from './lib/supabase'
 import AuthPage from './pages/AuthPage'
 import HomePage from './pages/HomePage'
+import MembershipGate from './components/MembershipGate'
 
 export default function App() {
   const [session, setSession] = useState(null)
@@ -21,5 +22,5 @@ export default function App() {
   }, [])
 
   if (loading) return <div className="center">Opening Collector Vault…</div>
-  return session ? <HomePage session={session} /> : <AuthPage />
+  return session ? <MembershipGate session={session}><HomePage session={session} /></MembershipGate> : <AuthPage />
 }
