@@ -10,6 +10,8 @@ create table if not exists public.collection_items (
   quantity integer not null default 0 check (quantity >= 0),
   owned boolean not null default false,
   wishlist boolean not null default false,
+  iso boolean not null default false,
+  diso boolean not null default false,
   for_trade boolean not null default false,
   notes text,
   created_at timestamptz default now()
@@ -26,3 +28,10 @@ create policy "Owner reads collection" on public.collection_items for select usi
 create policy "Owner adds collection" on public.collection_items for insert with check (auth.uid() = user_id);
 create policy "Owner updates collection" on public.collection_items for update using (auth.uid() = user_id);
 create policy "Owner deletes collection" on public.collection_items for delete using (auth.uid() = user_id);
+
+-- Status fields used by the catalog-backed dashboard.
+alter table if exists public.user_figures
+  add column if not exists iso boolean not null default false,
+  add column if not exists diso boolean not null default false;
+
+create index if not exists idx_user_figures_figure_id on public.user_figures (figure_id);
