@@ -1,28 +1,28 @@
 import { useEffect, useMemo, useState } from 'react'
 import { supabase } from '../lib/supabase'
+import './AlertsPage.css'
 
-const TYPES = ['all', 'restock', 'drop', 'launch', 'inventory']
+const TYPES=['restock','drop','launch','inventory']
+const emptySource={name:'',url:'',active:true}
 
-export default function AlertsPage() {
-  const [alerts, setAlerts] = useState([])
-  const [filter, setFilter] = useState('all')
-  const [error, setError] = useState('')
-  useEffect(() => {
-    supabase.from('stock_alerts').select('*,source:source_id(name,source_type,url,verified)').order('published_at', { ascending: false })
-      .then(({ data, error: loadError }) => { setAlerts(data || []); if (loadError) setError(loadError.message) })
-  }, [])
-  const shown = useMemo(() => filter === 'all' ? alerts : alerts.filter((alert) => alert.alert_type === filter), [alerts, filter])
-  return <main className="collection-page alerts-page">
-    <header className="page-header"><div><span className="eyebrow">Verified collector intelligence</span><h1>Restock alerts</h1><p>Drops, launches, and inventory updates from official sources, dealers, suppliers, stores, and online shops.</p></div></header>
-    <div className="alert-filters">{TYPES.map((type) => <button key={type} className={filter === type ? 'active' : ''} onClick={() => setFilter(type)}>{type}</button>)}</div>
-    {error && <p className="error-banner">{error}</p>}
-    <section className="alerts-grid">{shown.map((alert) => <article className="alert-card" key={alert.id}>
-      <div className="alert-card-top"><span className={`alert-type ${alert.alert_type}`}>{alert.alert_type}</span>{alert.source?.verified && <span className="verified-badge">Verified source</span>}</div>
-      <h2>{alert.title}</h2><p>{alert.description}</p>
-      <div className="alert-meta"><strong>{alert.source?.name}</strong><span>{alert.region || 'Online'}</span><span>{alert.availability}</span></div>
-      <a className="primary-button alert-link" href={alert.product_url} target="_blank" rel="noreferrer">Check availability</a>
-    </article>)}</section>
-    {!shown.length && <div className="empty-panel"><h3>No alerts in this category yet</h3><p>New verified updates will appear here.</p></div>}
-    <p className="alerts-note">Availability can change quickly. Always confirm price and stock with the linked seller.</p>
-  </main>
+export default function AlertsPage(){
+ const [alerts,setAlerts]=useState([]),[filter,setFilter]=useState('all'),[error,setError]=useState(''),[sources,setSources]=useState([]),[source,setSource]=useState(emptySource),[prefs,setPrefs]=useState({phone_e164:'',sms_enabled:false,event_types:TYPES,quiet_start:'22:00',quiet_end:'08:00',timezone:Intl.DateTimeFormat().resolvedOptions().timeZone}),[code,setCode]=useState(''),[status,setStatus]=useState(''),[busy,setBusy]=useState(false)
+ async function load(){
+  const [{data:a,error:e},{data:s},{data:p}]=await Promise.all([supabase.from('stock_alerts').select('*,source:source_id(name,source_type,url,verified)').order('published_at',{ascending:false}),supabase.from('user_alert_sources').select('*').order('created_at'),supabase.from('sms_alert_preferences').select('*').maybeSingle()])
+  setAlerts(a||[]);setSources(s||[]);if(p)setPrefs({...prefs,...p,event_types:p.event_types||TYPES});if(e)setError(e.message)
+ }
+ useEffect(()=>{load()},[])
+ const shown=useMemo(()=>filter==='all'?alerts:alerts.filter(x=>x.alert_type===filter),[alerts,filter])
+ async function authPost(body){const {data}=await supabase.auth.getSession();const response=await fetch('/api/sms-preferences',{method:'POST',headers:{'Content-Type':'application/json',Authorization:`Bearer ${data.session?.access_token||''}`},body:JSON.stringify(body)});const result=await response.json();if(!response.ok)throw new Error(result.error||'Request failed.');return result}
+ async function requestCode(e){e.preventDefault();setBusy(true);setStatus('');try{const result=await authPost({action:'request-code',phone:prefs.phone_e164});setStatus(result.message)}catch(x){setStatus(x.message)}finally{setBusy(false)}}
+ async function verifyCode(){setBusy(true);try{const result=await authPost({action:'verify-code',code});setPrefs(x=>({...x,phone_verified_at:new Date().toISOString(),sms_enabled:true}));setCode('');setStatus(result.message)}catch(x){setStatus(x.message)}finally{setBusy(false)}}
+ async function savePrefs(){try{const result=await authPost({action:'save',sms_enabled:prefs.sms_enabled,event_types:prefs.event_types,quiet_start:prefs.quiet_start,quiet_end:prefs.quiet_end,timezone:prefs.timezone});setStatus(result.message)}catch(x){setStatus(x.message)}}
+ async function addSource(e){e.preventDefault();try{const url=new URL(source.url);const {error:e}=await supabase.from('user_alert_sources').insert({...source,url:url.href,user_id:(await supabase.auth.getUser()).data.user.id});if(e)throw e;setSource(emptySource);setStatus('Store added to your watchlist.');load()}catch(x){setStatus(x.message)} }
+ async function removeSource(id){await supabase.from('user_alert_sources').delete().eq('id',id);load()}
+ function toggleType(type){setPrefs(x=>({...x,event_types:x.event_types.includes(type)?x.event_types.filter(t=>t!==type):[...x.event_types,type]}))}
+ return <main className="collection-page alerts-page"><header className="page-header"><div><span className="eyebrow">Collector intelligence</span><h1>Restock text alerts</h1><p>Follow the stores and websites you care about, then choose which verified announcements should reach your phone.</p></div></header>
+  <section className="sms-setup"><article className="sms-card"><span className="eyebrow">1 · Your phone</span><h2>{prefs.phone_verified_at?'Phone verified':'Verify your mobile number'}</h2><form onSubmit={requestCode}><label>Mobile number<input type="tel" required value={prefs.phone_e164||''} onChange={e=>setPrefs({...prefs,phone_e164:e.target.value})} placeholder="+1 555 123 4567"/></label><button className="primary-button" disabled={busy}>{busy?'Sending…':'Send verification code'}</button></form><div className="verification-row"><input inputMode="numeric" maxLength="6" value={code} onChange={e=>setCode(e.target.value.replace(/\D/g,''))} placeholder="6-digit code"/><button onClick={verifyCode} disabled={busy||code.length!==6}>Verify</button></div><small>Message and data rates may apply. Frequency varies. Reply STOP to opt out. Consent is not a condition of purchase.</small></article>
+  <article className="sms-card"><span className="eyebrow">2 · Alert preferences</span><h2>What should we text?</h2><div className="sms-types">{TYPES.map(type=><label key={type}><input type="checkbox" checked={prefs.event_types.includes(type)} onChange={()=>toggleType(type)}/>{type}</label>)}</div><label className="sms-switch"><input type="checkbox" checked={prefs.sms_enabled} disabled={!prefs.phone_verified_at} onChange={e=>setPrefs({...prefs,sms_enabled:e.target.checked})}/>SMS alerts enabled</label><div className="quiet-row"><label>Quiet hours start<input type="time" value={prefs.quiet_start} onChange={e=>setPrefs({...prefs,quiet_start:e.target.value})}/></label><label>End<input type="time" value={prefs.quiet_end} onChange={e=>setPrefs({...prefs,quiet_end:e.target.value})}/></label></div><button className="primary-button" onClick={savePrefs}>Save settings</button></article></section>
+  <section className="watchlist-panel"><div><span className="eyebrow">3 · Store watchlist</span><h2>Stores and websites you follow</h2><p>We match these sites against Collector Vault’s verified alert feed. Adding a URL does not authorize purchases or give us your store login.</p></div><form onSubmit={addSource}><input required value={source.name} onChange={e=>setSource({...source,name:e.target.value})} placeholder="Store name"/><input required type="url" value={source.url} onChange={e=>setSource({...source,url:e.target.value})} placeholder="https://store.example.com"/><button className="primary-button">Add store</button></form><div className="watched-sites">{sources.map(s=><div key={s.id}><span><strong>{s.name}</strong><small>{s.url}</small></span><button onClick={()=>removeSource(s.id)} aria-label={`Remove ${s.name}`}>Remove</button></div>)}{!sources.length&&<p>No stores added yet.</p>}</div></section>
+  {status&&<p className="admin-message">{status}</p>}<div className="alert-filters">{['all',...TYPES].map(type=><button key={type} className={filter===type?'active':''} onClick={()=>setFilter(type)}>{type}</button>)}</div>{error&&<p className="error-banner">{error}</p>}<section className="alerts-grid">{shown.map(alert=><article className="alert-card" key={alert.id}><div className="alert-card-top"><span className={`alert-type ${alert.alert_type}`}>{alert.alert_type}</span>{alert.source?.verified&&<span className="verified-badge">Verified source</span>}</div><h2>{alert.title}</h2><p>{alert.description}</p><div className="alert-meta"><strong>{alert.source?.name}</strong><span>{alert.region||'Online'}</span><span>{alert.availability}</span></div><a className="primary-button alert-link" href={alert.product_url} target="_blank" rel="noreferrer">Check availability</a></article>)}</section>{!shown.length&&<div className="empty-panel"><h3>No alerts in this category yet</h3><p>New verified updates will appear here.</p></div>}<p className="alerts-note">Availability changes quickly. Confirm price and stock with the linked seller.</p></main>
 }
