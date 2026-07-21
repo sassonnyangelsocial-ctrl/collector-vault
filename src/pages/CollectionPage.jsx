@@ -3,6 +3,7 @@ import { supabase } from '../lib/supabase'
 import StatCard from '../components/StatCard'
 import FigureCard from '../components/FigureCard'
 import FigureDrawer from '../components/FigureDrawer'
+import './CollectionPage.css'
 
 const EMPTY = { owned: false, quantity: 0, wishlist: false, iso: false, diso: false, for_trade: false, favorite: false }
 
@@ -14,11 +15,26 @@ const VIEW_COPY = {
   trade: ['Trades', 'Duplicates and figures you are ready to trade.'],
 }
 
+const CATALOG_PAGE_SIZE = 1000
+
+async function loadAllFigures() {
+  const allFigures = []
+  for (let from = 0; ; from += CATALOG_PAGE_SIZE) {
+    const { data, error } = await supabase.from('figures')
+      .select('id,name,rarity,edition_type,image_url,image_source_url,image_verified_at,sort_order,series:series_id!inner(name,active,source_url,verified_at),market_values:figure_market_values(estimated_value,low_value,high_value,currency,as_of_date,confidence,methodology,source_urls)')
+      .eq('active', true).eq('series.active', true).order('sort_order').order('id').range(from, from + CATALOG_PAGE_SIZE - 1)
+    if (error) throw error
+    allFigures.push(...(data || []))
+    if (!data || data.length < CATALOG_PAGE_SIZE) return allFigures
+  }
+}
+
 export default function CollectionPage({ session, view = 'dashboard', onNavigate }) {
   const [figures, setFigures] = useState([])
   const [states, setStates] = useState({})
   const [query, setQuery] = useState('')
   const [seriesFilter, setSeriesFilter] = useState('all')
+  const [browseAll, setBrowseAll] = useState(false)
   const [selectedFigure, setSelectedFigure] = useState(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState('')
@@ -26,9 +42,7 @@ export default function CollectionPage({ session, view = 'dashboard', onNavigate
   useEffect(() => {
     async function load() {
       const [{ data: catalog, error: catalogError }, { data: userRows, error: userError }] = await Promise.all([
-        supabase.from('figures')
-          .select('id,name,rarity,edition_type,image_url,image_source_url,image_verified_at,series:series_id!inner(name,active,source_url,verified_at),market_values:figure_market_values(estimated_value,low_value,high_value,currency,as_of_date,confidence,methodology,source_urls)')
-          .eq('active', true).eq('series.active', true).order('sort_order'),
+        loadAllFigures().then((data) => ({ data, error: null })).catch((error) => ({ data: null, error })),
         supabase.from('user_figures').select('*').eq('user_id', session.user.id),
       ])
       if (catalogError || userError) setError((catalogError || userError).message)
@@ -68,14 +82,16 @@ export default function CollectionPage({ session, view = 'dashboard', onNavigate
   }), [figures, states])
 
   const seriesNames = useMemo(() => [...new Set(figures.map((f) => f.series?.name).filter(Boolean))].sort(), [figures])
+  const searchingWholeDirectory = ['iso', 'diso'].includes(view) && (browseAll || query.trim().length > 0 || seriesFilter !== 'all')
   const matchesView = useCallback((figure) => {
     const state = states[figure.id] || EMPTY
+    if (searchingWholeDirectory) return true
     if (view === 'wishlist') return state.wishlist
     if (view === 'iso') return state.iso
     if (view === 'diso') return state.diso
     if (view === 'trade') return state.for_trade
     return true
-  }, [states, view])
+  }, [searchingWholeDirectory, states, view])
   const shownFigures = figures.filter((figure) => {
     const text = `${figure.name} ${figure.series?.name || ''} ${figure.rarity || ''}`.toLowerCase().includes(query.toLowerCase())
     return text && (seriesFilter === 'all' || figure.series?.name === seriesFilter) && matchesView(figure)
@@ -104,10 +120,11 @@ export default function CollectionPage({ session, view = 'dashboard', onNavigate
   const [title, description] = VIEW_COPY[view] || VIEW_COPY.collection
   return <main className="collection-page">
     <header className="page-header"><div><span className="eyebrow">Your personal vault</span><h1>{title}</h1><p>{description}</p></div><p>{shownFigures.length} figure{shownFigures.length === 1 ? '' : 's'}</p></header>
-    <section className="collection-tools"><input placeholder="Search figures, series, or rarity..." value={query} onChange={(e) => setQuery(e.target.value)} /><select value={seriesFilter} onChange={(e) => setSeriesFilter(e.target.value)}><option value="all">All series</option>{seriesNames.map((name) => <option value={name} key={name}>{name}</option>)}</select></section>
+    {['iso', 'diso'].includes(view) && <section className="catalog-scope" aria-label={`${title} directory scope`}><button className={!browseAll && !query && seriesFilter === 'all' ? 'active' : ''} onClick={() => { setBrowseAll(false); setQuery(''); setSeriesFilter('all') }}>My {title}</button><button className={searchingWholeDirectory ? 'active' : ''} onClick={() => setBrowseAll(true)}>Browse full directory</button><span>{searchingWholeDirectory ? `Searching all ${figures.length} catalog figures` : `${stats[view]} saved to your ${title} list`}</span></section>}
+    <section className="collection-tools"><input type="search" aria-label={`Search the full Sonny Angel directory for ${title}`} placeholder={['iso', 'diso'].includes(view) ? `Search the full directory to add a ${title}...` : 'Search figures, series, or rarity...'} value={query} onChange={(e) => setQuery(e.target.value)} /><select aria-label="Filter by series" value={seriesFilter} onChange={(e) => setSeriesFilter(e.target.value)}><option value="all">All series</option>{seriesNames.map((name) => <option value={name} key={name}>{name}</option>)}</select></section>
     {error && <p className="error-banner">{error}</p>}
     <div className="figure-grid">{shownFigures.map((figure) => <FigureCard key={figure.id} figure={figure} state={states[figure.id] || EMPTY} onOpen={setSelectedFigure} onSave={save} />)}</div>
-    {!shownFigures.length && <div className="empty-state"><h2>Nothing here yet</h2><p>Browse the collection and use the status buttons to build this list.</p><button className="primary-button" onClick={() => onNavigate('collection')}>Browse collection</button></div>}
+    {!shownFigures.length && <div className="empty-state"><h2>{searchingWholeDirectory ? 'No matching figures' : `No figures saved to ${title} yet`}</h2><p>{searchingWholeDirectory ? 'Try a different figure name, series, rarity, or series filter.' : `Search above or browse the full directory, then tap ${title} on any figure to add it.`}</p>{['iso', 'diso'].includes(view) ? <button className="primary-button" onClick={() => setBrowseAll(true)}>Browse full directory</button> : <button className="primary-button" onClick={() => onNavigate('collection')}>Browse collection</button>}</div>}
     {selectedFigure && <FigureDrawer figure={selectedFigure} state={states[selectedFigure.id] || EMPTY} onClose={() => setSelectedFigure(null)} onSave={save} />}
   </main>
 }
