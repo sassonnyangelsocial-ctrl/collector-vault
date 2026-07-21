@@ -1,15 +1,15 @@
 priority,recipient,category,public_channel,campaign_component,status,last_contact,next_action,notes
-1,TATE'S Comics,Official retailer,contact@tatescomics.com,Retailer and community email,Ready,,,Personalize around its March 2026 trading event
-2,Strangecat Toys,Official retailer,strangecatteam@strangecattoys.com,Retailer and Seller Pro email,Ready,,,Mention designer-toy community and ask for product feedback
-3,Giant Robot,Official retailer,mail@giantrobot.com,Retailer and community email,Ready,,,Mention art-toy audience; do not imply endorsement
-4,JapanLA,Official retailer,contact@japanla.com,Retailer and creator email,Queued,,,Send after first-batch response review
-5,Toy Joy,Official retailer,info@toyjoy.com,Retailer and community email,Queued,,,Send after first-batch response review
-6,Vault of Midnight,Official retailer,events@vaultofmidnight.com,Meetup and event email,Queued,,,Pitch QR resource or demo for a future collector event
-7,Woot Bear,Official retailer,https://wootbear.com/contact-us/,Retailer and community message,Queued,,,Use official contact form
-8,Sonny Angel / Dreams,Brand owner,https://www.sonnyangel.com/en/contact/,Permission and factual-feedback note,Queued,,,Never imply partnership or approval
+1,TATE'S Comics,Retailer and community,contact@tatescomics.com,Retailer feedback email,Ready,,,Personalize and send Batch 1
+2,Strangecat Toys,Designer-toy retailer,strangecatteam@strangecattoys.com,Seller Pro feedback email,Ready,,,Personalize and send Batch 1
+3,JapanLA,Collectible retailer,contact@japanla.com,Collector community feedback email,Ready,,,Personalize and send Batch 1
+4,Giant Robot Store,Designer-toy retailer,Official site/contact channel or 424-246-7626,Retailer feedback request,Queued,,,Send after reviewing Batch 1 replies
+5,Toy Joy,Toy and collectible retailer,https://www.toyjoy.com/service/ or 512-320-0090,Retailer feedback request,Queued,,,Use official support channel after Batch 1
+6,Woot Bear,Designer-toy gallery,https://wootbear.com/contact-us/,Retailer feedback request,Queued,,,Use official contact form after Batch 1
+7,Vault of Midnight,Comic and collectible retailer,https://www.vaultofmidnight.com/,Product feedback only,Hold,,,Official page says event hosting is on hold; do not send event pitch
+8,Sonny Angel / Dreams,Brand owner,https://www.sonnyangel.com/en/contact/,Factual and brand-use review,Ready,,,Do not imply partnership or request customer data
 9,r/SonnyAngel,Community,Reddit moderator mail,Moderator permission request,Ready,,,Do not post until moderators approve
-10,Product Hunt,Launch platform,https://www.producthunt.com/launch,Product listing,Ready,,,Confirm maker account eligibility and full listing assets
-11,Instagram micro-creators,Creators,Public business DM,Creator testing message,Research,,,Select 10 recent relevant creators manually; no scraping
-12,TikTok micro-creators,Creators,Public business DM,Creator testing message,Research,,,Select 10 recent relevant creators manually; no scraping
-13,Facebook collector groups,Community,Administrator message,Moderator permission request,Research,,,Record group rule and admin approval before posting
-14,Discord collector servers,Community,Moderator message,Moderator permission request,Research,,,Never mass-DM server members
+10,Product Hunt,Launch platform,https://www.producthunt.com/launch,Product listing,Ready,,,Use Product Hunt listing and maker comment
+11,Instagram micro-creators,Creators,Public business DM,Creator test request,Research,,,Choose relevant public business accounts manually; personalize every DM
+12,TikTok micro-creators,Creators,Public business DM,Creator test request,Research,,,Offer honest test access; disclose sponsorship if later agreed
+13,Facebook collector groups,Community,Administrator message,Moderator permission request,Research,,,Read rules and record approval before posting
+14,Discord collector servers,Community,Moderator message,Moderator permission request,Research,,,Never mass-DM members

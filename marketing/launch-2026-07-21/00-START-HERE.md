@@ -17,6 +17,9 @@ Use these files in order:
 5. `04-SOCIAL-POSTS.md` — ready-to-post captions, Reel scripts, and Stories.
 6. `05-MEDIA-KIT.md` — consistent facts for press and partners.
 7. `06-SELLER-PRO-FEATURES.md` — complete and approved Seller Pro claims.
+8. `07-MASTER-LAUNCH-PACKET.md` — controlling launch plan, complete features, exact posts, Reels, Stories, and schedule.
+9. `08-CONTACT-PLAYBOOK.md` — verified public contacts and recipient-specific copy.
+10. `09-GRAPHICS-AND-ASSET-GUIDE.md` — graphics, screenshots, sizes, and visual disclosures.
 
 Campaign assets are in `../assets/`.
 

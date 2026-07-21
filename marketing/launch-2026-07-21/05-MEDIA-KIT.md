@@ -15,6 +15,9 @@ Collector Vault replaces scattered screenshots, notes, and spreadsheets with one
 ## Core features
 
 - Collection, wishlist, ISO, DISO, and trade organization
+- Dashboard collection progress, quantity, duplicate, and favorite tracking
+- Full-directory search by figure, alias, series, and rarity
+- Dated asking-price estimates, confidence, methodology, and comparable links when exact defensible matches are available
 - Catalog images displayed with full artwork visible
 - Source-following restock, drop, launch, and inventory alerts
 - Optional SMS alert preferences when messaging service is available
@@ -26,6 +29,7 @@ Collector Vault replaces scattered screenshots, notes, and spreadsheets with one
 - Free giveaway-selection wheel with prize, eligibility, rules, secure selection, entry hash, and private audit history
 - Seller launch-copy studio
 - Direct phone installation without an app-store account
+- Email account access, Stripe-hosted membership checkout, and a 7-day trial shown at checkout
 
 ## Pricing
 
@@ -51,5 +55,8 @@ Collector Vault is independent and is not affiliated with or endorsed by Sonny A
 - `../assets/launch-square.png`
 - `../assets/collect-smarter-reel.png`
 - `../assets/seller-pro-square.png`
+- `../assets/collector-vault-launch-2026.png`
+- `../assets/trade-chat-square.png`
+- `../assets/seller-pro-complete-square.png`
 
 Use real screen recordings for product demonstrations. The campaign graphics are promotional art, not screenshots of exact live data.
