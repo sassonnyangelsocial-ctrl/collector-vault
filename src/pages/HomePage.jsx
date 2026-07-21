@@ -19,7 +19,7 @@ export default function HomePage({ session }) {
   return <>
     <nav className="top-nav">
       <button className="brand-button" onClick={() => setView('dashboard')}>Collector Vault</button>
-      <div className="nav-actions">{NAV_ITEMS.map(([id, label]) => <button key={id} className={view === id ? 'active' : ''} onClick={() => setView(id)}>{label}</button>)}{isAdmin && <button className={view === 'admin' ? 'active' : ''} onClick={() => setView('admin')}>Admin</button>}<button onClick={() => supabase.auth.signOut()}>Sign out</button></div>
+      <div className="nav-actions">{NAV_ITEMS.map(([id, label]) => <button key={id} className={view === id ? 'active' : ''} onClick={() => setView(id)}>{label}</button>)}{isAdmin && <button className={view === 'admin' ? 'active' : ''} onClick={() => setView('admin')}>Admin</button>}<button onClick={() => { window.location.hash = 'about' }}>About</button><button onClick={() => supabase.auth.signOut()}>Sign out</button></div>
     </nav>
     {view === 'admin' && isAdmin ? <AdminPage /> : view === 'alerts' ? <AlertsPage /> : view === 'seller' ? <SellerPage session={session} /> : view === 'matches' ? <TradeHubPage session={session} /> : <CollectionPage session={session} view={view} onNavigate={setView} />}
   </>

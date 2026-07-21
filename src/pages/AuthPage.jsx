@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { supabase } from '../lib/supabase'
 
-export default function AuthPage() {
-  const [mode, setMode] = useState('login')
+export default function AuthPage({ initialMode = 'login' }) {
+  const [mode, setMode] = useState(initialMode)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [message, setMessage] = useState('')
@@ -28,6 +28,7 @@ export default function AuthPage() {
         <span className="eyebrow">Track · Collect · Trade</span>
         <h1>Collector Vault</h1>
         <p>Your complete collection, wishlist, duplicates, and trade list in one place.</p>
+        <button className="text-button" type="button" onClick={() => { window.location.hash = 'about' }}>← Explore everything Collector Vault offers</button>
       </section>
 
       <form className="auth-card" onSubmit={submit}>
