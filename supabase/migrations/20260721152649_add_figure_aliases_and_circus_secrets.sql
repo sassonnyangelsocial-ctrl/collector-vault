@@ -20,7 +20,7 @@ select
   'https://www.sonnyangel.com/renewal/wp-content/uploads/2022/07/img_circus2022_09.png',
   'https://www.sonnyangel.com/en/2022/08/01/circus2022/',
   now(),
-  'secret',
+  'robby',
   'Official Sonny Angel 2022 release announcement',
   array['Carousel Lop', 'Carousel Lop Ear Rabbit', 'Carousel Lop Ear Bunny', 'Merry Go Round']::text[]
 from public.series s
