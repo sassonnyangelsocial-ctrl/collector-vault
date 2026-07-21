@@ -1,0 +1,15 @@
+priority,recipient,category,public_channel,campaign_component,status,last_contact,next_action,notes
+1,TATE'S Comics,Official retailer,contact@tatescomics.com,Retailer and community email,Ready,,,Personalize around its March 2026 trading event
+2,Strangecat Toys,Official retailer,strangecatteam@strangecattoys.com,Retailer and Seller Pro email,Ready,,,Mention designer-toy community and ask for product feedback
+3,Giant Robot,Official retailer,mail@giantrobot.com,Retailer and community email,Ready,,,Mention art-toy audience; do not imply endorsement
+4,JapanLA,Official retailer,contact@japanla.com,Retailer and creator email,Queued,,,Send after first-batch response review
+5,Toy Joy,Official retailer,info@toyjoy.com,Retailer and community email,Queued,,,Send after first-batch response review
+6,Vault of Midnight,Official retailer,events@vaultofmidnight.com,Meetup and event email,Queued,,,Pitch QR resource or demo for a future collector event
+7,Woot Bear,Official retailer,https://wootbear.com/contact-us/,Retailer and community message,Queued,,,Use official contact form
+8,Sonny Angel / Dreams,Brand owner,https://www.sonnyangel.com/en/contact/,Permission and factual-feedback note,Queued,,,Never imply partnership or approval
+9,r/SonnyAngel,Community,Reddit moderator mail,Moderator permission request,Ready,,,Do not post until moderators approve
+10,Product Hunt,Launch platform,https://www.producthunt.com/launch,Product listing,Ready,,,Confirm maker account eligibility and full listing assets
+11,Instagram micro-creators,Creators,Public business DM,Creator testing message,Research,,,Select 10 recent relevant creators manually; no scraping
+12,TikTok micro-creators,Creators,Public business DM,Creator testing message,Research,,,Select 10 recent relevant creators manually; no scraping
+13,Facebook collector groups,Community,Administrator message,Moderator permission request,Research,,,Record group rule and admin approval before posting
+14,Discord collector servers,Community,Moderator message,Moderator permission request,Research,,,Never mass-DM server members
