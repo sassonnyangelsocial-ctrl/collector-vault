@@ -16,6 +16,7 @@ Use these files in order:
 4. `03-EMAILS-AND-DMS.md` — personalized outreach copy.
 5. `04-SOCIAL-POSTS.md` — ready-to-post captions, Reel scripts, and Stories.
 6. `05-MEDIA-KIT.md` — consistent facts for press and partners.
+7. `06-SELLER-PRO-FEATURES.md` — complete and approved Seller Pro claims.
 
 Campaign assets are in `../assets/`.
 
@@ -23,4 +24,4 @@ Campaign assets are in `../assets/`.
 
 Collector Vault is an independent collector tool. It is not affiliated with or endorsed by Sonny Angel, Dreams Inc., Whatnot, eBay, or any retailer.
 
-Do not advertise guaranteed restocks, guaranteed pricing, guaranteed profit, or paid raffles/waffles. Use “estimated market price” only after the live pricing feed is operational and verified. Describe the wheel only as a free giveaway-selection tool.
+Do not advertise guaranteed restocks, guaranteed pricing, guaranteed profit, direct Whatnot synchronization, or paid raffles/waffles. Use “estimated market price” only after the live pricing feed is operational and verified. Describe the wheel only as a free giveaway-selection tool with private draw history.

@@ -4,7 +4,9 @@ Launch date: July 20, 2026
 
 ## Core message
 
-Seller Pro helps collectible sellers track case and supply orders, organize supplier relationships, import Whatnot sales, reconcile fees and payouts, and understand estimated profit without juggling spreadsheets.
+Seller Pro helps collectible sellers track detailed case, inventory, and supply orders; organize supplier relationships; import their own Whatnot Seller Hub CSV; review sales, fees, seller-paid shipping, payouts, purchase expenses, inventory indicators, and estimated profit; run free-entry promotional giveaways with a private draw history; and prepare launch content without juggling spreadsheets.
+
+The Whatnot workflow is a seller-controlled file import, not an automatic account link or sync. It never asks for a Whatnot password. The giveaway wheel supports free-entry promotions only; paid raffles or “waffles” are not supported.
 
 ## Today’s schedule
 
@@ -17,15 +19,16 @@ Seller Pro helps collectible sellers track case and supply orders, organize supp
 
 1. 0–3s: “What did your last live actually profit?”
 2. 3–9s: Show invoices, supplier messages, and a messy spreadsheet.
-3. 9–20s: Screen-record Supplier CRM → Purchase Orders → Whatnot CSV Import → Profit Snapshot.
-4. 20–27s: “Know your numbers. Grow your collection business.”
-5. 27–30s: “Seller Pro is live inside Collector Vault. Link in bio.”
+3. 9–18s: Screen-record Purchase Orders → Supplier CRM → seller-controlled Whatnot CSV Import → Profit Snapshot.
+4. 18–24s: Show the free-giveaway wheel and private draw history.
+5. 24–27s: “Know your numbers. Keep free giveaways organized.”
+6. 27–30s: “Seller Pro is live inside Collector Vault. Link in bio.”
 
-Caption: What did your last live actually profit? Seller Pro tracks cases, suppliers, Whatnot fees, payouts and real margins in one place. Live now inside Collector Vault. #WhatnotSeller #SonnyAngelSeller #ResellerBusiness
+Caption: What did your last live actually profit? Seller Pro tracks detailed purchase orders, suppliers, your own Whatnot Seller Hub CSV, fees, shipping, payouts, expenses, inventory indicators, estimated profit, and free-giveaway draws in one place. No Whatnot password required. Estimates only; reconcile with official records. Not affiliated with Whatnot. #WhatnotSeller #SonnyAngelSeller #ResellerBusiness
 
 ## Launch caption
 
-Your collection has a business side now. Introducing Seller Pro inside Collector Vault ✨ Log every case and supply order, organize suppliers, import Whatnot sales, track fees and COGS, and see estimated profit in one calm dashboard. Founding seller access is open now. Comment SELLER and I’ll send the link. #SonnyAngelSeller #WhatnotSeller #ResellerTools #CollectorVault
+Your collection has a business side now. Introducing Seller Pro inside Collector Vault ✨ Log detailed case, inventory, and supply orders; organize supplier contacts and terms; import your own Whatnot Seller Hub CSV; track available sales, fees, shipping, payouts, and expenses; review inventory indicators and estimated profit; and run free-entry promotional giveaways with the in-app wheel and private draw history. No Whatnot password required. Collector Vault is independent and is not affiliated with Whatnot. #SonnyAngelSeller #WhatnotSeller #ResellerTools #CollectorVault
 
 ## Story frames
 
@@ -49,3 +52,5 @@ Your collection has a business side now. Introducing Seller Pro inside Collector
 - “Can I track other platforms?” The ledger data model supports additional platforms; Whatnot import is the launch workflow.
 - “Is this tax software?” No. It is an operating dashboard and estimates; always reconcile with official statements and a tax professional.
 - “Can I use it on my phone?” Yes. The Seller Pro screens are responsive; Whatnot currently requires desktop web for its CSV export.
+- “Does it link directly to Whatnot?” No. The seller exports a CSV from Whatnot Seller Hub and uploads it. There is no automatic account sync.
+- “Can I run raffles or waffles?” Seller Pro supports only free-entry promotional giveaways where permitted. No purchase, payment, tip, bid, or subscription may improve the odds. Do not use it during or in connection with a Whatnot show.

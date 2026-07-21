@@ -1,0 +1,10 @@
+create index if not exists trade_threads_member_a_idx on public.trade_threads(member_a);
+create index if not exists trade_threads_member_b_idx on public.trade_threads(member_b);
+create index if not exists trade_threads_created_by_idx on public.trade_threads(created_by);
+create index if not exists trade_threads_requested_idx on public.trade_threads(requested_figure_id);
+create index if not exists trade_threads_offered_idx on public.trade_threads(offered_figure_id);
+create index if not exists trade_messages_sender_idx on public.trade_messages(sender_id);
+create index if not exists trade_blocks_blocked_idx on public.trade_blocks(blocked_id);
+create index if not exists trade_reports_reporter_idx on public.trade_reports(reporter_id);
+create index if not exists trade_reports_reported_idx on public.trade_reports(reported_user_id);
+create index if not exists trade_reports_thread_idx on public.trade_reports(thread_id);

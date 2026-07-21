@@ -4,7 +4,7 @@
 
 - Test sign-up, email confirmation, login, monthly checkout, yearly checkout, and sign-out on a phone.
 - Tap **Install app** before signing up and verify the instructions.
-- Test the dashboard, collection, wishlist, ISO, DISO, trades, alerts, and Seller Pro.
+- Test the dashboard, collection, wishlist, ISO, DISO, trades, Trade Chat matching/messages, alerts, and Seller Pro.
 - Confirm the Stripe success and cancellation paths return to the live site.
 - Confirm SMS verification with one real phone number. If Twilio is still in trial mode, do not promise SMS access to every subscriber.
 - Do not promote live market-price estimates until the approved eBay production credentials are installed and real results have been checked.

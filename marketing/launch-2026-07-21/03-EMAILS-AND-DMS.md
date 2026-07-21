@@ -26,9 +26,11 @@ Subject: Would your seller community test Collector Vault Seller Pro?
 
 Hi [name/team],
 
-Your work with [specific products/events/community] stood out to me. Seller Pro inside Collector Vault helps collectible sellers log case and supply orders, organize suppliers, import supported sales files, and review costs, fees, and estimated profit.
+Your work with [specific products/events/community] stood out to me. Seller Pro inside Collector Vault helps collectible sellers log detailed case, inventory, and supply orders; organize supplier contacts, lead times, minimums, and terms; and import their own Whatnot Seller Hub CSV for sales and expense tracking. The dashboard organizes available gross sales, platform fees, seller-paid shipping, payouts, purchase costs, inventory indicators, and estimated profit.
 
-Would someone on your team be willing to test the workflow and share candid feedback? It never asks for a Whatnot password, and Collector Vault is not affiliated with Whatnot.
+Collectors can also opt into Trade Chat: reciprocal matches are found from ISO/DISO and ready-to-trade lists, then both members can use a private conversation tied to the proposed trade. Seller Pro also includes an in-app wheel for free-entry promotional giveaways, with prize and rules fields, secure winner selection, and a private draw audit history. Paid chance-based entries are not supported.
+
+Would someone on your team be willing to test the workflow and share candid feedback? It never asks for a Whatnot password, does not automatically sync a Whatnot account, and is not affiliated with Whatnot.
 
 https://collector-vault-one.vercel.app/?utm_source=[recipient]&utm_medium=email&utm_campaign=seller_pro_launch
 

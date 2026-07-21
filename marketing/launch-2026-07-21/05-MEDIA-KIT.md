@@ -18,8 +18,13 @@ Collector Vault replaces scattered screenshots, notes, and spreadsheets with one
 - Catalog images displayed with full artwork visible
 - Source-following restock, drop, launch, and inventory alerts
 - Optional SMS alert preferences when messaging service is available
-- Seller Pro order, supplier, sales-import, fee, cost, and estimated-profit tools
-- Free giveaway-selection wheel with audit history
+- Seller Pro detailed purchase orders for cases, inventory, supplies, invoices, item counts, shipping, tax, discounts, payments, ETA, carrier, tracking, receipt, and notes
+- Opt-in reciprocal trade matching across member ISO/DISO and ready-to-trade lists, with private trade-specific messaging, conversation status, blocking, and reporting
+- Supplier CRM for contacts, websites, lead times, minimum orders, terms, ratings, and notes
+- Seller-controlled Whatnot Seller Hub CSV import for available order, gross-sales, fee, shipping, payout, and status fields—without collecting a Whatnot password
+- Seller overview for sales, expenses, open orders, inventory indicators, recent activity, and estimated profit
+- Free giveaway-selection wheel with prize, eligibility, rules, secure selection, entry hash, and private audit history
+- Seller launch-copy studio
 - Direct phone installation without an app-store account
 
 ## Pricing
@@ -38,7 +43,7 @@ Collector Vault is independent and is not affiliated with or endorsed by Sonny A
 - “Official Sonny Angel app/partner.”
 - “Guaranteed restock alerts.”
 - “Guaranteed seller profits.”
-- “Whatnot integration” unless clearly described as a seller-controlled supported file import.
+- “Direct Whatnot integration,” “automatic Whatnot sync,” or “linked Whatnot account.” The current workflow is a seller-controlled supported CSV import.
 - Any promotion of paid raffles or waffles.
 
 ## Available launch assets
