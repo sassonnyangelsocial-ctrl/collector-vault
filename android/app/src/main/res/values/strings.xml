@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Collector Vault</string>
+    <string name="title_activity_main">Collector Vault</string>
+    <string name="package_name">com.collectorvault.app</string>
+    <string name="custom_url_scheme">com.collectorvault.app</string>
+</resources>

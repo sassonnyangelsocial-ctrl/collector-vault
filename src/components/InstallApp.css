@@ -1,0 +1,9 @@
+.install-app-button { position: fixed; right: 18px; bottom: 18px; z-index: 45; border: 0; border-radius: 999px; padding: 13px 18px; background: #30262f; color: #fff; font-weight: 900; box-shadow: 0 14px 30px rgba(48,38,47,.24); }
+.install-app-button:focus-visible, .install-close:focus-visible { outline: 3px solid #ffb6cc; outline-offset: 3px; }
+.install-backdrop { position: fixed; inset: 0; z-index: 120; display: grid; place-items: center; padding: 18px; background: rgba(41,29,37,.55); }
+.install-dialog { position: relative; width: min(480px,100%); display: grid; gap: 14px; background: #fffaf9; border: 1px solid var(--line); border-radius: 26px; padding: 30px; box-shadow: 0 24px 70px rgba(41,29,37,.28); }
+.install-dialog h2 { font-size: clamp(1.8rem,6vw,2.6rem); line-height: 1; margin: 0; }
+.install-dialog ol { display: grid; gap: 10px; margin: 2px 0; padding-left: 24px; }
+.install-dialog p { margin: 0; color: var(--muted); }
+.install-close { position: absolute; right: 14px; top: 14px; width: 38px; height: 38px; border: 1px solid var(--line); border-radius: 50%; background: #fff; font-size: 1.4rem; }
+.install-icon { width: 58px; height: 58px; display: grid; place-items: center; border-radius: 17px; background: linear-gradient(145deg,#f26b8a,#ffac79); color: #fff; font-weight: 950; letter-spacing: -.05em; }

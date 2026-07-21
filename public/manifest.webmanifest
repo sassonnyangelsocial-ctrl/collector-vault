@@ -1,0 +1,21 @@
+{
+  "name": "Collector Vault",
+  "short_name": "Collector Vault",
+  "description": "Track collections, wishlists, trades, ISOs, DISOs, seller orders, and collector alerts.",
+  "id": "/",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#fff8f6",
+  "theme_color": "#f26b8a",
+  "categories": ["lifestyle", "shopping", "utilities"],
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

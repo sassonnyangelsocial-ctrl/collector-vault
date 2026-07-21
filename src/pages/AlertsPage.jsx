@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import { supabase } from '../lib/supabase'
+import { apiUrl } from '../lib/runtime'
 import './AlertsPage.css'
 
 const TYPES=['restock','drop','launch','inventory']
@@ -13,7 +14,7 @@ export default function AlertsPage(){
  }
  useEffect(()=>{load()},[])
  const shown=useMemo(()=>filter==='all'?alerts:alerts.filter(x=>x.alert_type===filter),[alerts,filter])
- async function authPost(body){const {data}=await supabase.auth.getSession();const response=await fetch('/api/sms-preferences',{method:'POST',headers:{'Content-Type':'application/json',Authorization:`Bearer ${data.session?.access_token||''}`},body:JSON.stringify(body)});const result=await response.json();if(!response.ok)throw new Error(result.error||'Request failed.');return result}
+ async function authPost(body){const {data}=await supabase.auth.getSession();const response=await fetch(apiUrl('/api/sms-preferences'),{method:'POST',headers:{'Content-Type':'application/json',Authorization:`Bearer ${data.session?.access_token||''}`},body:JSON.stringify(body)});const result=await response.json();if(!response.ok)throw new Error(result.error||'Request failed.');return result}
  async function requestCode(e){e.preventDefault();setBusy(true);setStatus('');try{const result=await authPost({action:'request-code',phone:prefs.phone_e164});setStatus(result.message)}catch(x){setStatus(x.message)}finally{setBusy(false)}}
  async function verifyCode(){setBusy(true);try{const result=await authPost({action:'verify-code',code});setPrefs(x=>({...x,phone_verified_at:new Date().toISOString(),sms_enabled:true}));setCode('');setStatus(result.message)}catch(x){setStatus(x.message)}finally{setBusy(false)}}
  async function savePrefs(){try{const result=await authPost({action:'save',sms_enabled:prefs.sms_enabled,event_types:prefs.event_types,quiet_start:prefs.quiet_start,quiet_end:prefs.quiet_end,timezone:prefs.timezone});setStatus(result.message)}catch(x){setStatus(x.message)}}
