@@ -21,7 +21,7 @@ async function loadAllFigures() {
   const allFigures = []
   for (let from = 0; ; from += CATALOG_PAGE_SIZE) {
     const { data, error } = await supabase.from('figures')
-      .select('id,name,rarity,edition_type,image_url,image_source_url,image_verified_at,sort_order,series:series_id!inner(name,active,source_url,verified_at),market_values:figure_market_values(estimated_value,low_value,high_value,currency,as_of_date,confidence,methodology,source_urls)')
+      .select('id,name,aliases,rarity,edition_type,image_url,image_source_url,image_verified_at,sort_order,series:series_id!inner(name,active,source_url,verified_at),market_values:figure_market_values(estimated_value,low_value,high_value,currency,as_of_date,confidence,methodology,source_urls)')
       .eq('active', true).eq('series.active', true).order('sort_order').order('id').range(from, from + CATALOG_PAGE_SIZE - 1)
     if (error) throw error
     allFigures.push(...(data || []))
@@ -93,7 +93,7 @@ export default function CollectionPage({ session, view = 'dashboard', onNavigate
     return true
   }, [searchingWholeDirectory, states, view])
   const shownFigures = figures.filter((figure) => {
-    const text = `${figure.name} ${figure.series?.name || ''} ${figure.rarity || ''}`.toLowerCase().includes(query.toLowerCase())
+    const text = `${figure.name} ${(figure.aliases || []).join(' ')} ${figure.series?.name || ''} ${figure.rarity || ''}`.toLowerCase().includes(query.toLowerCase())
     return text && (seriesFilter === 'all' || figure.series?.name === seriesFilter) && matchesView(figure)
   })
   const completion = figures.length ? Math.round((stats.owned / figures.length) * 100) : 0

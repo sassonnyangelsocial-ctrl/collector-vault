@@ -19,9 +19,9 @@ const statements = series.map((item, seriesOffset) => {
   const seriesSort = chunkIndex * chunkSize + seriesOffset
   const figures = item.figures.map((figure) => `
     insert into public.figures
-      (series_id, name, slug, rarity, sort_order, active, image_url, image_source_url, image_verified_at, edition_type)
-    select s.id, ${quote(figure.name)}, ${quote(slugify(figure.name))}, 'regular', ${figure.sortOrder}, true,
-      ${quote(figure.imageUrl)}, ${quote(figure.imageSourceUrl)}, ${quote(figure.imageVerifiedAt)}::timestamptz, 'regular'
+      (series_id, name, slug, rarity, sort_order, active, image_url, image_source_url, image_verified_at, edition_type, aliases)
+    select s.id, ${quote(figure.name)}, ${quote(slugify(figure.name))}, ${quote(figure.rarity || 'regular')}, ${figure.sortOrder}, true,
+      ${quote(figure.imageUrl)}, ${quote(figure.imageSourceUrl)}, ${quote(figure.imageVerifiedAt)}::timestamptz, ${quote(figure.editionType || 'regular')}, array[${(figure.aliases || []).map(quote).join(', ')}]::text[]
     from public.series s where s.slug = ${quote(seriesSlug)}
     on conflict (series_id, slug) do update set
       name = excluded.name,
@@ -29,7 +29,10 @@ const statements = series.map((item, seriesOffset) => {
       active = true,
       image_url = excluded.image_url,
       image_source_url = excluded.image_source_url,
-      image_verified_at = excluded.image_verified_at;
+      image_verified_at = excluded.image_verified_at,
+      rarity = excluded.rarity,
+      edition_type = excluded.edition_type,
+      aliases = excluded.aliases;
   `).join('\n')
 
   return `

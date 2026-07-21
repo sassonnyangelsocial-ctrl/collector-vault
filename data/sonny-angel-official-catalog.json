@@ -2888,7 +2888,7 @@
       ]
     },
     {
-      "name": "Circus Series -Join the Circus Editon-(2022)",
+      "name": "Circus Series -Join the Circus Edition- (2022)",
       "category": "limited",
       "releaseYear": 2022,
       "sourceUrl": "https://www.sonnyangel.com/en/products/mini-figure-limited/",
@@ -2934,6 +2934,26 @@
           "sortOrder": 5,
           "imageSourceUrl": "https://www.sonnyangel.com/en/products/mini-figure-limited/",
           "imageVerifiedAt": "2026-07-20T02:02:53.852Z"
+        },
+        {
+          "name": "Merry-go-round",
+          "aliases": ["Carousel Lop", "Carousel Lop Ear Rabbit", "Carousel Lop Ear Bunny", "Merry Go Round"],
+          "rarity": "secret",
+          "editionType": "secret",
+          "imageUrl": "https://www.sonnyangel.com/renewal/wp-content/uploads/2022/07/img_circus2022_09.png",
+          "sortOrder": 6,
+          "imageSourceUrl": "https://www.sonnyangel.com/en/2022/08/01/circus2022/",
+          "imageVerifiedAt": "2026-07-21T00:00:00.000Z"
+        },
+        {
+          "name": "Robby Angel Clown on Stilts",
+          "aliases": ["Circus Robby", "Tall Circus Robby", "Long Legged Clown Robby Angel"],
+          "rarity": "robby",
+          "editionType": "secret",
+          "imageUrl": "https://www.sonnyangel.com/renewal/wp-content/uploads/2022/07/img_circus2022_10.png",
+          "sortOrder": 7,
+          "imageSourceUrl": "https://www.sonnyangel.com/en/2022/08/01/circus2022/",
+          "imageVerifiedAt": "2026-07-21T00:00:00.000Z"
         }
       ]
     },
