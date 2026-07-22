@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react'
 import Papa from 'papaparse'
 import { supabase } from '../lib/supabase'
+import './AdminPage.css'
 
 const slugify = (value) => value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
 
-export default function AdminPage() {
-  const [tab, setTab] = useState('figures'); const [series, setSeries] = useState([]); const [figures, setFigures] = useState([]); const [brands, setBrands] = useState([]); const [message, setMessage] = useState('')
+export default function AdminPage({ session }) {
+  const [tab, setTab] = useState('subscribers'); const [series, setSeries] = useState([]); const [figures, setFigures] = useState([]); const [brands, setBrands] = useState([]); const [message, setMessage] = useState('')
   async function load() {
     const [{ data: seriesRows }, { data: figureRows }, { data: brandRows }] = await Promise.all([
       supabase.from('series').select('*,brand:brand_id(name)').order('name'),
@@ -15,10 +16,45 @@ export default function AdminPage() {
     setSeries(seriesRows || []); setFigures(figureRows || []); setBrands(brandRows || [])
   }
   useEffect(() => { load() }, [])
-  return <main className="admin-page"><header className="page-header"><div><span className="eyebrow">Protected workspace</span><h1>Catalog Manager</h1></div><p>{figures.length} figures · {figures.filter((item) => item.image_url).length} images</p></header>
-    <div className="tabs"><button className={tab === 'figures' ? 'active' : ''} onClick={() => setTab('figures')}>Figures & images</button><button className={tab === 'series' ? 'active' : ''} onClick={() => setTab('series')}>Series</button><button className={tab === 'csv' ? 'active' : ''} onClick={() => setTab('csv')}>CSV Import</button></div>
-    {tab === 'figures' && <Figures series={series} figures={figures} load={load} setMessage={setMessage} />}{tab === 'series' && <Series brands={brands} series={series} load={load} setMessage={setMessage} />}{tab === 'csv' && <CsvImport series={series} load={load} setMessage={setMessage} />}{message && <p className="admin-message">{message}</p>}
+  return <main className="admin-page"><header className="page-header"><div><span className="eyebrow">Protected workspace</span><h1>Admin Dashboard</h1></div><p>{figures.length} figures · {figures.filter((item) => item.image_url).length} images</p></header>
+    <div className="tabs"><button className={tab === 'subscribers' ? 'active' : ''} onClick={() => setTab('subscribers')}>Subscribers</button><button className={tab === 'figures' ? 'active' : ''} onClick={() => setTab('figures')}>Figures & images</button><button className={tab === 'series' ? 'active' : ''} onClick={() => setTab('series')}>Series</button><button className={tab === 'csv' ? 'active' : ''} onClick={() => setTab('csv')}>CSV Import</button></div>
+    {tab === 'subscribers' && <Subscribers session={session} />}{tab === 'figures' && <Figures series={series} figures={figures} load={load} setMessage={setMessage} />}{tab === 'series' && <Series brands={brands} series={series} load={load} setMessage={setMessage} />}{tab === 'csv' && <CsvImport series={series} load={load} setMessage={setMessage} />}{message && <p className="admin-message">{message}</p>}
   </main>
+}
+
+function Subscribers({ session }) {
+  const [data, setData] = useState(null)
+  const [error, setError] = useState('')
+  const [query, setQuery] = useState('')
+
+  useEffect(() => {
+    let live = true
+    fetch('/api/admin-subscribers', { headers: { Authorization: `Bearer ${session.access_token}` } })
+      .then(async (response) => {
+        const body = await response.json()
+        if (!response.ok) throw new Error(body.error || 'Could not load subscribers.')
+        return body
+      })
+      .then((body) => { if (live) setData(body) })
+      .catch((requestError) => { if (live) setError(requestError.message) })
+    return () => { live = false }
+  }, [session.access_token])
+
+  if (error) return <p className="error-banner">{error}</p>
+  if (!data) return <div className="center compact">Loading subscribers…</div>
+  const shown = data.subscribers.filter((item) => item.email.toLowerCase().includes(query.trim().toLowerCase()))
+  const date = (value) => value ? new Date(value).toLocaleDateString() : '—'
+
+  return <section className="subscriber-admin">
+    <div className="subscriber-stats">
+      <article><strong>{data.summary.total}</strong><span>Total signups</span></article>
+      <article><strong>{data.summary.active}</strong><span>Active</span></article>
+      <article><strong>{data.summary.trialing}</strong><span>In trial</span></article>
+      <article><strong>{data.summary.canceled}</strong><span>Canceled/unpaid</span></article>
+    </div>
+    <div className="subscriber-toolbar"><div><h2>Customer accounts</h2><p>Authentication and subscription information only. Passwords and card details are never available here.</p></div><input type="search" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search customer email" /></div>
+    <div className="subscriber-table-wrap"><table className="subscriber-table"><thead><tr><th>Email</th><th>Joined</th><th>Last sign-in</th><th>Status</th><th>Plan</th><th>Trial/renewal</th></tr></thead><tbody>{shown.map((item) => <tr key={item.id}><td><strong>{item.email || 'No email'}</strong><small>{item.email_confirmed_at ? 'Verified' : 'Not verified'}</small></td><td>{date(item.created_at)}</td><td>{date(item.last_sign_in_at)}</td><td><span className={`subscriber-status ${item.status}`}>{item.status.replaceAll('_', ' ')}</span></td><td>{item.grandfathered ? 'Complimentary' : item.billing_interval || 'No paid plan'}</td><td>{date(item.current_period_end || item.trial_end)}</td></tr>)}</tbody></table>{!shown.length && <div className="empty-panel"><h3>No matching customers</h3><p>Try a different email search.</p></div>}</div>
+  </section>
 }
 
 function Figures({ series, figures, load, setMessage }) {

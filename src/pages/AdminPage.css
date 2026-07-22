@@ -1,0 +1,20 @@
+.subscriber-admin{display:grid;gap:22px}
+.subscriber-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.subscriber-stats article{display:grid;gap:4px;padding:20px;border:1px solid var(--line);border-radius:18px;background:#fff}
+.subscriber-stats strong{font-size:2rem}
+.subscriber-stats span,.subscriber-toolbar p,.subscriber-table small{color:var(--muted)}
+.subscriber-toolbar{display:flex;justify-content:space-between;align-items:end;gap:20px}
+.subscriber-toolbar h2,.subscriber-toolbar p{margin:0}
+.subscriber-toolbar p{margin-top:6px}
+.subscriber-toolbar input{max-width:320px}
+.subscriber-table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:18px;background:#fff}
+.subscriber-table{width:100%;border-collapse:collapse;min-width:820px}
+.subscriber-table th,.subscriber-table td{text-align:left;padding:14px;border-bottom:1px solid var(--line)}
+.subscriber-table th{font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.subscriber-table td:first-child{display:grid;gap:3px}
+.subscriber-status{display:inline-block;padding:6px 9px;border-radius:999px;background:#f1ebee;font-size:.78rem;font-weight:900;text-transform:capitalize}
+.subscriber-status.active{background:#dcf7e5;color:#176c37}
+.subscriber-status.trialing{background:#e4efff;color:#265aa3}
+.subscriber-status.past_due{background:#fff0db;color:#a44612}
+.subscriber-status.canceled,.subscriber-status.unpaid,.subscriber-status.incomplete_expired{background:#fff0f0;color:#9a3030}
+@media(max-width:760px){.subscriber-stats{grid-template-columns:repeat(2,1fr)}.subscriber-toolbar{display:grid}.subscriber-toolbar input{max-width:none}}
