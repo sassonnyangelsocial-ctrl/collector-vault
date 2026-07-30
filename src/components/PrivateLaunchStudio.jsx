@@ -1,0 +1,10 @@
+import { useEffect, useState } from 'react'
+
+export default function PrivateLaunchStudio({ session }) {
+  const [kit, setKit] = useState(null), [error, setError] = useState(''), [copied, setCopied] = useState('')
+  useEffect(() => { fetch('/api/admin-launch-kit', { headers: { Authorization: `Bearer ${session.access_token}` } }).then(async response => { const body = await response.json(); if (!response.ok) throw new Error(body.error || 'Could not load launch kit.'); return body }).then(setKit).catch(requestError => setError(requestError.message)) }, [session.access_token])
+  async function copy(text, id) { await navigator.clipboard.writeText(text); setCopied(id); setTimeout(() => setCopied(''), 1500) }
+  if (error) return <p className="error-banner">{error}</p>
+  if (!kit) return <div className="center compact">Opening your private launch kit…</div>
+  return <><section className="launch-banner"><span>LAUNCH DAY · ADMIN ONLY</span><h2>Seller Pro is ready to announce.</h2><p>{kit.sequence}</p></section><section className="seller-columns"><article className="seller-panel"><span className="eyebrow">30-second Reel</span><h2>“{kit.reel.title}”</h2><ol className="reel-script">{kit.reel.steps.map(([title,body])=><li key={title}><b>{title}</b><span>{body}</span></li>)}</ol><button className="copy-button" onClick={()=>copy(kit.reel.caption,'reel')}>{copied==='reel'?'Copied!':'Copy Reel caption'}</button></article><article className="seller-panel"><span className="eyebrow">Today’s rollout</span><h2>4-post schedule</h2><div className="timeline">{kit.schedule.map(([time,item])=><div key={time}><b>{time}</b><span>{item}</span></div>)}</div><h3>Founding offer</h3><p><b>“{kit.offer}”</b></p><small>Use a real end date and honor the offer shown.</small></article></section><section className="post-grid">{kit.posts.map(([tag,title,body],i)=><article className="post-card" key={tag}><span>{tag}</span><h3>{title}</h3><p>{body}</p><button className="copy-button" onClick={()=>copy(body,`p${i}`)}>{copied===`p${i}`?'Copied!':'Copy caption'}</button></article>)}</section></>
+}
