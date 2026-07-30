@@ -44,6 +44,7 @@
       {
         "name": "Series 1 Secret",
         "image_url": "https://smiski.com/wp-content/uploads/2016/03/s1_secret.png",
+        "image_source_url": "https://smiski.com/e/products/series-1/",
         "rarity": "Secret",
         "edition_type": "secret"
       }
@@ -94,6 +95,7 @@
       {
         "name": "Series 2 Secret",
         "image_url": "https://smiski.com/wp-content/uploads/2016/03/s2_secret.png",
+        "image_source_url": "https://smiski.com/e/products/series-2/",
         "rarity": "Secret",
         "edition_type": "secret"
       }
@@ -144,6 +146,7 @@
       {
         "name": "Series 3 Secret",
         "image_url": "https://smiski.com/e/wp-content/uploads/2016/09/s3_secret.png",
+        "image_source_url": "https://smiski.com/e/products/series-3/",
         "rarity": "Secret",
         "edition_type": "secret"
       }
@@ -194,6 +197,7 @@
       {
         "name": "Series 4 Secret",
         "image_url": "https://smiski.com/e/wp-content/uploads/2017/02/s3_secret-1.png",
+        "image_source_url": "https://smiski.com/e/products/series-4/",
         "rarity": "Secret",
         "edition_type": "secret"
       }
@@ -244,6 +248,7 @@
       {
         "name": "Bath Series Secret",
         "image_url": "https://smiski.com/e/wp-content/uploads/2017/10/bath_secret.png",
+        "image_source_url": "https://smiski.com/e/products/bath-series/",
         "rarity": "Secret",
         "edition_type": "secret"
       }
@@ -294,6 +299,7 @@
       {
         "name": "Toilet Series Secret",
         "image_url": "https://smiski.com/e/wp-content/uploads/2017/10/toilet_secret.png",
+        "image_source_url": "https://smiski.com/e/products/toilet-series/",
         "rarity": "Secret",
         "edition_type": "secret"
       }
@@ -342,8 +348,9 @@
         "edition_type": "standard"
       },
       {
-        "name": "Living Series Secret",
-        "image_url": null,
+        "name": "Sunflower (Secret)",
+        "image_url": "https://cdn.shopify.com/s/files/1/0837/6310/2006/files/smiski_living_secret_flower.webp?v=1721037344",
+        "image_source_url": "https://blinkbox.com.au/blogs/box-of-wonders/smiski-secret-figure-guide",
         "rarity": "Secret",
         "edition_type": "secret"
       }
@@ -392,8 +399,9 @@
         "edition_type": "standard"
       },
       {
-        "name": "Bed Series Secret",
-        "image_url": null,
+        "name": "Crescent Moon (Secret)",
+        "image_url": "https://smiski.com/e/p2019/bed/assets/images/modal/modal7.jpg",
+        "image_source_url": "https://smiski.com/e/p2019/bed/",
         "rarity": "Secret",
         "edition_type": "secret"
       }
@@ -442,8 +450,9 @@
         "edition_type": "standard"
       },
       {
-        "name": "Yoga Series Secret",
-        "image_url": null,
+        "name": "Twin Hearts (Secret)",
+        "image_url": "https://cdn.shopify.com/s/files/1/0837/6310/2006/files/smiski_yoga_secret-figure_twin-hearts.webp?v=1721037343",
+        "image_source_url": "https://blinkbox.com.au/blogs/box-of-wonders/smiski-secret-figure-guide",
         "rarity": "Secret",
         "edition_type": "secret"
       }
@@ -492,8 +501,9 @@
         "edition_type": "standard"
       },
       {
-        "name": "Cheer Series Secret",
-        "image_url": null,
+        "name": "Trophy Angel (Secret)",
+        "image_url": "https://cdn.shopify.com/s/files/1/0837/6310/2006/files/smiski_cheer_secret-figure_trophy.webp?v=1721037343",
+        "image_source_url": "https://blinkbox.com.au/blogs/box-of-wonders/smiski-secret-figure-guide",
         "rarity": "Secret",
         "edition_type": "secret"
       }
@@ -542,8 +552,9 @@
         "edition_type": "standard"
       },
       {
-        "name": "Museum Series Secret",
-        "image_url": null,
+        "name": "King Tut (Secret)",
+        "image_url": "https://cdn.shopify.com/s/files/1/0837/6310/2006/files/smiski_museum_secret-figure_king-tut.webp?v=1721037344",
+        "image_source_url": "https://blinkbox.com.au/blogs/box-of-wonders/smiski-secret-figure-guide",
         "rarity": "Secret",
         "edition_type": "secret"
       }
@@ -592,8 +603,9 @@
         "edition_type": "standard"
       },
       {
-        "name": "Work Series Secret",
-        "image_url": null,
+        "name": "Lucky Cat (Secret)",
+        "image_url": "https://cdn.shopify.com/s/files/1/0837/6310/2006/files/smiski_work_secret_lucky-cat.webp?v=1721037344",
+        "image_source_url": "https://blinkbox.com.au/blogs/box-of-wonders/smiski-secret-figure-guide",
         "rarity": "Secret",
         "edition_type": "secret"
       }
@@ -642,8 +654,9 @@
         "edition_type": "standard"
       },
       {
-        "name": "Dressing Series Secret",
-        "image_url": null,
+        "name": "Costume Bunny (Secret)",
+        "image_url": "https://cdn.shopify.com/s/files/1/0837/6310/2006/files/smiski_dressing_secret-figure_bunny-costume.webp?v=1721037344",
+        "image_source_url": "https://blinkbox.com.au/blogs/box-of-wonders/smiski-secret-figure-guide",
         "rarity": "Secret",
         "edition_type": "secret"
       }
@@ -692,8 +705,9 @@
         "edition_type": "standard"
       },
       {
-        "name": "Exercising Series Secret",
-        "image_url": null,
+        "name": "Flexing (Secret)",
+        "image_url": "https://cdn.shopify.com/s/files/1/0837/6310/2006/files/smiski_exercising-figure_flexing.webp?v=1721037343",
+        "image_source_url": "https://blinkbox.com.au/blogs/box-of-wonders/smiski-secret-figure-guide",
         "rarity": "Secret",
         "edition_type": "secret"
       }
@@ -742,8 +756,9 @@
         "edition_type": "standard"
       },
       {
-        "name": "Moving Series Secret",
-        "image_url": null,
+        "name": "Teddy (Secret)",
+        "image_url": "https://cdn.shopify.com/s/files/1/0837/6310/2006/files/smiski_moving_secret-figure_teddy.webp?v=1721037344",
+        "image_source_url": "https://blinkbox.com.au/blogs/box-of-wonders/smiski-secret-figure-guide",
         "rarity": "Secret",
         "edition_type": "secret"
       }
@@ -792,8 +807,9 @@
         "edition_type": "standard"
       },
       {
-        "name": "Sunday Series Secret",
-        "image_url": null,
+        "name": "Dog Walk (Secret)",
+        "image_url": "https://cdn.shopify.com/s/files/1/0837/6310/2006/files/blog_smiski-secret_sunday-series.webp?v=1740035518",
+        "image_source_url": "https://blinkbox.com.au/blogs/box-of-wonders/smiski-secret-figure-guide",
         "rarity": "Secret",
         "edition_type": "secret"
       }
@@ -842,8 +858,60 @@
         "edition_type": "standard"
       },
       {
-        "name": "HIPPERS Secret",
-        "image_url": null,
+        "name": "Headphones (Secret)",
+        "image_url": "https://cdn.shopify.com/s/files/1/0837/6310/2006/files/blog_secret-smiski-hipper.jpg?v=1726031428",
+        "image_source_url": "https://blinkbox.com.au/blogs/box-of-wonders/smiski-secret-figure-guide",
+        "rarity": "Secret",
+        "edition_type": "secret"
+      }
+    ]
+  },
+  {
+    "brand": "SMISKI",
+    "series": "Birthday Series",
+    "slug": "birthday-series",
+    "source_url": "https://smiski.com/e/products/birthday-series/",
+    "figures": [
+      {
+        "name": "SMISKI Giving a Bouquet",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2025/09/img_birthday01.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "SMISKI Wrapped Up",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2025/09/img_birthday02.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "SMISKI Popping Confetti",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2025/09/img_birthday03.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "SMISKI Birthday Message",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2025/09/img_birthday04.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "Little SMISKI Decorating",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2025/09/img_birthday05.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "SMISKI Tasting",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2025/09/img_birthday06.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "Candle (Secret)",
+        "image_url": "https://cdn.shopify.com/s/files/1/0837/6310/2006/files/blog_smiski-secret_birthday-series.webp?v=1740035518",
+        "image_source_url": "https://blinkbox.com.au/blogs/box-of-wonders/smiski-secret-figure-guide",
         "rarity": "Secret",
         "edition_type": "secret"
       }

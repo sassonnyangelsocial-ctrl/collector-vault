@@ -13,28 +13,22 @@ for (const match of indexHtml.matchAll(collectionPattern)) {
 const productMap = new Map()
 for (const collection of collections) {
   const html = await (await fetch(collection.url)).text()
+  const nextJson = html.match(/<script id="__NEXT_DATA__" type="application\/json">([\s\S]*?)<\/script>/)?.[1]
+  const officialProducts = nextJson ? JSON.parse(nextJson).props?.pageProps?.serverCollectionRaw?.productData || [] : []
+  const officialById = new Map(officialProducts.map((product) => [String(product.id), product]))
   const pattern = /<a[^>]+href="(\/us\/products\/(\d+)\/[^"]+)"[^>]+data-sensors-exposure-property-spu_name="([^"]+)"[\s\S]*?<div class="index_itemPrice[^>]*>(?:From )?\$([\d.]+)<\/div>[\s\S]*?<\/a>/gi
   for (const match of html.matchAll(pattern)) {
     const name = match[3].replaceAll('&quot;', '"').replaceAll('&amp;', '&')
     if (!/(series|blind box|figures)/i.test(name) || /(bag|case|magnet|fragrance|card|blocks|phone|cup|blanket|light|holder)/i.test(name)) continue
     const id = match[2]
     const current = productMap.get(id)
-    if (!current) productMap.set(id, { id, name, url: `${origin}${match[1]}`, retail_price: Number(match[4]), collection: collection.name })
+    const official = officialById.get(id)
+    const imageUrl = official?.coverImg || official?.bannerImages?.[0] || official?.skus?.[0]?.mainImage || official?.mainImage || null
+    if (!current) productMap.set(id, { id, name, url: `${origin}${match[1]}`, retail_price: Number(match[4]), collection: collection.name, image_url: imageUrl })
   }
 }
 
 const products = [...productMap.values()]
-let cursor = 0
-async function enrich() {
-  while (cursor < products.length) {
-    const product = products[cursor++]
-    try {
-      const html = await (await fetch(product.url)).text()
-      product.image_url = html.match(/<meta property="og:image" content="([^"]+)"/i)?.[1] || null
-    } catch { product.image_url = null }
-  }
-}
-await Promise.all(Array.from({ length: 10 }, enrich))
 
 const grouped = collections.map((collection) => ({
   brand: 'POP MART', series: collection.name, slug: `popmart-${collection.id}`, source_url: collection.url,
