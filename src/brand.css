@@ -1,0 +1,20 @@
+.brand-switcher {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 4px 0 18px;
+}
+
+.brand-switcher button {
+  padding: 10px 16px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #fff;
+  font-weight: 900;
+}
+
+.brand-switcher button.active {
+  border-color: #30262f;
+  background: #30262f;
+  color: #fff;
+}

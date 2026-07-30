@@ -4,6 +4,7 @@ import StatCard from '../components/StatCard'
 import FigureCard from '../components/FigureCard'
 import FigureDrawer from '../components/FigureDrawer'
 import './CollectionPage.css'
+import '../brand.css'
 
 const EMPTY = { owned: false, quantity: 0, wishlist: false, iso: false, diso: false, for_trade: false, favorite: false }
 
@@ -21,7 +22,7 @@ async function loadAllFigures() {
   const allFigures = []
   for (let from = 0; ; from += CATALOG_PAGE_SIZE) {
     const { data, error } = await supabase.from('figures')
-      .select('id,name,aliases,rarity,edition_type,image_url,image_source_url,image_verified_at,sort_order,series:series_id!inner(name,active,source_url,verified_at),market_values:figure_market_values(estimated_value,low_value,high_value,currency,as_of_date,confidence,methodology,source_urls)')
+      .select('id,name,aliases,rarity,edition_type,image_url,image_source_url,image_verified_at,sort_order,series:series_id!inner(name,active,source_url,verified_at,brand:brand_id(name,slug)),market_values:figure_market_values(estimated_value,low_value,high_value,currency,as_of_date,confidence,methodology,source_urls)')
       .eq('active', true).eq('series.active', true).order('sort_order').order('id').range(from, from + CATALOG_PAGE_SIZE - 1)
     if (error) throw error
     allFigures.push(...(data || []))
@@ -33,6 +34,7 @@ export default function CollectionPage({ session, view = 'dashboard', onNavigate
   const [figures, setFigures] = useState([])
   const [states, setStates] = useState({})
   const [query, setQuery] = useState('')
+  const [brandFilter, setBrandFilter] = useState('all')
   const [seriesFilter, setSeriesFilter] = useState('all')
   const [browseAll, setBrowseAll] = useState(false)
   const [selectedFigure, setSelectedFigure] = useState(null)
@@ -81,8 +83,9 @@ export default function CollectionPage({ session, view = 'dashboard', onNavigate
     trade: figures.filter((f) => states[f.id]?.for_trade).length,
   }), [figures, states])
 
-  const seriesNames = useMemo(() => [...new Set(figures.map((f) => f.series?.name).filter(Boolean))].sort(), [figures])
-  const searchingWholeDirectory = ['iso', 'diso'].includes(view) && (browseAll || query.trim().length > 0 || seriesFilter !== 'all')
+  const brands = useMemo(() => [...new Set(figures.map((f) => f.series?.brand?.name).filter(Boolean))].sort(), [figures])
+  const seriesNames = useMemo(() => [...new Set(figures.filter((f) => brandFilter === 'all' || f.series?.brand?.name === brandFilter).map((f) => f.series?.name).filter(Boolean))].sort(), [brandFilter, figures])
+  const searchingWholeDirectory = ['iso', 'diso'].includes(view) && (browseAll || query.trim().length > 0 || seriesFilter !== 'all' || brandFilter !== 'all')
   const matchesView = useCallback((figure) => {
     const state = states[figure.id] || EMPTY
     if (searchingWholeDirectory) return true
@@ -93,8 +96,8 @@ export default function CollectionPage({ session, view = 'dashboard', onNavigate
     return true
   }, [searchingWholeDirectory, states, view])
   const shownFigures = figures.filter((figure) => {
-    const text = `${figure.name} ${(figure.aliases || []).join(' ')} ${figure.series?.name || ''} ${figure.rarity || ''}`.toLowerCase().includes(query.toLowerCase())
-    return text && (seriesFilter === 'all' || figure.series?.name === seriesFilter) && matchesView(figure)
+    const text = `${figure.name} ${(figure.aliases || []).join(' ')} ${figure.series?.name || ''} ${figure.series?.brand?.name || ''} ${figure.rarity || ''}`.toLowerCase().includes(query.toLowerCase())
+    return text && (brandFilter === 'all' || figure.series?.brand?.name === brandFilter) && (seriesFilter === 'all' || figure.series?.name === seriesFilter) && matchesView(figure)
   })
   const completion = figures.length ? Math.round((stats.owned / figures.length) * 100) : 0
 
@@ -120,8 +123,9 @@ export default function CollectionPage({ session, view = 'dashboard', onNavigate
   const [title, description] = VIEW_COPY[view] || VIEW_COPY.collection
   return <main className="collection-page">
     <header className="page-header"><div><span className="eyebrow">Your personal vault</span><h1>{title}</h1><p>{description}</p></div><p>{shownFigures.length} figure{shownFigures.length === 1 ? '' : 's'}</p></header>
-    {['iso', 'diso'].includes(view) && <section className="catalog-scope" aria-label={`${title} directory scope`}><button className={!browseAll && !query && seriesFilter === 'all' ? 'active' : ''} onClick={() => { setBrowseAll(false); setQuery(''); setSeriesFilter('all') }}>My {title}</button><button className={searchingWholeDirectory ? 'active' : ''} onClick={() => setBrowseAll(true)}>Browse full directory</button><span>{searchingWholeDirectory ? `Searching all ${figures.length} catalog figures` : `${stats[view]} saved to your ${title} list`}</span></section>}
-    <section className="collection-tools"><input type="search" aria-label={`Search the full Sonny Angel directory for ${title}`} placeholder={['iso', 'diso'].includes(view) ? `Search the full directory to add a ${title}...` : 'Search figures, series, or rarity...'} value={query} onChange={(e) => setQuery(e.target.value)} /><select aria-label="Filter by series" value={seriesFilter} onChange={(e) => setSeriesFilter(e.target.value)}><option value="all">All series</option>{seriesNames.map((name) => <option value={name} key={name}>{name}</option>)}</select></section>
+    <section className="brand-switcher" aria-label="Choose a collectible brand"><button className={brandFilter === 'all' ? 'active' : ''} onClick={() => { setBrandFilter('all'); setSeriesFilter('all') }}>All brands</button>{brands.map((brand) => <button key={brand} className={brandFilter === brand ? 'active' : ''} onClick={() => { setBrandFilter(brand); setSeriesFilter('all'); setBrowseAll(true) }}>{brand}</button>)}</section>
+    {['iso', 'diso'].includes(view) && <section className="catalog-scope" aria-label={`${title} directory scope`}><button className={!browseAll && !query && seriesFilter === 'all' && brandFilter === 'all' ? 'active' : ''} onClick={() => { setBrowseAll(false); setQuery(''); setSeriesFilter('all'); setBrandFilter('all') }}>My {title}</button><button className={searchingWholeDirectory ? 'active' : ''} onClick={() => setBrowseAll(true)}>Browse full directory</button><span>{searchingWholeDirectory ? `Searching all ${figures.length} catalog collectibles` : `${stats[view]} saved to your ${title} list`}</span></section>}
+    <section className="collection-tools"><input type="search" aria-label={`Search the full collectible directory for ${title}`} placeholder={['iso', 'diso'].includes(view) ? `Search every brand and series to add a ${title}...` : 'Search figures, series, brand, or rarity...'} value={query} onChange={(e) => setQuery(e.target.value)} /><select aria-label="Filter by series" value={seriesFilter} onChange={(e) => setSeriesFilter(e.target.value)}><option value="all">All series</option>{seriesNames.map((name) => <option value={name} key={name}>{name}</option>)}</select></section>
     {error && <p className="error-banner">{error}</p>}
     <div className="figure-grid">{shownFigures.map((figure) => <FigureCard key={figure.id} figure={figure} state={states[figure.id] || EMPTY} onOpen={setSelectedFigure} onSave={save} />)}</div>
     {!shownFigures.length && <div className="empty-state"><h2>{searchingWholeDirectory ? 'No matching figures' : `No figures saved to ${title} yet`}</h2><p>{searchingWholeDirectory ? 'Try a different figure name, series, rarity, or series filter.' : `Search above or browse the full directory, then tap ${title} on any figure to add it.`}</p>{['iso', 'diso'].includes(view) ? <button className="primary-button" onClick={() => setBrowseAll(true)}>Browse full directory</button> : <button className="primary-button" onClick={() => onNavigate('collection')}>Browse collection</button>}</div>}

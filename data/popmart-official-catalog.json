@@ -1,0 +1,3598 @@
+[
+  {
+    "brand": "POP MART",
+    "series": "TRENDING",
+    "slug": "popmart-330",
+    "source_url": "https://www.popmart.com/us/collection/330",
+    "figures": [
+      {
+        "name": "THE MONSTERS Hair Salon Series - Vinyl Plush Pendant Blind Box",
+        "slug": "popmart-7890",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/7890/THE-MONSTERS-Hair-Salon-Series---Vinyl-Plush-Pendant-Blind-Box",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 1,
+        "retail_price": 39.99
+      },
+      {
+        "name": "Peach Riot Power Chords Series Figures",
+        "slug": "popmart-7998",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/7998/Peach-Riot-Power-Chords-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 2,
+        "retail_price": 19.99
+      },
+      {
+        "name": "DIMOO WORLD × PIXAR Series - Vinyl Plush Pendant Blind Box",
+        "slug": "popmart-8135",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/8135/DIMOO-WORLD-%C3%97-PIXAR-Series---Vinyl-Plush-Pendant-Blind-Box",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 3,
+        "retail_price": 29.99
+      },
+      {
+        "name": "Hirono Mist-Walker Series - Plush Doll Pendant",
+        "slug": "popmart-8247",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/8247/Hirono-Mist-Walker-Series---Plush-Doll-Pendant",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 4,
+        "retail_price": 29.99
+      },
+      {
+        "name": "SKULLPANDA × My Little Pony Series Plush Doll Pendant",
+        "slug": "popmart-5812",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/5812/SKULLPANDA-%C3%97-My-Little-Pony-Series-Plush-Doll-Pendant",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 5,
+        "retail_price": 39.99
+      },
+      {
+        "name": "DIMOO WORLD × PIXAR Series Figures",
+        "slug": "popmart-8137",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/8137/DIMOO-WORLD-%C3%97-PIXAR-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 6,
+        "retail_price": 19.99
+      },
+      {
+        "name": "THE MONSTERS Big into Energy Series-Vinyl Plush Pendant Blind Box",
+        "slug": "popmart-2155",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/2155/THE-MONSTERS-Big-into-Energy-Series-Vinyl-Plush-Pendant-Blind-Box",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 7,
+        "retail_price": 27.99
+      },
+      {
+        "name": "Haikyu!! Off-Court Vibes Series Figures",
+        "slug": "popmart-6287",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/6287/Haikyu!!-Off-Court-Vibes-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 8,
+        "retail_price": 18.99
+      },
+      {
+        "name": "THE MONSTERS × Hello Kitty and Friends Series-Vinyl Plush Pendant Blind Box",
+        "slug": "popmart-5991",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/5991/THE-MONSTERS-%C3%97-Hello-Kitty-and-Friends-Series-Vinyl-Plush-Pendant-Blind-Box",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 9,
+        "retail_price": 39.99
+      },
+      {
+        "name": "Monster Hunter Palico Series Figures",
+        "slug": "popmart-8000",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/8000/Monster-Hunter-Palico-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 10,
+        "retail_price": 19.99
+      },
+      {
+        "name": "HACIPUPU Take Me Home Series - Vinyl Plush Pendant Blind Box",
+        "slug": "popmart-8062",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/8062/HACIPUPU-Take-Me-Home-Series---Vinyl-Plush-Pendant-Blind-Box",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 11,
+        "retail_price": 26.99
+      },
+      {
+        "name": "mini DUCKOO Citywalk Series Figures",
+        "slug": "popmart-7996",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/7996/mini-DUCKOO-Citywalk-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 12,
+        "retail_price": 19.99
+      },
+      {
+        "name": "Hirono Road Journal Series-Plush Doll Pendant Blind Box",
+        "slug": "popmart-5166",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/5166/Hirono-Road-Journal-Series-Plush-Doll-Pendant-Blind-Box",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 13,
+        "retail_price": 36.99
+      },
+      {
+        "name": "THE MONSTERS - Exciting Macaron Vinyl Face Blind Box",
+        "slug": "popmart-675",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/675/THE-MONSTERS---Exciting-Macaron-Vinyl-Face-Blind-Box",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 14,
+        "retail_price": 27.99
+      },
+      {
+        "name": "Demon Slayer Unwavering Resolve Arc Series Block Figures",
+        "slug": "popmart-7894",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/7894/Demon-Slayer-Unwavering-Resolve-Arc-Series-Block-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 15,
+        "retail_price": 19.99
+      },
+      {
+        "name": "Mickey Family Cute Together Keychain Series Figures",
+        "slug": "popmart-2186",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/2186/Mickey-Family-Cute-Together-Keychain-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 16,
+        "retail_price": 27.99
+      },
+      {
+        "name": "SKULLPANDA Petals in Four Acts Series Figures",
+        "slug": "popmart-6201",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/6201/SKULLPANDA-Petals-in-Four-Acts-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 17,
+        "retail_price": 19.99
+      },
+      {
+        "name": "Peach Riot Carry the Music Series Block Pendant",
+        "slug": "popmart-7999",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/7999/Peach-Riot-Carry-the-Music-Series-Block-Pendant",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 18,
+        "retail_price": 19.99
+      },
+      {
+        "name": "THE MONSTERS Pin for Love Series-Vinyl Plush Pendant Blind Box (A-M)",
+        "slug": "popmart-3022",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/3022/THE-MONSTERS-Pin-for-Love-Series-Vinyl-Plush-Pendant-Blind-Box-(A-M)",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 19,
+        "retail_price": 22.99
+      }
+    ]
+  },
+  {
+    "brand": "POP MART",
+    "series": "LATEST DROPS",
+    "slug": "popmart-375",
+    "source_url": "https://www.popmart.com/us/collection/375",
+    "figures": [
+      {
+        "name": "Dear Birds Series-Plush Pendant Blind Box",
+        "slug": "popmart-6352",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/6352/Dear-Birds-Series-Plush-Pendant-Blind-Box",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 1,
+        "retail_price": 26.99
+      },
+      {
+        "name": "THE MONSTERS Hair Salon Series Figures",
+        "slug": "popmart-7892",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/7892/THE-MONSTERS-Hair-Salon-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 2,
+        "retail_price": 17.99
+      },
+      {
+        "name": "DIMOO WORLD × PIXAR Series - TV-shaped Luminous Display Box",
+        "slug": "popmart-8132",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/8132/DIMOO-WORLD-%C3%97-PIXAR-Series---TV-shaped-Luminous-Display-Box",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 3,
+        "retail_price": 49.99
+      },
+      {
+        "name": "POP BEAN DIMOO WORLD × PIXAR Series",
+        "slug": "popmart-8140",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/8140/POP-BEAN-DIMOO-WORLD-%C3%97-PIXAR-Series",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 4,
+        "retail_price": 4.99
+      }
+    ]
+  },
+  {
+    "brand": "POP MART",
+    "series": "THE MONSTERS",
+    "slug": "popmart-11",
+    "source_url": "https://www.popmart.com/us/collection/11",
+    "figures": [
+      {
+        "name": "POP BEAN THE MONSTERS Hair Salon Series",
+        "slug": "popmart-7895",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/7895/POP-BEAN-THE-MONSTERS-Hair-Salon-Series",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 1,
+        "retail_price": 4.99
+      },
+      {
+        "name": "THE MONSTERS FALL IN WILD SERIES-Vinyl Plush Doll Pendant",
+        "slug": "popmart-1061",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/1061/THE-MONSTERS-FALL-IN-WILD-SERIES-Vinyl-Plush-Doll-Pendant",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 2,
+        "retail_price": 39.99
+      },
+      {
+        "name": "THE MONSTERS Pin for Love Series-Vinyl Plush Pendant Blind Box (N-Z)",
+        "slug": "popmart-3023",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/3023/THE-MONSTERS-Pin-for-Love-Series-Vinyl-Plush-Pendant-Blind-Box-(N-Z)",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 3,
+        "retail_price": 22.99
+      },
+      {
+        "name": "THE MONSTERS - Have a Seat Vinyl Plush Blind Box",
+        "slug": "popmart-1372",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/1372/THE-MONSTERS---Have-a-Seat-Vinyl-Plush-Blind-Box",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 4,
+        "retail_price": 27.99
+      },
+      {
+        "name": "THE MONSTERS Big into Energy Series-ROCK THE UNIVERSE Vinyl Plush Doll",
+        "slug": "popmart-3021",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/3021/THE-MONSTERS-Big-into-Energy-Series-ROCK-THE-UNIVERSE-Vinyl-Plush-Doll",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 5,
+        "retail_price": 114.99
+      },
+      {
+        "name": "THE MONSTERS COCA-COLA SERIES-Vinyl Face Blind Box",
+        "slug": "popmart-1981",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/1981/THE-MONSTERS-COCA-COLA-SERIES-Vinyl-Face-Blind-Box",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 6,
+        "retail_price": 46.99
+      },
+      {
+        "name": "THE MONSTERS Hair Salon Series - Pendant Blind Box",
+        "slug": "popmart-7888",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/7888/THE-MONSTERS-Hair-Salon-Series---Pendant-Blind-Box",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 7,
+        "retail_price": 15.99
+      },
+      {
+        "name": "THE MONSTERS × FIFA SERIES-Catch the Win Vinyl Plush Doll",
+        "slug": "popmart-6083",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/6083/THE-MONSTERS-%C3%97-FIFA-SERIES-Catch-the-Win-Vinyl-Plush-Doll",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 8,
+        "retail_price": 149.99
+      }
+    ]
+  },
+  {
+    "brand": "POP MART",
+    "series": "SKULLPANDA",
+    "slug": "popmart-2",
+    "source_url": "https://www.popmart.com/us/collection/2",
+    "figures": [
+      {
+        "name": "θ SKULLPANDA Off Mode Series Plush Doll Pendant",
+        "slug": "popmart-8340",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/8340/%CE%B8-SKULLPANDA-Off-Mode-Series-Plush-Doll-Pendant",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 1,
+        "retail_price": 19.99
+      },
+      {
+        "name": "POP ATTACH θ SKULLPANDA Off Mode Series",
+        "slug": "popmart-8342",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/8342/POP-ATTACH-%CE%B8-SKULLPANDA-Off-Mode-Series",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 2,
+        "retail_price": 9.99
+      },
+      {
+        "name": "SKULLPANDA You Found Me! Series Plush Doll Pendant",
+        "slug": "popmart-3676",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/3676/SKULLPANDA-You-Found-Me!-Series-Plush-Doll-Pendant",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 3,
+        "retail_price": 39.99
+      },
+      {
+        "name": "θSKULLPANDA L&#x27;impressionnisme Series Plush Doll",
+        "slug": "popmart-2766",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/2766/%CE%B8SKULLPANDA-L&#x27;impressionnisme-Series-Plush-Doll",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 4,
+        "retail_price": 32.99
+      },
+      {
+        "name": "SKULLPANDA The Feast Begins Series Figures",
+        "slug": "popmart-4080",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/4080/SKULLPANDA-The-Feast-Begins-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 5,
+        "retail_price": 19.99
+      },
+      {
+        "name": "SKULLPANDA The Sound Series Figures",
+        "slug": "popmart-1317",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/1317/SKULLPANDA-The-Sound-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 6,
+        "retail_price": 19.99
+      }
+    ]
+  },
+  {
+    "brand": "POP MART",
+    "series": "HIRONO",
+    "slug": "popmart-4",
+    "source_url": "https://www.popmart.com/us/collection/4",
+    "figures": [
+      {
+        "name": "Hirono Tamed Wildgrass Series Figures",
+        "slug": "popmart-6071",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/6071/Hirono-Tamed-Wildgrass-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 1,
+        "retail_price": 19.99
+      },
+      {
+        "name": "Hirono Monsters&#x27; Carnival Series Figures",
+        "slug": "popmart-3944",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/3944/Hirono-Monsters&#x27;-Carnival-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 2,
+        "retail_price": 20.99
+      },
+      {
+        "name": "Hirono × Le Petit Prince Series Figures",
+        "slug": "popmart-1604",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/1604/Hirono-%C3%97-Le-Petit-Prince-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 3,
+        "retail_price": 19.99
+      },
+      {
+        "name": "HIRONO Mime Series Figures",
+        "slug": "popmart-365",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/365/HIRONO-Mime-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 4,
+        "retail_price": 19.99
+      },
+      {
+        "name": "HIRONO Little Mischief Series",
+        "slug": "popmart-13",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/13/HIRONO-Little-Mischief-Series",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 5,
+        "retail_price": 19.99
+      },
+      {
+        "name": "HIRONO The Other One Series",
+        "slug": "popmart-739",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/739/HIRONO-The-Other-One-Series",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 6,
+        "retail_price": 19.99
+      },
+      {
+        "name": "Hirono Echo Series Figures",
+        "slug": "popmart-2165",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/2165/Hirono-Echo-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 7,
+        "retail_price": 19.99
+      },
+      {
+        "name": "Hirono Shelter Series Figures",
+        "slug": "popmart-1385",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/1385/Hirono-Shelter-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 8,
+        "retail_price": 19.99
+      },
+      {
+        "name": "Hirono Monsters&#x27; Carnival Series Figures-Scene Prop",
+        "slug": "popmart-4171",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/4171/Hirono-Monsters&#x27;-Carnival-Series-Figures-Scene-Prop",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 9,
+        "retail_price": 7.99
+      },
+      {
+        "name": "HIRONO Reshape Series Figures",
+        "slug": "popmart-867",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/867/HIRONO-Reshape-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 10,
+        "retail_price": 19.99
+      }
+    ]
+  },
+  {
+    "brand": "POP MART",
+    "series": "CRYBABY",
+    "slug": "popmart-38",
+    "source_url": "https://www.popmart.com/us/collection/38",
+    "figures": [
+      {
+        "name": "CRYBABY Cry Me An Ocean Series - Vinyl Plush Pendant Blind Box",
+        "slug": "popmart-6278",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/6278/CRYBABY-Cry-Me-An-Ocean-Series---Vinyl-Plush-Pendant-Blind-Box",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 1,
+        "retail_price": 22.99
+      },
+      {
+        "name": "CRYBABY Cry Me an Ocean Series Figures",
+        "slug": "popmart-6284",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/6284/CRYBABY-Cry-Me-an-Ocean-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 2,
+        "retail_price": 19.99
+      },
+      {
+        "name": "CRYBABY Vacation Mode On Series-Vinyl Plush Pendant Blind Box",
+        "slug": "popmart-4071",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/4071/CRYBABY-Vacation-Mode-On-Series-Vinyl-Plush-Pendant-Blind-Box",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 3,
+        "retail_price": 36.99
+      },
+      {
+        "name": "CRYBABY Cry Me an Ocean Series - 2-in-1 Neck Pillow",
+        "slug": "popmart-6282",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/6282/CRYBABY-Cry-Me-an-Ocean-Series---2-in-1-Neck-Pillow",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 4,
+        "retail_price": 69.99
+      },
+      {
+        "name": "CRYBABY Wild but Cutie Series - Vinyl Plush Pendant Blind Box",
+        "slug": "popmart-2233",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/2233/CRYBABY-Wild-but-Cutie-Series---Vinyl-Plush-Pendant-Blind-Box",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 5,
+        "retail_price": 22.99
+      },
+      {
+        "name": "CRYBABY Crying Again Series-Vinyl Face Plush Blind Box",
+        "slug": "popmart-1681",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/1681/CRYBABY-Crying-Again-Series-Vinyl-Face-Plush-Blind-Box",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 6,
+        "retail_price": 32.99
+      },
+      {
+        "name": "CRYBABY CRYING TO THE MOON SERIES FIGURES",
+        "slug": "popmart-4701",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/4701/CRYBABY-CRYING-TO-THE-MOON-SERIES-FIGURES",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 7,
+        "retail_price": 19.99
+      },
+      {
+        "name": "CRYBABY Sad Club Series - Plush Flower Blind Box",
+        "slug": "popmart-1122",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/1122/CRYBABY-Sad-Club-Series---Plush-Flower-Blind-Box",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 8,
+        "retail_price": 19.99
+      },
+      {
+        "name": "CRYBABY × Powerpuff Girls Series-TV Set Luminous Display Container",
+        "slug": "popmart-1002",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/1002/CRYBABY-%C3%97-Powerpuff-Girls-Series-TV-Set-Luminous-Display-Container",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 9,
+        "retail_price": 56.99
+      },
+      {
+        "name": "CRYBABY Crying For Love Series Figures",
+        "slug": "popmart-1870",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/1870/CRYBABY-Crying-For-Love-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 10,
+        "retail_price": 19.99
+      },
+      {
+        "name": "CRYBABY × Powerpuff Girls Series Figures",
+        "slug": "popmart-990",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/990/CRYBABY-%C3%97-Powerpuff-Girls-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 11,
+        "retail_price": 19.99
+      },
+      {
+        "name": "CRYBABY × Powerpuff Girls Series-Vinyl Face Plush Blind Box",
+        "slug": "popmart-1079",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/1079/CRYBABY-%C3%97-Powerpuff-Girls-Series-Vinyl-Face-Plush-Blind-Box",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 12,
+        "retail_price": 22.99
+      },
+      {
+        "name": "CRYBABY CRYING TO THE MOON-SITTING SERIES FIGURES",
+        "slug": "popmart-4700",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/4700/CRYBABY-CRYING-TO-THE-MOON-SITTING-SERIES-FIGURES",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 13,
+        "retail_price": 13.99
+      }
+    ]
+  },
+  {
+    "brand": "POP MART",
+    "series": "PEACH RIOT",
+    "slug": "popmart-61",
+    "source_url": "https://www.popmart.com/us/collection/61",
+    "figures": [
+      {
+        "name": "Peach Riot Fruit Punch Series Plush Doll Pendant",
+        "slug": "popmart-6476",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/6476/Peach-Riot-Fruit-Punch-Series-Plush-Doll-Pendant",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 1,
+        "retail_price": 39.99
+      },
+      {
+        "name": "Peach Riot Winter Break OOTD Series 1/8 Action Figure",
+        "slug": "popmart-4194",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/4194/Peach-Riot-Winter-Break-OOTD-Series-1%2F8-Action-Figure",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 2,
+        "retail_price": 71.99
+      },
+      {
+        "name": "Peach Riot Punk Fairy Series Figures",
+        "slug": "popmart-1063",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/1063/Peach-Riot-Punk-Fairy-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 3,
+        "retail_price": 20.99
+      },
+      {
+        "name": "Peach Riot Rush Hour Series Figures",
+        "slug": "popmart-1937",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/1937/Peach-Riot-Rush-Hour-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 4,
+        "retail_price": 20.99
+      },
+      {
+        "name": "Peach Riot Rise Up Series Figures",
+        "slug": "popmart-876",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/876/Peach-Riot-Rise-Up-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 5,
+        "retail_price": 20.99
+      },
+      {
+        "name": "Lil Peach Riot Sleepover Series Figures",
+        "slug": "popmart-3456",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/3456/Lil-Peach-Riot-Sleepover-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 6,
+        "retail_price": 19.99
+      },
+      {
+        "name": "Peach Riot Bloody Valentine Figures",
+        "slug": "popmart-1928",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/1928/Peach-Riot-Bloody-Valentine-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 7,
+        "retail_price": 134.99
+      },
+      {
+        "name": "Lil Peach Riot Holiday Mixtape Series Figures",
+        "slug": "popmart-4192",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/4192/Lil-Peach-Riot-Holiday-Mixtape-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 8,
+        "retail_price": 19.99
+      },
+      {
+        "name": "Lil Peach Riot：Loading! Series Figures",
+        "slug": "popmart-1633",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/1633/Lil-Peach-Riot%EF%BC%9ALoading!-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 9,
+        "retail_price": 19.99
+      },
+      {
+        "name": "Peach Riot Rush Hour Series-Pendant Blind Box",
+        "slug": "popmart-2021",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/2021/Peach-Riot-Rush-Hour-Series-Pendant-Blind-Box",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 10,
+        "retail_price": 19.99
+      },
+      {
+        "name": "Lil Peach Riot:Loading! Series-Pin",
+        "slug": "popmart-1630",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/1630/Lil-Peach-Riot%3ALoading!-Series-Pin",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 11,
+        "retail_price": 14.99
+      }
+    ]
+  },
+  {
+    "brand": "POP MART",
+    "series": "DIMOO",
+    "slug": "popmart-3",
+    "source_url": "https://www.popmart.com/us/collection/3",
+    "figures": [
+      {
+        "name": "DIMOO Memories We Hold Series Figures",
+        "slug": "popmart-5582",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/5582/DIMOO-Memories-We-Hold-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 1,
+        "retail_price": 20.99
+      },
+      {
+        "name": "DIMOO The Missing Day Series Figures",
+        "slug": "popmart-3678",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/3678/DIMOO-The-Missing-Day-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 2,
+        "retail_price": 19.99
+      },
+      {
+        "name": "DIMOO The Secret Theatre Club Series - Vinyl Plush Pendant Blind Box",
+        "slug": "popmart-6093",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/6093/DIMOO-The-Secret-Theatre-Club-Series---Vinyl-Plush-Pendant-Blind-Box",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 3,
+        "retail_price": 32.99
+      },
+      {
+        "name": "DIMOO WORLD × DISNEY Series-Vinyl Plush Keychain Blind Box",
+        "slug": "popmart-2064",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/2064/DIMOO-WORLD-%C3%97-DISNEY-Series-Vinyl-Plush-Keychain-Blind-Box",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 4,
+        "retail_price": 50.99
+      },
+      {
+        "name": "DIMOO Journal of New Life Series-Vinyl Plush Pendant Blind Box",
+        "slug": "popmart-4191",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/4191/DIMOO-Journal-of-New-Life-Series-Vinyl-Plush-Pendant-Blind-Box",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 5,
+        "retail_price": 27.99
+      },
+      {
+        "name": "DIMOO Moments in Bloom Series Figures",
+        "slug": "popmart-5995",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/5995/DIMOO-Moments-in-Bloom-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 6,
+        "retail_price": 19.99
+      },
+      {
+        "name": "DIMOO Memories We Hold Series-Glowing Hourglass Crystal Ball Blind Box",
+        "slug": "popmart-5583",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/5583/DIMOO-Memories-We-Hold-Series-Glowing-Hourglass-Crystal-Ball-Blind-Box",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 7,
+        "retail_price": 32.99
+      },
+      {
+        "name": "DIMOO Gentleman Series 1/8 Action Figure",
+        "slug": "popmart-3702",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/3702/DIMOO-Gentleman-Series-1%2F8-Action-Figure",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 8,
+        "retail_price": 89.99
+      }
+    ]
+  },
+  {
+    "brand": "POP MART",
+    "series": "MOLLY",
+    "slug": "popmart-5",
+    "source_url": "https://www.popmart.com/us/collection/5",
+    "figures": [
+      {
+        "name": "Angry Molly - Angry Energy Series Plush Pendant",
+        "slug": "popmart-5824",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/5824/Angry-Molly---Angry-Energy-Series-Plush-Pendant",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 1,
+        "retail_price": 22.99
+      },
+      {
+        "name": "Baby Molly Winter Fit Check Series-Vinyl Plush Pendant Blind Box",
+        "slug": "popmart-5292",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/5292/Baby-Molly-Winter-Fit-Check-Series-Vinyl-Plush-Pendant-Blind-Box",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 2,
+        "retail_price": 36.99
+      },
+      {
+        "name": "Baby Molly Pocket Friends Series-Vinyl Plush Pendant Blind Box",
+        "slug": "popmart-2235",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/2235/Baby-Molly-Pocket-Friends-Series-Vinyl-Plush-Pendant-Blind-Box",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 3,
+        "retail_price": 22.99
+      },
+      {
+        "name": "MOLLY Scenery Along the Way 20th Anniversary Series Figures",
+        "slug": "popmart-6078",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/6078/MOLLY-Scenery-Along-the-Way-20th-Anniversary-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 4,
+        "retail_price": 20.99
+      },
+      {
+        "name": "MOLLY Carb-Lover Series Figures",
+        "slug": "popmart-1600",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/1600/MOLLY-Carb-Lover-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 5,
+        "retail_price": 19.99
+      },
+      {
+        "name": "Baby Molly & Baby Tabby Series Figures",
+        "slug": "popmart-2236",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/2236/Baby-Molly-%26-Baby-Tabby-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 6,
+        "retail_price": 19.99
+      },
+      {
+        "name": "Baby Molly My Huggable Discovery Series Figures",
+        "slug": "popmart-1863",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/1863/Baby-Molly-My-Huggable-Discovery-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 7,
+        "retail_price": 19.99
+      },
+      {
+        "name": "Baby Molly When I was Three！Series Figures",
+        "slug": "popmart-1078",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/1078/Baby-Molly-When-I-was-Three%EF%BC%81Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 8,
+        "retail_price": 19.99
+      },
+      {
+        "name": "MEGA SPACE MOLLY 400% Hello Kitty and Friends Series",
+        "slug": "popmart-1974",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/1974/MEGA-SPACE-MOLLY-400%25-Hello-Kitty-and-Friends-Series",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 9,
+        "retail_price": 299.9
+      },
+      {
+        "name": "MEGA SPACE MOLLY 100% Series 2-B",
+        "slug": "popmart-455",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/455/MEGA-SPACE-MOLLY-100%25-Series-2-B",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 10,
+        "retail_price": 20.99
+      },
+      {
+        "name": "MEGA SPACE MOLLY 100% Series 3",
+        "slug": "popmart-1429",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/1429/MEGA-SPACE-MOLLY-100%25-Series-3",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 11,
+        "retail_price": 20.99
+      }
+    ]
+  },
+  {
+    "brand": "POP MART",
+    "series": "TWINKLE TWINKLE",
+    "slug": "popmart-123",
+    "source_url": "https://www.popmart.com/us/collection/123",
+    "figures": [
+      {
+        "name": "MOON GELATO Series-Milk Pudding Plush Blister Pack",
+        "slug": "popmart-6105",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/6105/MOON-GELATO-Series-Milk-Pudding-Plush-Blister-Pack",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 1,
+        "retail_price": 22.99
+      },
+      {
+        "name": "Twinkle Twinkle Crush On You Series-Vinyl Plush Doll Gift Box",
+        "slug": "popmart-5741",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/5741/Twinkle-Twinkle-Crush-On-You-Series-Vinyl-Plush-Doll-Gift-Box",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 2,
+        "retail_price": 189.99
+      },
+      {
+        "name": "MOON GELATO Series-Honey Plush Pendant",
+        "slug": "popmart-6102",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/6102/MOON-GELATO-Series-Honey-Plush-Pendant",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 3,
+        "retail_price": 24.99
+      },
+      {
+        "name": "MOON GELATO Series-Ice Cream Plush Pendant Blind Box (Overseas Ver.)",
+        "slug": "popmart-6100",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/6100/MOON-GELATO-Series-Ice-Cream-Plush-Pendant-Blind-Box-(Overseas-Ver.)",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 4,
+        "retail_price": 20.99
+      },
+      {
+        "name": "MOON GELATO Series-Gelato Pendant",
+        "slug": "popmart-6106",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/6106/MOON-GELATO-Series-Gelato-Pendant",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 5,
+        "retail_price": 22.99
+      },
+      {
+        "name": "MOON GELATO Series-Baker Plush Doll",
+        "slug": "popmart-6103",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/6103/MOON-GELATO-Series-Baker-Plush-Doll",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 6,
+        "retail_price": 44.99
+      },
+      {
+        "name": "Twinkle Twinkle Crush On You Series Figures",
+        "slug": "popmart-5691",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/5691/Twinkle-Twinkle-Crush-On-You-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 7,
+        "retail_price": 19.99
+      },
+      {
+        "name": "Twinkle Twinkle Sweet Dreams Forecast Series-Plush Pendant Blind Box",
+        "slug": "popmart-3450",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/3450/Twinkle-Twinkle-Sweet-Dreams-Forecast-Series-Plush-Pendant-Blind-Box",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 8,
+        "retail_price": 20.99
+      },
+      {
+        "name": "Twinkle Twinkle The Gifts From Stars Series Figures",
+        "slug": "popmart-1745",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/1745/Twinkle-Twinkle-The-Gifts-From-Stars-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 9,
+        "retail_price": 19.99
+      },
+      {
+        "name": "MOON GELATO Series-Hand Towel Blind Box",
+        "slug": "popmart-6101",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/6101/MOON-GELATO-Series-Hand-Towel-Blind-Box",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 10,
+        "retail_price": 10.99
+      },
+      {
+        "name": "Twinkle Twinkle Create Your Taste Series-Tumbler Blind Box",
+        "slug": "popmart-6232",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/6232/Twinkle-Twinkle-Create-Your-Taste-Series-Tumbler-Blind-Box",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 11,
+        "retail_price": 29.99
+      },
+      {
+        "name": "We are Twinkle Twinkle Series-Pillow",
+        "slug": "popmart-1510",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/1510/We-are-Twinkle-Twinkle-Series-Pillow",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 12,
+        "retail_price": 45.99
+      },
+      {
+        "name": "Twinkle Twinkle Savor the Moment Series-Fresh-Baked Mini Cookies Plush Pendant Blind Box",
+        "slug": "popmart-3811",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/3811/Twinkle-Twinkle-Savor-the-Moment-Series-Fresh-Baked-Mini-Cookies-Plush-Pendant-Blind-Box",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 13,
+        "retail_price": 18.99
+      },
+      {
+        "name": "Twinkle Twinkle Create Your Taste Series Figures - A",
+        "slug": "popmart-3006",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/3006/Twinkle-Twinkle-Create-Your-Taste-Series-Figures---A",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 14,
+        "retail_price": 13.99
+      },
+      {
+        "name": "Twinkle Twinkle Create Your Taste Series Figures - B",
+        "slug": "popmart-3007",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/3007/Twinkle-Twinkle-Create-Your-Taste-Series-Figures---B",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 15,
+        "retail_price": 13.99
+      },
+      {
+        "name": "Twinkle Twinkle Savor the Moment Series Figures",
+        "slug": "popmart-3813",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/3813/Twinkle-Twinkle-Savor-the-Moment-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 16,
+        "retail_price": 19.99
+      },
+      {
+        "name": "We are Twinkle Twinkle Series Figures",
+        "slug": "popmart-1448",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/1448/We-are-Twinkle-Twinkle-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 17,
+        "retail_price": 19.99
+      },
+      {
+        "name": "Apple of My Eye Series-Twinkle Twinkle Plush Doll Pillow",
+        "slug": "popmart-4463",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/4463/Apple-of-My-Eye-Series-Twinkle-Twinkle-Plush-Doll-Pillow",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 18,
+        "retail_price": 75.99
+      }
+    ]
+  },
+  {
+    "brand": "POP MART",
+    "series": "PUCKY",
+    "slug": "popmart-12",
+    "source_url": "https://www.popmart.com/us/collection/12",
+    "figures": [
+      {
+        "name": "PUCKY Love Across Galaxies Series-Vinyl Plush Blister Pack",
+        "slug": "popmart-7997",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/7997/PUCKY-Love-Across-Galaxies-Series-Vinyl-Plush-Blister-Pack",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 1,
+        "retail_price": 26.99
+      },
+      {
+        "name": "PUCKY FLYING BABIES SERIES - Plush Pendant Blind Box",
+        "slug": "popmart-6197",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/6197/PUCKY-FLYING-BABIES-SERIES---Plush-Pendant-Blind-Box",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 2,
+        "retail_price": 20.99
+      },
+      {
+        "name": "PUCKY Dreamy Wishes Series Figures",
+        "slug": "popmart-6097",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/6097/PUCKY-Dreamy-Wishes-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 3,
+        "retail_price": 19.99
+      },
+      {
+        "name": "PUCKY Tap Tap Babies Series-Pendant Blind Box",
+        "slug": "popmart-5664",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/5664/PUCKY-Tap-Tap-Babies-Series-Pendant-Blind-Box",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 4,
+        "retail_price": 20.99
+      },
+      {
+        "name": "Pucky Tap Tap Babies Series-Vinyl Plush Pendant Blind Box",
+        "slug": "popmart-5663",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/5663/Pucky-Tap-Tap-Babies-Series-Vinyl-Plush-Pendant-Blind-Box",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 5,
+        "retail_price": 24.99
+      },
+      {
+        "name": "PUCKY Fairies&#x27; Market Series Figures",
+        "slug": "popmart-4708",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/4708/PUCKY-Fairies&#x27;-Market-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 6,
+        "retail_price": 19.99
+      },
+      {
+        "name": "PUCKY Roly-Poly Kitty Series-Vinyl Plush Blind Box",
+        "slug": "popmart-1501",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/1501/PUCKY-Roly-Poly-Kitty-Series-Vinyl-Plush-Blind-Box",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 7,
+        "retail_price": 27.99
+      },
+      {
+        "name": "PUCKY Forest Party Series-Vinyl  Plush Pendant Blind Box",
+        "slug": "popmart-457",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/457/PUCKY-Forest-Party-Series-Vinyl-Plush-Pendant-Blind-Box",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 8,
+        "retail_price": 27.99
+      },
+      {
+        "name": "PUCKY The Feast Series-Cable Blind Box (Type-C)",
+        "slug": "popmart-1229",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/1229/PUCKY-The-Feast-Series-Cable-Blind-Box-(Type-C)",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 9,
+        "retail_price": 12.99
+      },
+      {
+        "name": "PUCKY Roly-Poly Kitty Series Figures",
+        "slug": "popmart-1499",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/1499/PUCKY-Roly-Poly-Kitty-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 10,
+        "retail_price": 15.99
+      },
+      {
+        "name": "PUCKY The Feast Series-Dinner Set",
+        "slug": "popmart-1256",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/1256/PUCKY-The-Feast-Series-Dinner-Set",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 11,
+        "retail_price": 27.99
+      },
+      {
+        "name": "PUCKY Home Time Series-Lamp",
+        "slug": "popmart-951",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/951/PUCKY-Home-Time-Series-Lamp",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 12,
+        "retail_price": 69.99
+      }
+    ]
+  },
+  {
+    "brand": "POP MART",
+    "series": "KUBO",
+    "slug": "popmart-113",
+    "source_url": "https://www.popmart.com/us/collection/113",
+    "figures": [
+      {
+        "name": "KUBO Love, Still Series Figures",
+        "slug": "popmart-7836",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/7836/KUBO-Love%2C-Still-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 1,
+        "retail_price": 18.99
+      },
+      {
+        "name": "KUBO Angel&#x27;s Poem Series Figures",
+        "slug": "popmart-4704",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/4704/KUBO-Angel&#x27;s-Poem-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 2,
+        "retail_price": 19.99
+      },
+      {
+        "name": "KUBO City of Sunset Series Figures",
+        "slug": "popmart-3155",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/3155/KUBO-City-of-Sunset-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 3,
+        "retail_price": 19.99
+      },
+      {
+        "name": "KUBO Breathing In Series Figures",
+        "slug": "popmart-1384",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/1384/KUBO-Breathing-In-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 4,
+        "retail_price": 19.99
+      },
+      {
+        "name": "KUBO 24/7 YOU Series Figures",
+        "slug": "popmart-1695",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/1695/KUBO-24%2F7-YOU-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 5,
+        "retail_price": 19.99
+      },
+      {
+        "name": "KUBO JEANS SERIES-Badge Blind Box",
+        "slug": "popmart-1175",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/1175/KUBO-JEANS-SERIES-Badge-Blind-Box",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 6,
+        "retail_price": 8.99
+      },
+      {
+        "name": "KUBO JEANS SERIES-Trendy Socks ",
+        "slug": "popmart-1071",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/1071/KUBO-JEANS-SERIES-Trendy-Socks-",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 7,
+        "retail_price": 12.99
+      },
+      {
+        "name": "KUBO Select Your Character Series Figures",
+        "slug": "popmart-907",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/907/KUBO-Select-Your-Character-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 8,
+        "retail_price": 15.99
+      },
+      {
+        "name": "KUBO Walks of Life Series Figures",
+        "slug": "popmart-456",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/456/KUBO-Walks-of-Life-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 9,
+        "retail_price": 15.99
+      }
+    ]
+  },
+  {
+    "brand": "POP MART",
+    "series": "NYOTA",
+    "slug": "popmart-135",
+    "source_url": "https://www.popmart.com/us/collection/135",
+    "figures": [
+      {
+        "name": "Nyota Where Moments Meet Series Plush Doll",
+        "slug": "popmart-6268",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/6268/Nyota-Where-Moments-Meet-Series-Plush-Doll",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 1,
+        "retail_price": 27.99
+      },
+      {
+        "name": "Nyota We are All Stars Series Figures",
+        "slug": "popmart-4706",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/4706/Nyota-We-are-All-Stars-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 2,
+        "retail_price": 19.99
+      },
+      {
+        "name": "Nyota I Am the Seasons Series Figures",
+        "slug": "popmart-3080",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/3080/Nyota-I-Am-the-Seasons-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 3,
+        "retail_price": 19.99
+      },
+      {
+        "name": "Nyota Growing up by Your Way Series Figures",
+        "slug": "popmart-1720",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/1720/Nyota-Growing-up-by-Your-Way-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 4,
+        "retail_price": 19.99
+      },
+      {
+        "name": "Nyota&#x27;s Fluffy Life Series Figures",
+        "slug": "popmart-959",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/959/Nyota&#x27;s-Fluffy-Life-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 5,
+        "retail_price": 19.99
+      }
+    ]
+  },
+  {
+    "brand": "POP MART",
+    "series": "HACIPUPU",
+    "slug": "popmart-22",
+    "source_url": "https://www.popmart.com/us/collection/22",
+    "figures": [
+      {
+        "name": "HACIPUPU Take Me Home Series - Pendant Blind Box",
+        "slug": "popmart-8061",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/8061/HACIPUPU-Take-Me-Home-Series---Pendant-Blind-Box",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 1,
+        "retail_price": 19.99
+      },
+      {
+        "name": "HACIPUPU Gummy Bear Series-Vinyl Plush Pendant Blind Box",
+        "slug": "popmart-2780",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/2780/HACIPUPU-Gummy-Bear-Series-Vinyl-Plush-Pendant-Blind-Box",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 2,
+        "retail_price": 27.99
+      },
+      {
+        "name": "HACIPUPU Whispers of My World Series Figures",
+        "slug": "popmart-4450",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/4450/HACIPUPU-Whispers-of-My-World-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 3,
+        "retail_price": 19.99
+      },
+      {
+        "name": "HACIPUPU Snuggle With You Series Figures",
+        "slug": "popmart-1860",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/1860/HACIPUPU-Snuggle-With-You-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 4,
+        "retail_price": 22.99
+      },
+      {
+        "name": "HACIPUPU Rolling Time Machine Series Figures",
+        "slug": "popmart-2491",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/2491/HACIPUPU-Rolling-Time-Machine-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 5,
+        "retail_price": 19.99
+      },
+      {
+        "name": "HACIPUPU Little Foodie Series 1/12 Action Figure",
+        "slug": "popmart-4503",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/4503/HACIPUPU-Little-Foodie-Series-1%2F12-Action-Figure",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 6,
+        "retail_price": 71.99
+      },
+      {
+        "name": "HACIPUPU Snuggle With You Series-Pendant Blind Box",
+        "slug": "popmart-1924",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/1924/HACIPUPU-Snuggle-With-You-Series-Pendant-Blind-Box",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 7,
+        "retail_price": 18.99
+      },
+      {
+        "name": "HACIPUPU The Constellation Series-Vinyl Plush Blind Box",
+        "slug": "popmart-1598",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/1598/HACIPUPU-The-Constellation-Series-Vinyl-Plush-Blind-Box",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 8,
+        "retail_price": 20.99
+      },
+      {
+        "name": "HACIPUPU Into the Secret Realm Series 1/8 Action Figure",
+        "slug": "popmart-6359",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/6359/HACIPUPU-Into-the-Secret-Realm-Series-1%2F8-Action-Figure",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 9,
+        "retail_price": 79.99
+      },
+      {
+        "name": "HACIPUPU Snuggle With You Series Figures-Computer Package",
+        "slug": "popmart-1923",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/1923/HACIPUPU-Snuggle-With-You-Series-Figures-Computer-Package",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 10,
+        "retail_price": 34.99
+      }
+    ]
+  },
+  {
+    "brand": "POP MART",
+    "series": "CHAKA",
+    "slug": "popmart-171",
+    "source_url": "https://www.popmart.com/us/collection/171",
+    "figures": [
+      {
+        "name": "CHAKA Luminous Reverie Series Figures",
+        "slug": "popmart-4699",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/4699/CHAKA-Luminous-Reverie-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 1,
+        "retail_price": 19.99
+      },
+      {
+        "name": "CHAKA Candlelit Wander Series Figures",
+        "slug": "popmart-6194",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/6194/CHAKA-Candlelit-Wander-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 2,
+        "retail_price": 20.99
+      },
+      {
+        "name": "CHAKA Candle Whisper Series Figures",
+        "slug": "popmart-2321",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/2321/CHAKA-Candle-Whisper-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 3,
+        "retail_price": 19.99
+      }
+    ]
+  },
+  {
+    "brand": "POP MART",
+    "series": "ZSIGA",
+    "slug": "popmart-16",
+    "source_url": "https://www.popmart.com/us/collection/16",
+    "figures": [
+      {
+        "name": "ZSIGA I&#x27;m Zsiga Series-Vinyl Plush Pendant",
+        "slug": "popmart-6479",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/6479/ZSIGA-I&#x27;m-Zsiga-Series-Vinyl-Plush-Pendant",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 1,
+        "retail_price": 32.99
+      },
+      {
+        "name": "Zsiga Under the Sun Series Figures",
+        "slug": "popmart-5817",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/5817/Zsiga-Under-the-Sun-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 2,
+        "retail_price": 19.99
+      },
+      {
+        "name": "Zsiga × Care Bears Series Figures",
+        "slug": "popmart-3789",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/3789/Zsiga-%C3%97-Care-Bears-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 3,
+        "retail_price": 20.99
+      },
+      {
+        "name": "Zsiga The Winter of Gifts Series Figures",
+        "slug": "popmart-4264",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/4264/Zsiga-The-Winter-of-Gifts-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 4,
+        "retail_price": 19.99
+      },
+      {
+        "name": "Zsiga Take It Slow Series Figures",
+        "slug": "popmart-2840",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/2840/Zsiga-Take-It-Slow-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 5,
+        "retail_price": 19.99
+      },
+      {
+        "name": "Zsiga Borderline Drifter Series Figures",
+        "slug": "popmart-2054",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/2054/Zsiga-Borderline-Drifter-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 6,
+        "retail_price": 19.99
+      },
+      {
+        "name": "Zsiga We All Are Kids Series Figures",
+        "slug": "popmart-1508",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/1508/Zsiga-We-All-Are-Kids-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 7,
+        "retail_price": 19.99
+      },
+      {
+        "name": "Zsiga Let It Be Series Figures",
+        "slug": "popmart-1091",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/1091/Zsiga-Let-It-Be-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 8,
+        "retail_price": 19.99
+      }
+    ]
+  },
+  {
+    "brand": "POP MART",
+    "series": "POLAR",
+    "slug": "popmart-172",
+    "source_url": "https://www.popmart.com/us/collection/172",
+    "figures": [
+      {
+        "name": "POLAR-Monster Baby Collection Series Plush Pendant Ver.1",
+        "slug": "popmart-4506",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/4506/POLAR-Monster-Baby-Collection-Series-Plush-Pendant-Ver.1",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 1,
+        "retail_price": 36.99
+      },
+      {
+        "name": "POLAR-Season 3 &lt; Polar In Monster Village &gt; Series Figures",
+        "slug": "popmart-6269",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/6269/POLAR-Season-3-%3C-Polar-In-Monster-Village-%3E-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 2,
+        "retail_price": 18.99
+      },
+      {
+        "name": "Polar-Season 2 &lt;Hidden Forest Path&gt; Series Figures",
+        "slug": "popmart-4257",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/4257/Polar-Season-2-%3CHidden-Forest-Path%3E-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 3,
+        "retail_price": 19.99
+      },
+      {
+        "name": "POLAR - HELLO POLAR Season 1 Series Figures",
+        "slug": "popmart-1611",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/1611/POLAR---HELLO-POLAR-Season-1-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 4,
+        "retail_price": 19.99
+      }
+    ]
+  },
+  {
+    "brand": "POP MART",
+    "series": "PINO JELLY",
+    "slug": "popmart-60",
+    "source_url": "https://www.popmart.com/us/collection/60",
+    "figures": [
+      {
+        "name": "PINO JELLY Sweet Like Me Series Figures",
+        "slug": "popmart-3018",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/3018/PINO-JELLY-Sweet-Like-Me-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 1,
+        "retail_price": 19.99
+      },
+      {
+        "name": "PINO JELLY Hard & Shiny Series Figures",
+        "slug": "popmart-1772",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/1772/PINO-JELLY-Hard-%26-Shiny-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 2,
+        "retail_price": 19.99
+      },
+      {
+        "name": "PINO JELLY Star Project Series Figures",
+        "slug": "popmart-1493",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/1493/PINO-JELLY-Star-Project-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 3,
+        "retail_price": 16.99
+      }
+    ]
+  },
+  {
+    "brand": "POP MART",
+    "series": "INOSOUL",
+    "slug": "popmart-107",
+    "source_url": "https://www.popmart.com/us/collection/107",
+    "figures": [
+      {
+        "name": "inosoul The Forgotten Land Series Figures",
+        "slug": "popmart-4507",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/4507/inosoul-The-Forgotten-Land-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 1,
+        "retail_price": 19.99
+      },
+      {
+        "name": "inosoul In the Still Room Series Figures",
+        "slug": "popmart-2772",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/2772/inosoul-In-the-Still-Room-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 2,
+        "retail_price": 19.99
+      },
+      {
+        "name": "inosoul&#x27;s Lucid Dreams Series Figures",
+        "slug": "popmart-1062",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/1062/inosoul&#x27;s-Lucid-Dreams-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 3,
+        "retail_price": 15.99
+      }
+    ]
+  },
+  {
+    "brand": "POP MART",
+    "series": "TINY TINY",
+    "slug": "popmart-170",
+    "source_url": "https://www.popmart.com/us/collection/170",
+    "figures": [
+      {
+        "name": "TINYTINY-PROLOGUE SERIES FIGURES",
+        "slug": "popmart-2081",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/2081/TINYTINY-PROLOGUE-SERIES-FIGURES",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 1,
+        "retail_price": 19.99
+      }
+    ]
+  },
+  {
+    "brand": "POP MART",
+    "series": "DUCKOO",
+    "slug": "popmart-53",
+    "source_url": "https://www.popmart.com/us/collection/53",
+    "figures": [
+      {
+        "name": "The Grand DUCKOO Hotel Series Figures",
+        "slug": "popmart-293",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/293/The-Grand-DUCKOO-Hotel-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 1,
+        "retail_price": 18.99
+      },
+      {
+        "name": "DUCKOO FARM Series Figures",
+        "slug": "popmart-679",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/679/DUCKOO-FARM-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 2,
+        "retail_price": 18.99
+      },
+      {
+        "name": "DUCKOO Music Festival Series",
+        "slug": "popmart-2837",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/2837/DUCKOO-Music-Festival-Series",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 3,
+        "retail_price": 18.99
+      },
+      {
+        "name": "DUCKOO Ball Club Series",
+        "slug": "popmart-115",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/115/DUCKOO-Ball-Club-Series",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 4,
+        "retail_price": 14.99
+      }
+    ]
+  },
+  {
+    "brand": "POP MART",
+    "series": "MERODI",
+    "slug": "popmart-311",
+    "source_url": "https://www.popmart.com/us/collection/311",
+    "figures": [
+      {
+        "name": "Chapter 1 – Merodi After School Series Figures",
+        "slug": "popmart-5826",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/5826/Chapter-1-%E2%80%93-Merodi-After-School-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 1,
+        "retail_price": 19.99
+      }
+    ]
+  },
+  {
+    "brand": "POP MART",
+    "series": "SWEET BEAN",
+    "slug": "popmart-13",
+    "source_url": "https://www.popmart.com/us/collection/13",
+    "figures": [
+      {
+        "name": "Sweet Bean Your Exclusive Holiday Series Figures",
+        "slug": "popmart-4198",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/4198/Sweet-Bean-Your-Exclusive-Holiday-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 1,
+        "retail_price": 19.99
+      },
+      {
+        "name": "Sweet Bean Celebrate Ordinary Days Series Scene Sets",
+        "slug": "popmart-3775",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/3775/Sweet-Bean-Celebrate-Ordinary-Days-Series-Scene-Sets",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 2,
+        "retail_price": 19.99
+      },
+      {
+        "name": "Sweet Bean The Language of Love Series Figures",
+        "slug": "popmart-2234",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/2234/Sweet-Bean-The-Language-of-Love-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 3,
+        "retail_price": 19.99
+      },
+      {
+        "name": "Sweet Bean I Want a Hug Series Figures",
+        "slug": "popmart-1977",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/1977/Sweet-Bean-I-Want-a-Hug-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 4,
+        "retail_price": 19.99
+      },
+      {
+        "name": "Sweet Bean Fruit World Adventure Series Figures",
+        "slug": "popmart-1444",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/1444/Sweet-Bean-Fruit-World-Adventure-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 5,
+        "retail_price": 16.99
+      },
+      {
+        "name": "Sweet Bean Afternoon Tea Series Figures",
+        "slug": "popmart-1054",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/1054/Sweet-Bean-Afternoon-Tea-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 6,
+        "retail_price": 15.99
+      },
+      {
+        "name": "Sweet Bean × INSTINCTOY Sweet Together Series",
+        "slug": "popmart-144",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/144/Sweet-Bean-%C3%97-INSTINCTOY-Sweet-Together-Series",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 7,
+        "retail_price": 17.99
+      }
+    ]
+  },
+  {
+    "brand": "POP MART",
+    "series": "1001MOONS",
+    "slug": "popmart-251",
+    "source_url": "https://www.popmart.com/us/collection/251",
+    "figures": [
+      {
+        "name": "1001MOONS Where’s the Elephant Slide Series Figures",
+        "slug": "popmart-4502",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/4502/1001MOONS-Where%E2%80%99s-the-Elephant-Slide-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 1,
+        "retail_price": 19.99
+      },
+      {
+        "name": "1001MOONS Wind&#x27;s Intention Series Figures",
+        "slug": "popmart-6356",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/6356/1001MOONS-Wind&#x27;s-Intention-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 2,
+        "retail_price": 18.99
+      }
+    ]
+  },
+  {
+    "brand": "POP MART",
+    "series": "SUPERTUTU",
+    "slug": "popmart-278",
+    "source_url": "https://www.popmart.com/us/collection/278",
+    "figures": [
+      {
+        "name": "SUPERTUTU HAPPY-ING! Series Figures",
+        "slug": "popmart-5609",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/5609/SUPERTUTU-HAPPY-ING!-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 1,
+        "retail_price": 19.99
+      }
+    ]
+  },
+  {
+    "brand": "POP MART",
+    "series": "ALL",
+    "slug": "popmart-114",
+    "source_url": "https://www.popmart.com/us/collection/114",
+    "figures": [
+      {
+        "name": "SKULLPANDA The Mirage Series Figures",
+        "slug": "popmart-2141",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/2141/SKULLPANDA-The-Mirage-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 1,
+        "retail_price": 24.99
+      },
+      {
+        "name": "SKULLPANDA Image Of Reality Series Figures",
+        "slug": "popmart-953",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/953/SKULLPANDA-Image-Of-Reality-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 2,
+        "retail_price": 19.99
+      },
+      {
+        "name": "SKULLPANDA The Ink Plum Blossom Series Figures",
+        "slug": "popmart-720",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/720/SKULLPANDA-The-Ink-Plum-Blossom-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 3,
+        "retail_price": 19.99
+      },
+      {
+        "name": "aespa Fluffy Club Series Vinyl Plush Doll Pendant",
+        "slug": "popmart-6271",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/6271/aespa-Fluffy-Club-Series-Vinyl-Plush-Doll-Pendant",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 4,
+        "retail_price": 32.99
+      },
+      {
+        "name": "Disney Princess Create Your World Series Figures",
+        "slug": "popmart-3154",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/3154/Disney-Princess-Create-Your-World-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 5,
+        "retail_price": 19.99
+      },
+      {
+        "name": "Teletubbies \"Say Hello\" Series Figures",
+        "slug": "popmart-3779",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/3779/Teletubbies-%22Say-Hello%22-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 6,
+        "retail_price": 23.99
+      },
+      {
+        "name": "Disney Princess&#x27;s Fairy Tales Series Scene Sets",
+        "slug": "popmart-2139",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/2139/Disney-Princess&#x27;s-Fairy-Tales-Series-Scene-Sets",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 7,
+        "retail_price": 19.99
+      }
+    ]
+  },
+  {
+    "brand": "POP MART",
+    "series": "ART FIGURES",
+    "slug": "popmart-10",
+    "source_url": "https://www.popmart.com/us/collection/10",
+    "figures": [
+      {
+        "name": "Demon Slayer: Kimetsu no Yaiba Battle Series Figures",
+        "slug": "popmart-8139",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/8139/Demon-Slayer%3A-Kimetsu-no-Yaiba-Battle-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 1,
+        "retail_price": 19.99
+      },
+      {
+        "name": "League of Legends Clash of the Cuties Series Figures",
+        "slug": "popmart-8343",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/8343/League-of-Legends-Clash-of-the-Cuties-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 2,
+        "retail_price": 19.99
+      },
+      {
+        "name": "Inuyasha The Journey of Sengoku Series Figures",
+        "slug": "popmart-7839",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/7839/Inuyasha-The-Journey-of-Sengoku-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 3,
+        "retail_price": 19.99
+      },
+      {
+        "name": "MOLLY The Wheel of Time 20th Anniversary Series Figures",
+        "slug": "popmart-8138",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/8138/MOLLY-The-Wheel-of-Time-20th-Anniversary-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 4,
+        "retail_price": 27.99
+      },
+      {
+        "name": "SpongeBob: Krabby Patty Bestsellers Series Figures",
+        "slug": "popmart-8063",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/8063/SpongeBob%3A-Krabby-Patty-Bestsellers-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 5,
+        "retail_price": 19.99
+      },
+      {
+        "name": "Puella Magi Madoka Magica Iconic Scenes Series Figures",
+        "slug": "popmart-6482",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/6482/Puella-Magi-Madoka-Magica-Iconic-Scenes-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 6,
+        "retail_price": 19.99
+      }
+    ]
+  },
+  {
+    "brand": "POP MART",
+    "series": "PLUSH PENDANTS",
+    "slug": "popmart-133",
+    "source_url": "https://www.popmart.com/us/collection/133",
+    "figures": [
+      {
+        "name": "Stitch Adventure Series Vinyl Plush Pendant",
+        "slug": "popmart-5819",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/5819/Stitch-Adventure-Series-Vinyl-Plush-Pendant",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 1,
+        "retail_price": 27.99
+      },
+      {
+        "name": "Twinkle Twinkle Crush On You Series-Plush Pendant Blind Box",
+        "slug": "popmart-5674",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/5674/Twinkle-Twinkle-Crush-On-You-Series-Plush-Pendant-Blind-Box",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 2,
+        "retail_price": 22.99
+      },
+      {
+        "name": "Happy Halloween Party Series-Sitting Pumpkin Vinyl Plush Pendant",
+        "slug": "popmart-1505",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/1505/Happy-Halloween-Party-Series-Sitting-Pumpkin-Vinyl-Plush-Pendant",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 3,
+        "retail_price": 42.99
+      },
+      {
+        "name": "WHY SO SERIOUS Series-Vinyl Plush Pendant Blind Box",
+        "slug": "popmart-3866",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/3866/WHY-SO-SERIOUS-Series-Vinyl-Plush-Pendant-Blind-Box",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 4,
+        "retail_price": 42.99
+      }
+    ]
+  },
+  {
+    "brand": "POP MART",
+    "series": "PLUSH DOLLS",
+    "slug": "popmart-20",
+    "source_url": "https://www.popmart.com/us/collection/20",
+    "figures": [
+      {
+        "name": "THE MONSTERS 10th Anniversary Series-ZIMOMO Vinyl Plush Doll",
+        "slug": "popmart-5701",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/5701/THE-MONSTERS-10th-Anniversary-Series-ZIMOMO-Vinyl-Plush-Doll",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 1,
+        "retail_price": 299.99
+      },
+      {
+        "name": "THE MONSTERS Let&#x27;s Checkmate Series-Vinyl Plush Doll",
+        "slug": "popmart-1898",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/1898/THE-MONSTERS-Let&#x27;s-Checkmate-Series-Vinyl-Plush-Doll",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 2,
+        "retail_price": 114.99
+      },
+      {
+        "name": "THE MONSTERS FALL IN WILD SERIES-Vinyl Plush Doll",
+        "slug": "popmart-1060",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/1060/THE-MONSTERS-FALL-IN-WILD-SERIES-Vinyl-Plush-Doll",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 3,
+        "retail_price": 99.99
+      },
+      {
+        "name": "CRYBABY SHINY SHINY SERIES-Plush Doll",
+        "slug": "popmart-3075",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/3075/CRYBABY-SHINY-SHINY-SERIES-Plush-Doll",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 4,
+        "retail_price": 43.99
+      },
+      {
+        "name": "CRYBABY Crying for Love Series-Plush Gift Box",
+        "slug": "popmart-1926",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/1926/CRYBABY-Crying-for-Love-Series-Plush-Gift-Box",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 5,
+        "retail_price": 134.99
+      },
+      {
+        "name": "CRYBABY Sunset Concert Series-Plush Doll",
+        "slug": "popmart-1311",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/1311/CRYBABY-Sunset-Concert-Series-Plush-Doll",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 6,
+        "retail_price": 43.99
+      },
+      {
+        "name": "CRYBABY CHEER UP, BABY! SERIES-Plush Doll",
+        "slug": "popmart-1207",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/1207/CRYBABY-CHEER-UP%2C-BABY!-SERIES-Plush-Doll",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 7,
+        "retail_price": 43.99
+      },
+      {
+        "name": "CRYBABY SAD CLUB SERIES-PLUSH DOLL",
+        "slug": "popmart-904",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/904/CRYBABY-SAD-CLUB-SERIES-PLUSH-DOLL",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 8,
+        "retail_price": 43.99
+      }
+    ]
+  },
+  {
+    "brand": "POP MART",
+    "series": "ACTION FIGURES",
+    "slug": "popmart-57",
+    "source_url": "https://www.popmart.com/us/collection/57",
+    "figures": [
+      {
+        "name": "Laid-Back Camp Series Action Figure",
+        "slug": "popmart-5911",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/5911/Laid-Back-Camp-Series-Action-Figure",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 1,
+        "retail_price": 101.99
+      },
+      {
+        "name": "MOLLY ZOOTOPIA 2 Series 1/12 Action Figure",
+        "slug": "popmart-4141",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/4141/MOLLY-ZOOTOPIA-2-Series-1%2F12-Action-Figure",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 2,
+        "retail_price": 71.99
+      },
+      {
+        "name": "Detective Conan Series-Edogawa Conan Action Figure",
+        "slug": "popmart-4651",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/4651/Detective-Conan-Series-Edogawa-Conan-Action-Figure",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 3,
+        "retail_price": 73.99
+      },
+      {
+        "name": "Detective Conan Series-Mori Ran Action Figure",
+        "slug": "popmart-4038",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/4038/Detective-Conan-Series-Mori-Ran-Action-Figure",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 4,
+        "retail_price": 89.99
+      },
+      {
+        "name": "MOLLY 20th Anniversary Series 1/8 Action Figure",
+        "slug": "popmart-6076",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/6076/MOLLY-20th-Anniversary-Series-1%2F8-Action-Figure",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 5,
+        "retail_price": 79.99
+      }
+    ]
+  },
+  {
+    "brand": "POP MART",
+    "series": "ACCESSORIES",
+    "slug": "popmart-18",
+    "source_url": "https://www.popmart.com/us/collection/18",
+    "figures": [
+      {
+        "name": "THE MONSTERS × FIFA SERIES-Long Lanyard Blind Box",
+        "slug": "popmart-6085",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/6085/THE-MONSTERS-%C3%97-FIFA-SERIES-Long-Lanyard-Blind-Box",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 1,
+        "retail_price": 29.99
+      },
+      {
+        "name": "Have a Good Run Series-Bracelet Blind Box",
+        "slug": "popmart-5617",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/5617/Have-a-Good-Run-Series-Bracelet-Blind-Box",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 2,
+        "retail_price": 33.99
+      },
+      {
+        "name": "THE MONSTERS Wacky Mart Series-Pillow (Chips)",
+        "slug": "popmart-2878",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/2878/THE-MONSTERS-Wacky-Mart-Series-Pillow-(Chips)",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 3,
+        "retail_price": 44.99
+      }
+    ]
+  },
+  {
+    "brand": "POP MART",
+    "series": "POP BEAN",
+    "slug": "popmart-147",
+    "source_url": "https://www.popmart.com/us/collection/147",
+    "figures": [
+      {
+        "name": "POP BEAN DIMOO WORLD × DISNEY Classic Series（3Pcs Per Pack）",
+        "slug": "popmart-2148",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/2148/POP-BEAN-DIMOO-WORLD-%C3%97-DISNEY-Classic-Series%EF%BC%883Pcs-Per-Pack%EF%BC%89",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 1,
+        "retail_price": 9.99
+      },
+      {
+        "name": "POP BEAN Coffee Factory Series (1Pc Per Pack)",
+        "slug": "popmart-4197",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/4197/POP-BEAN-Coffee-Factory-Series-(1Pc-Per-Pack)",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 2,
+        "retail_price": 4.99
+      },
+      {
+        "name": "POP BEAN Fluffy & Cozy Series-Decorative Charm Blind Box",
+        "slug": "popmart-4517",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/4517/POP-BEAN-Fluffy-%26-Cozy-Series-Decorative-Charm-Blind-Box",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 3,
+        "retail_price": 18.99
+      },
+      {
+        "name": "POP BEAN Fluffy & Cozy Series-Plush Pendant Blind Box",
+        "slug": "popmart-4515",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/4515/POP-BEAN-Fluffy-%26-Cozy-Series-Plush-Pendant-Blind-Box",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 4,
+        "retail_price": 22.99
+      },
+      {
+        "name": "POP BEAN Fluffy & Cozy Series-Pillow",
+        "slug": "popmart-4511",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/4511/POP-BEAN-Fluffy-%26-Cozy-Series-Pillow",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 5,
+        "retail_price": 73.99
+      },
+      {
+        "name": "POP BEAN Winter Romance Series Box Set",
+        "slug": "popmart-4265",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/4265/POP-BEAN-Winter-Romance-Series-Box-Set",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 6,
+        "retail_price": 38.99
+      },
+      {
+        "name": "POP BEAN Celebrate This Moment Series（1Pc Per Pack）",
+        "slug": "popmart-4044",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/4044/POP-BEAN-Celebrate-This-Moment-Series%EF%BC%881Pc-Per-Pack%EF%BC%89",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 7,
+        "retail_price": 6.99
+      },
+      {
+        "name": "POP BEAN Goodnight,Night Sky Series(1 PC Per Pack)",
+        "slug": "popmart-3991",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/3991/POP-BEAN-Goodnight%2CNight-Sky-Series(1-PC-Per-Pack)",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 8,
+        "retail_price": 4.99
+      },
+      {
+        "name": "POP BEAN Coffee Factory Series-Coffee Portafilter Pillow",
+        "slug": "popmart-3907",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/3907/POP-BEAN-Coffee-Factory-Series-Coffee-Portafilter-Pillow",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 9,
+        "retail_price": 45.99
+      },
+      {
+        "name": "POP BEAN Coffee Factory Series-Plush Pendant",
+        "slug": "popmart-3785",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/3785/POP-BEAN-Coffee-Factory-Series-Plush-Pendant",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 10,
+        "retail_price": 22.99
+      },
+      {
+        "name": "POP BEAN Coffee Factory Series-Long Lanyard",
+        "slug": "popmart-3784",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/3784/POP-BEAN-Coffee-Factory-Series-Long-Lanyard",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 11,
+        "retail_price": 18.99
+      },
+      {
+        "name": "POP BEAN Coffee Factory Series-Decoration Charm",
+        "slug": "popmart-3776",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/3776/POP-BEAN-Coffee-Factory-Series-Decoration-Charm",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 12,
+        "retail_price": 18.99
+      }
+    ]
+  },
+  {
+    "brand": "POP MART",
+    "series": "ALL",
+    "slug": "popmart-1",
+    "source_url": "https://www.popmart.com/us/collection/1",
+    "figures": [
+      {
+        "name": "SKULLPANDA The Mirage Series Figures",
+        "slug": "popmart-2141",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/2141/SKULLPANDA-The-Mirage-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 1,
+        "retail_price": 24.99
+      },
+      {
+        "name": "SKULLPANDA Image Of Reality Series Figures",
+        "slug": "popmart-953",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/953/SKULLPANDA-Image-Of-Reality-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 2,
+        "retail_price": 19.99
+      },
+      {
+        "name": "SKULLPANDA The Ink Plum Blossom Series Figures",
+        "slug": "popmart-720",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/720/SKULLPANDA-The-Ink-Plum-Blossom-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 3,
+        "retail_price": 19.99
+      },
+      {
+        "name": "aespa Fluffy Club Series Vinyl Plush Doll Pendant",
+        "slug": "popmart-6271",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/6271/aespa-Fluffy-Club-Series-Vinyl-Plush-Doll-Pendant",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 4,
+        "retail_price": 32.99
+      },
+      {
+        "name": "Disney Princess Create Your World Series Figures",
+        "slug": "popmart-3154",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/3154/Disney-Princess-Create-Your-World-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 5,
+        "retail_price": 19.99
+      },
+      {
+        "name": "Teletubbies \"Say Hello\" Series Figures",
+        "slug": "popmart-3779",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/3779/Teletubbies-%22Say-Hello%22-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 6,
+        "retail_price": 23.99
+      },
+      {
+        "name": "Disney Princess&#x27;s Fairy Tales Series Scene Sets",
+        "slug": "popmart-2139",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/2139/Disney-Princess&#x27;s-Fairy-Tales-Series-Scene-Sets",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 7,
+        "retail_price": 19.99
+      }
+    ]
+  },
+  {
+    "brand": "POP MART",
+    "series": "CARTOONS",
+    "slug": "popmart-284",
+    "source_url": "https://www.popmart.com/us/collection/284",
+    "figures": [
+      {
+        "name": "Crayon Shin-chan Inner-Child Theatre Series Figures",
+        "slug": "popmart-6363",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/6363/Crayon-Shin-chan-Inner-Child-Theatre-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 1,
+        "retail_price": 18.99
+      },
+      {
+        "name": "Disney/Pixar Toy Story 5 Series Figures",
+        "slug": "popmart-6275",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/6275/Disney%2FPixar-Toy-Story-5-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 2,
+        "retail_price": 18.99
+      },
+      {
+        "name": "Crayon Shinchan POP CUBE-3 Series Figures",
+        "slug": "popmart-6009",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/6009/Crayon-Shinchan-POP-CUBE-3-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 3,
+        "retail_price": 13.99
+      },
+      {
+        "name": "Crayon Shinchan POP CUBE-2 Series Figures",
+        "slug": "popmart-6008",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/6008/Crayon-Shinchan-POP-CUBE-2-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 4,
+        "retail_price": 13.99
+      },
+      {
+        "name": "Crayon Shinchan POP CUBE-1 Series Figures",
+        "slug": "popmart-6007",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/6007/Crayon-Shinchan-POP-CUBE-1-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 5,
+        "retail_price": 13.99
+      },
+      {
+        "name": "Teletubbies Vibrancy Series Figures",
+        "slug": "popmart-2092",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/2092/Teletubbies-Vibrancy-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 6,
+        "retail_price": 20.99
+      },
+      {
+        "name": "ZANMANG LOOPY’s Moments Series Figures",
+        "slug": "popmart-1826",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/1826/ZANMANG-LOOPY%E2%80%99s-Moments-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 7,
+        "retail_price": 19.99
+      },
+      {
+        "name": "The Powerpuff Girls Party Surprise Series Figures",
+        "slug": "popmart-4037",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/4037/The-Powerpuff-Girls-Party-Surprise-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 8,
+        "retail_price": 19.99
+      },
+      {
+        "name": "CRYBABY x Powerpuff Girls Series-Mirror Pendant",
+        "slug": "popmart-999",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/999/CRYBABY-x-Powerpuff-Girls-Series-Mirror-Pendant",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 9,
+        "retail_price": 20.99
+      },
+      {
+        "name": "Teletubbies Companion Series Figures",
+        "slug": "popmart-1210",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/1210/Teletubbies-Companion-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 10,
+        "retail_price": 19.99
+      },
+      {
+        "name": "Teletubbies Fantasy Candy World Series",
+        "slug": "popmart-132",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/132/Teletubbies-Fantasy-Candy-World-Series",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 11,
+        "retail_price": 18.99
+      }
+    ]
+  },
+  {
+    "brand": "POP MART",
+    "series": "ANIME",
+    "slug": "popmart-283",
+    "source_url": "https://www.popmart.com/us/collection/283",
+    "figures": [
+      {
+        "name": "Naruto: Shippuden Series Battle Against Akatsuki Themed Figure",
+        "slug": "popmart-4196",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/4196/Naruto%3A-Shippuden-Series-Battle-Against-Akatsuki-Themed-Figure",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 1,
+        "retail_price": 20.99
+      },
+      {
+        "name": "One Piece - The Grand Line Series Vehicles",
+        "slug": "popmart-3420",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/3420/One-Piece---The-Grand-Line-Series-Vehicles",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 2,
+        "retail_price": 22.99
+      },
+      {
+        "name": "Demon Slayer: Kimetsu no Yaiba Birth Flower Series Figures",
+        "slug": "popmart-1971",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/1971/Demon-Slayer%3A-Kimetsu-no-Yaiba-Birth-Flower-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 3,
+        "retail_price": 20.99
+      },
+      {
+        "name": "THE MONSTERS × One Piece Series Figures",
+        "slug": "popmart-2052",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/2052/THE-MONSTERS-%C3%97-One-Piece-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 4,
+        "retail_price": 19.99
+      },
+      {
+        "name": "NARUTO SHIPPUDEN Childhood Series Figures",
+        "slug": "popmart-5827",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/5827/NARUTO-SHIPPUDEN-Childhood-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 5,
+        "retail_price": 19.99
+      },
+      {
+        "name": "NARUTO Ninkai Taisen Series Figures",
+        "slug": "popmart-1573",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/1573/NARUTO-Ninkai-Taisen-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 6,
+        "retail_price": 19.99
+      },
+      {
+        "name": "Haikyu!! The Dumpster Battle Series Figures",
+        "slug": "popmart-3795",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/3795/Haikyu!!-The-Dumpster-Battle-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 7,
+        "retail_price": 19.99
+      },
+      {
+        "name": "SPY × FAMILY Daily Life Series Figures",
+        "slug": "popmart-5666",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/5666/SPY-%C3%97-FAMILY-Daily-Life-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 8,
+        "retail_price": 19.99
+      },
+      {
+        "name": "Evangelion Pilot Series Figures",
+        "slug": "popmart-4709",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/4709/Evangelion-Pilot-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 9,
+        "retail_price": 22.99
+      },
+      {
+        "name": "DRAGON BALL-Alloy Vehicles Series Figures",
+        "slug": "popmart-3124",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/3124/DRAGON-BALL-Alloy-Vehicles-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 10,
+        "retail_price": 20.99
+      },
+      {
+        "name": "Gintama Welcome To Yorozuya Series Figures",
+        "slug": "popmart-5698",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/5698/Gintama-Welcome-To-Yorozuya-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 11,
+        "retail_price": 19.99
+      }
+    ]
+  },
+  {
+    "brand": "POP MART",
+    "series": "GAMES",
+    "slug": "popmart-287",
+    "source_url": "https://www.popmart.com/us/collection/287",
+    "figures": [
+      {
+        "name": "Overwatch Play of the Game Series Figures",
+        "slug": "popmart-5222",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/5222/Overwatch-Play-of-the-Game-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 1,
+        "retail_price": 20.99
+      },
+      {
+        "name": "Hearthstone Legends in Tavern Series Figures",
+        "slug": "popmart-4508",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/4508/Hearthstone-Legends-in-Tavern-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 2,
+        "retail_price": 30.99
+      },
+      {
+        "name": "Fight For the Golden Spatula Chibi Series Figures",
+        "slug": "popmart-1696",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/1696/Fight-For-the-Golden-Spatula-Chibi-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 3,
+        "retail_price": 19.99
+      },
+      {
+        "name": "Fight For the Golden Spatula Chibi Series Figures II",
+        "slug": "popmart-3790",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/3790/Fight-For-the-Golden-Spatula-Chibi-Series-Figures-II",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 4,
+        "retail_price": 19.99
+      },
+      {
+        "name": "Honor of Kings Baby Heroes-Gratitude Season Series Figures",
+        "slug": "popmart-3455",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/3455/Honor-of-Kings-Baby-Heroes-Gratitude-Season-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 5,
+        "retail_price": 19.99
+      },
+      {
+        "name": "League of Legends Classic Characters Series Figures",
+        "slug": "popmart-214",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/214/League-of-Legends-Classic-Characters-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 6,
+        "retail_price": 19.99
+      },
+      {
+        "name": "Genshin Impact Dress-Up Dreams Themed Chibi Series Figures",
+        "slug": "popmart-1466",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/1466/Genshin-Impact-Dress-Up-Dreams-Themed-Chibi-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 7,
+        "retail_price": 19.99
+      },
+      {
+        "name": "Eggy Party: Colorful Playland Classic Series Figures",
+        "slug": "popmart-1844",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/1844/Eggy-Party%3A-Colorful-Playland-Classic-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 8,
+        "retail_price": 19.99
+      },
+      {
+        "name": "League of Legends: Arcane Series Figures",
+        "slug": "popmart-2217",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/2217/League-of-Legends%3A-Arcane-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 9,
+        "retail_price": 30.99
+      },
+      {
+        "name": "League of Legends K/DA ALL OUT Series Figures",
+        "slug": "popmart-1605",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/1605/League-of-Legends-K%2FDA-ALL-OUT-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 10,
+        "retail_price": 24.99
+      }
+    ]
+  },
+  {
+    "brand": "POP MART",
+    "series": "MOVIES",
+    "slug": "popmart-286",
+    "source_url": "https://www.popmart.com/us/collection/286",
+    "figures": [
+      {
+        "name": "Minions Bello World Series Figures",
+        "slug": "popmart-5669",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/5669/Minions-Bello-World-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 1,
+        "retail_price": 19.99
+      },
+      {
+        "name": "Minions Bedtime Stories by Bob and Tim Series Figures",
+        "slug": "popmart-2839",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/2839/Minions-Bedtime-Stories-by-Bob-and-Tim-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 2,
+        "retail_price": 19.99
+      },
+      {
+        "name": "Star Wars Grogu Tiny But Mighty Series Figures",
+        "slug": "popmart-5992",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/5992/Star-Wars-Grogu-Tiny-But-Mighty-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 3,
+        "retail_price": 19.99
+      },
+      {
+        "name": "Marvel Iron Man: A Journey Through Armors Series Figures",
+        "slug": "popmart-6095",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/6095/Marvel-Iron-Man%3A-A-Journey-Through-Armors-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 4,
+        "retail_price": 19.99
+      },
+      {
+        "name": "Chucky Franchise Series Figures",
+        "slug": "popmart-3611",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/3611/Chucky-Franchise-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 5,
+        "retail_price": 19.99
+      },
+      {
+        "name": "Star Wars Series Figures",
+        "slug": "popmart-1109",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/1109/Star-Wars-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 6,
+        "retail_price": 19.99
+      },
+      {
+        "name": "NeZha 2 Dress Up Party Series Vinyl Plush Doll Pendant",
+        "slug": "popmart-5219",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/5219/NeZha-2-Dress-Up-Party-Series-Vinyl-Plush-Doll-Pendant",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 7,
+        "retail_price": 36.99
+      },
+      {
+        "name": "NeZha 2 Born Bonds Series Figures",
+        "slug": "popmart-3447",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/3447/NeZha-2-Born-Bonds-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 8,
+        "retail_price": 19.99
+      },
+      {
+        "name": "NeZha 2 Hug Series Vinyl Plush Doll-Ao Bing&#x27;s Loong Edition",
+        "slug": "popmart-5220",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/5220/NeZha-2-Hug-Series-Vinyl-Plush-Doll-Ao-Bing&#x27;s-Loong-Edition",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 9,
+        "retail_price": 66.99
+      },
+      {
+        "name": "NeZha 2 Hug Series Vinyl Plush Doll-Nezha&#x27;s Panda Edition",
+        "slug": "popmart-5221",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/5221/NeZha-2-Hug-Series-Vinyl-Plush-Doll-Nezha&#x27;s-Panda-Edition",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 10,
+        "retail_price": 66.99
+      },
+      {
+        "name": "Disney/Pixar POP CUBE CUBIEC Series Figures",
+        "slug": "popmart-6274",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/6274/Disney%2FPixar-POP-CUBE-CUBIEC-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 11,
+        "retail_price": 13.99
+      },
+      {
+        "name": "DIMOO Jurassic World Series",
+        "slug": "popmart-12",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/12/DIMOO-Jurassic-World-Series",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 12,
+        "retail_price": 19.99
+      },
+      {
+        "name": "Universal Despicable Me 4 Series Figures",
+        "slug": "popmart-1304",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/1304/Universal-Despicable-Me-4-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 13,
+        "retail_price": 19.99
+      },
+      {
+        "name": "Minions Lazy Every Day Series Figures",
+        "slug": "popmart-1706",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/1706/Minions-Lazy-Every-Day-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 14,
+        "retail_price": 19.99
+      }
+    ]
+  },
+  {
+    "brand": "POP MART",
+    "series": "DISNEY",
+    "slug": "popmart-103",
+    "source_url": "https://www.popmart.com/us/collection/103",
+    "figures": [
+      {
+        "name": "Disney/Pixar POP CUBE-1 Series Figures",
+        "slug": "popmart-1443",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/1443/Disney%2FPixar-POP-CUBE-1-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 1,
+        "retail_price": 13.99
+      },
+      {
+        "name": "Disney/Pixar Lotso Wondrous Rendezvous Series Figures",
+        "slug": "popmart-1895",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/1895/Disney%2FPixar-Lotso-Wondrous-Rendezvous-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 2,
+        "retail_price": 19.99
+      },
+      {
+        "name": "Disney Stitch Little Emotions Series Figures",
+        "slug": "popmart-2224",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/2224/Disney-Stitch-Little-Emotions-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 3,
+        "retail_price": 19.99
+      },
+      {
+        "name": "Star Wars Bobblehead Series Figures",
+        "slug": "popmart-3079",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/3079/Star-Wars-Bobblehead-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 4,
+        "retail_price": 19.99
+      },
+      {
+        "name": "Disney Mickey Boundless Creativity Series Figures",
+        "slug": "popmart-5610",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/5610/Disney-Mickey-Boundless-Creativity-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 5,
+        "retail_price": 19.99
+      }
+    ]
+  },
+  {
+    "brand": "POP MART",
+    "series": "SPONGEBOB",
+    "slug": "popmart-392",
+    "source_url": "https://www.popmart.com/us/collection/392",
+    "figures": [
+      {
+        "name": "SpongeBob Best Friends Series Figures",
+        "slug": "popmart-2167",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/2167/SpongeBob-Best-Friends-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 1,
+        "retail_price": 19.99
+      },
+      {
+        "name": "SpongeBob’s Window Series Figurine",
+        "slug": "popmart-1338",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/1338/SpongeBob%E2%80%99s-Window-Series-Figurine",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 2,
+        "retail_price": 29.99
+      },
+      {
+        "name": "SpongeBob SquarePants Carnival Anniversary Series Scene Sets",
+        "slug": "popmart-1479",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/1479/SpongeBob-SquarePants-Carnival-Anniversary-Series-Scene-Sets",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 3,
+        "retail_price": 16.99
+      },
+      {
+        "name": "SpongeBob SquarePants Daily Quirks Series Figures",
+        "slug": "popmart-1297",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/1297/SpongeBob-SquarePants-Daily-Quirks-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 4,
+        "retail_price": 15.99
+      }
+    ]
+  },
+  {
+    "brand": "POP MART",
+    "series": "MICKEY &amp; FRIENDS",
+    "slug": "popmart-279",
+    "source_url": "https://www.popmart.com/us/collection/279",
+    "figures": [
+      {
+        "name": "Disney Mickey Remixed: Mickey Meets Pixar Series Figures",
+        "slug": "popmart-4043",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/4043/Disney-Mickey-Remixed%3A-Mickey-Meets-Pixar-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 1,
+        "retail_price": 19.99
+      },
+      {
+        "name": "Disney Mickey Childhood of Boundless Imagination Series Figures",
+        "slug": "popmart-1858",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/1858/Disney-Mickey-Childhood-of-Boundless-Imagination-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 2,
+        "retail_price": 19.99
+      },
+      {
+        "name": "The Wonderful Dreams of Mickey and His Friends Series Scene Sets",
+        "slug": "popmart-1697",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/1697/The-Wonderful-Dreams-of-Mickey-and-His-Friends-Series-Scene-Sets",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 3,
+        "retail_price": 19.99
+      }
+    ]
+  },
+  {
+    "brand": "POP MART",
+    "series": "HELLO KITTY &amp; FRIENDS",
+    "slug": "popmart-282",
+    "source_url": "https://www.popmart.com/us/collection/282",
+    "figures": [
+      {
+        "name": "HELLO KITTY AND FRIENDS Pink Party Series Figures",
+        "slug": "popmart-5998",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/5998/HELLO-KITTY-AND-FRIENDS-Pink-Party-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 1,
+        "retail_price": 18.99
+      },
+      {
+        "name": "Hello Kitty and Friends Fall Asleep Series Figures",
+        "slug": "popmart-1972",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/1972/Hello-Kitty-and-Friends-Fall-Asleep-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 2,
+        "retail_price": 18.99
+      },
+      {
+        "name": "Hello Kitty and Friends Sweet Dream Bubble House Series Scene Sets",
+        "slug": "popmart-5668",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/5668/Hello-Kitty-and-Friends-Sweet-Dream-Bubble-House-Series-Scene-Sets",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 3,
+        "retail_price": 18.99
+      }
+    ]
+  },
+  {
+    "brand": "POP MART",
+    "series": "HARRY POTTER",
+    "slug": "popmart-14",
+    "source_url": "https://www.popmart.com/us/collection/14",
+    "figures": [
+      {
+        "name": "Harry Potter Series Trendy Figure",
+        "slug": "popmart-685",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/685/Harry-Potter-Series-Trendy-Figure",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 1,
+        "retail_price": 21.99
+      },
+      {
+        "name": "Harry Potter and the Goblet of Fire Series Figures",
+        "slug": "popmart-3024",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/3024/Harry-Potter-and-the-Goblet-of-Fire-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 2,
+        "retail_price": 19.99
+      },
+      {
+        "name": "Harry Potter:Hogwarts Biographical Series Scene Sets",
+        "slug": "popmart-3675",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/3675/Harry-Potter%3AHogwarts-Biographical-Series-Scene-Sets",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 3,
+        "retail_price": 19.99
+      },
+      {
+        "name": "Harry Potter POP CUBE-1 Series Figures",
+        "slug": "popmart-2781",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/2781/Harry-Potter-POP-CUBE-1-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 4,
+        "retail_price": 13.99
+      },
+      {
+        "name": "Harry Potter POP CUBE-3 Series Figures",
+        "slug": "popmart-2838",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/2838/Harry-Potter-POP-CUBE-3-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 5,
+        "retail_price": 13.99
+      },
+      {
+        "name": "Harry Potter POP CUBE-2 Series Figures",
+        "slug": "popmart-2834",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/2834/Harry-Potter-POP-CUBE-2-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 6,
+        "retail_price": 13.99
+      },
+      {
+        "name": "Fantastic Beasts Series Figures",
+        "slug": "popmart-1447",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/1447/Fantastic-Beasts-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 7,
+        "retail_price": 19.99
+      },
+      {
+        "name": "Harry Potter Heading to Hogwarts Series",
+        "slug": "popmart-158",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/158/Harry-Potter-Heading-to-Hogwarts-Series",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 8,
+        "retail_price": 14.99
+      }
+    ]
+  },
+  {
+    "brand": "POP MART",
+    "series": "MARVEL",
+    "slug": "popmart-280",
+    "source_url": "https://www.popmart.com/us/collection/280",
+    "figures": [
+      {
+        "name": "Marvel Across the Infinite Series Figures",
+        "slug": "popmart-4922",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/4922/Marvel-Across-the-Infinite-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 1,
+        "retail_price": 19.99
+      },
+      {
+        "name": "Marvel Spider-Man Across the Spider-Verse Series Figures",
+        "slug": "popmart-1936",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/1936/Marvel-Spider-Man-Across-the-Spider-Verse-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 2,
+        "retail_price": 19.99
+      },
+      {
+        "name": "Marvel Photo Frame Series Figures",
+        "slug": "popmart-1426",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/1426/Marvel-Photo-Frame-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 3,
+        "retail_price": 19.99
+      },
+      {
+        "name": "Marvel Infinity Saga Series Figures",
+        "slug": "popmart-1108",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/1108/Marvel-Infinity-Saga-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 4,
+        "retail_price": 16.99
+      },
+      {
+        "name": "Marvel Deadpool Series Figures",
+        "slug": "popmart-1684",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/1684/Marvel-Deadpool-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 5,
+        "retail_price": 19.99
+      }
+    ]
+  },
+  {
+    "brand": "POP MART",
+    "series": "DC",
+    "slug": "popmart-281",
+    "source_url": "https://www.popmart.com/us/collection/281",
+    "figures": [
+      {
+        "name": "DC Justice League Childhood Series Figures",
+        "slug": "popmart-945",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/945/DC-Justice-League-Childhood-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 1,
+        "retail_price": 14.99
+      },
+      {
+        "name": "DC Batman 85th Anniversary Series Figures",
+        "slug": "popmart-1478",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/1478/DC-Batman-85th-Anniversary-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 2,
+        "retail_price": 21.99
+      }
+    ]
+  },
+  {
+    "brand": "POP MART",
+    "series": "FIFA",
+    "slug": "popmart-320",
+    "source_url": "https://www.popmart.com/us/collection/320",
+    "figures": [
+      {
+        "name": "THE MONSTERS × FIFA SERIES-Vinyl Plush Pendant",
+        "slug": "popmart-6088",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/6088/THE-MONSTERS-%C3%97-FIFA-SERIES-Vinyl-Plush-Pendant",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 1,
+        "retail_price": 32.99
+      },
+      {
+        "name": "THE MONSTERS 1:00 A.M. Series Figures",
+        "slug": "popmart-4262",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/4262/THE-MONSTERS-1%3A00-A.M.-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 2,
+        "retail_price": 20.99
+      },
+      {
+        "name": "THE MONSTERS 10th Anniversary Series Figures",
+        "slug": "popmart-5696",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/5696/THE-MONSTERS-10th-Anniversary-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 3,
+        "retail_price": 18.99
+      }
+    ]
+  },
+  {
+    "brand": "POP MART",
+    "series": "ALL",
+    "slug": "popmart-8",
+    "source_url": "https://www.popmart.com/us/collection/8",
+    "figures": [
+      {
+        "name": "SKULLPANDA The Mirage Series Figures",
+        "slug": "popmart-2141",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/2141/SKULLPANDA-The-Mirage-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 1,
+        "retail_price": 24.99
+      },
+      {
+        "name": "SKULLPANDA Image Of Reality Series Figures",
+        "slug": "popmart-953",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/953/SKULLPANDA-Image-Of-Reality-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 2,
+        "retail_price": 19.99
+      },
+      {
+        "name": "SKULLPANDA The Ink Plum Blossom Series Figures",
+        "slug": "popmart-720",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/720/SKULLPANDA-The-Ink-Plum-Blossom-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 3,
+        "retail_price": 19.99
+      },
+      {
+        "name": "aespa Fluffy Club Series Vinyl Plush Doll Pendant",
+        "slug": "popmart-6271",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/6271/aespa-Fluffy-Club-Series-Vinyl-Plush-Doll-Pendant",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 4,
+        "retail_price": 32.99
+      },
+      {
+        "name": "Disney Princess Create Your World Series Figures",
+        "slug": "popmart-3154",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/3154/Disney-Princess-Create-Your-World-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 5,
+        "retail_price": 19.99
+      },
+      {
+        "name": "Teletubbies \"Say Hello\" Series Figures",
+        "slug": "popmart-3779",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/3779/Teletubbies-%22Say-Hello%22-Series-Figures",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 6,
+        "retail_price": 23.99
+      },
+      {
+        "name": "Disney Princess&#x27;s Fairy Tales Series Scene Sets",
+        "slug": "popmart-2139",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/2139/Disney-Princess&#x27;s-Fairy-Tales-Series-Scene-Sets",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 7,
+        "retail_price": 19.99
+      }
+    ]
+  },
+  {
+    "brand": "POP MART",
+    "series": "MEGA 100%",
+    "slug": "popmart-28",
+    "source_url": "https://www.popmart.com/us/collection/28",
+    "figures": [
+      {
+        "name": "MEGA SPACE MOLLY 100% Series4",
+        "slug": "popmart-3152",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/3152/MEGA-SPACE-MOLLY-100%25-Series4",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 1,
+        "retail_price": 20.99
+      },
+      {
+        "name": "MEGA SPACE MOLLY 100% × emoji™ Series",
+        "slug": "popmart-2204",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/2204/MEGA-SPACE-MOLLY-100%25-%C3%97-emoji%E2%84%A2-Series",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 2,
+        "retail_price": 20.99
+      },
+      {
+        "name": "MEGA SPACE MOLLY 100% Blooming Series-Rose",
+        "slug": "popmart-2095",
+        "image_url": null,
+        "image_source_url": "https://www.popmart.com/us/products/2095/MEGA-SPACE-MOLLY-100%25-Blooming-Series-Rose",
+        "rarity": "Official product",
+        "edition_type": "standard",
+        "sort_order": 3,
+        "retail_price": 59.99
+      }
+    ]
+  }
+]

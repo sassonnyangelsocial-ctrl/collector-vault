@@ -7,7 +7,7 @@ export default function FigureCard({ figure, state, onOpen, onSave }) {
   function act(event, patch) { event.stopPropagation(); onSave(figure, patch) }
   return <article className={`figure-card ${state.owned ? 'owned-card' : ''}`} onClick={() => onOpen(figure)}>
     <FigureImage figure={figure} />
-    <div className="figure-heading"><div><h3>{figure.name}</h3><small>{figure.series?.name} · {figure.rarity}</small></div><button className={`favorite-button ${state.favorite ? 'active' : ''}`} aria-label="Toggle favorite" onClick={(event) => act(event, { favorite: !state.favorite })}>★</button></div>
+    <div className="figure-heading"><div><h3>{figure.name}</h3><small>{figure.series?.brand?.name} · {figure.series?.name} · {figure.rarity}</small></div><button className={`favorite-button ${state.favorite ? 'active' : ''}`} aria-label="Toggle favorite" onClick={(event) => act(event, { favorite: !state.favorite })}>★</button></div>
     <div className={`market-chip ${market ? '' : 'live-lookup'}`}>{market ? <>Est. ${Number(market.estimated_value).toFixed(0)} <small>asking prices · {market.as_of_date}</small></> : <>Open for live asking prices <small>tap figure</small></>}</div>
     <div className="quantity-control"><button aria-label="Decrease quantity" onClick={(event) => act(event, { quantity: Math.max(0, quantity - 1) })}>−</button><b>{quantity}</b><button aria-label="Increase quantity" onClick={(event) => act(event, { quantity: quantity + 1 })}>+</button></div>
     <div className="figure-actions status-actions">

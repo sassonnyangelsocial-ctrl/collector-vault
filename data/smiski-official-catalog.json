@@ -1,0 +1,852 @@
+[
+  {
+    "brand": "SMISKI",
+    "series": "Series 1",
+    "slug": "series-1",
+    "source_url": "https://smiski.com/e/products/series-1/",
+    "figures": [
+      {
+        "name": "Smiski Hugging Knees",
+        "image_url": "https://smiski.com/wp-content/uploads/2016/03/s1_01.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "Smiski Sitting",
+        "image_url": "https://smiski.com/wp-content/uploads/2016/03/s1_02.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "Smiski Looking Back",
+        "image_url": "https://smiski.com/wp-content/uploads/2016/03/s1_03.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "Smiski Lounging",
+        "image_url": "https://smiski.com/wp-content/uploads/2016/03/s1_04.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "Smiski Hiding",
+        "image_url": "https://smiski.com/wp-content/uploads/2016/03/s1_05.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "Smiski Peeking",
+        "image_url": "https://smiski.com/wp-content/uploads/2016/03/s1_06.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "Series 1 Secret",
+        "image_url": "https://smiski.com/wp-content/uploads/2016/03/s1_secret.png",
+        "rarity": "Secret",
+        "edition_type": "secret"
+      }
+    ]
+  },
+  {
+    "brand": "SMISKI",
+    "series": "Series 2",
+    "slug": "series-2",
+    "source_url": "https://smiski.com/e/products/series-2/",
+    "figures": [
+      {
+        "name": "Smiski Kneeling",
+        "image_url": "https://smiski.com/wp-content/uploads/2016/03/s2_01.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "Smiski Climbing",
+        "image_url": "https://smiski.com/wp-content/uploads/2016/03/s2_02.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "Smiski Daydreaming",
+        "image_url": "https://smiski.com/wp-content/uploads/2016/03/s2_03.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "Smiski Pushing",
+        "image_url": "https://smiski.com/wp-content/uploads/2016/03/s2_04.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "Smiski Peeking",
+        "image_url": "https://smiski.com/wp-content/uploads/2016/03/s2_05.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "Smiski Listening",
+        "image_url": "https://smiski.com/wp-content/uploads/2016/03/s2_06.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "Series 2 Secret",
+        "image_url": "https://smiski.com/wp-content/uploads/2016/03/s2_secret.png",
+        "rarity": "Secret",
+        "edition_type": "secret"
+      }
+    ]
+  },
+  {
+    "brand": "SMISKI",
+    "series": "Series 3",
+    "slug": "series-3",
+    "source_url": "https://smiski.com/e/products/series-3/",
+    "figures": [
+      {
+        "name": "Smiski Bridge",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2016/09/3_3.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "Smiski Peeking",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2016/09/3_4.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "Smiski Climbing",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2016/09/3_5.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "Smiski Little",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2016/09/3_6.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "Smiski Hiding",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2016/09/3_7.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "Smiski Handstand",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2016/09/3_8.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "Series 3 Secret",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2016/09/s3_secret.png",
+        "rarity": "Secret",
+        "edition_type": "secret"
+      }
+    ]
+  },
+  {
+    "brand": "SMISKI",
+    "series": "Series 4",
+    "slug": "series-4",
+    "source_url": "https://smiski.com/e/products/series-4/",
+    "figures": [
+      {
+        "name": "Smiski Sneaking",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2017/02/3_3.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "Smiski Scared",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2017/02/3_4.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "Smiski Relaxing",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2017/02/3_5.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "Smiski Lazy",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2017/02/3_6.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "Smiski Stuck",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2017/02/3_7.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "Smiski Defeated",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2017/02/3_8.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "Series 4 Secret",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2017/02/s3_secret-1.png",
+        "rarity": "Secret",
+        "edition_type": "secret"
+      }
+    ]
+  },
+  {
+    "brand": "SMISKI",
+    "series": "Bath Series",
+    "slug": "bath-series",
+    "source_url": "https://smiski.com/e/products/bath-series/",
+    "figures": [
+      {
+        "name": "Smiski Shampooing",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2017/10/awadateski.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "Smiski Not Looking",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2017/10/tereski.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "Smiski Scrubbing",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2017/10/araikkoski.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "Smiski With Duck",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2017/10/ahirumochiski.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "Smiski Dazed",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2017/10/noboseski.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "Smiski Looking",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2017/10/mitaski.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "Bath Series Secret",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2017/10/bath_secret.png",
+        "rarity": "Secret",
+        "edition_type": "secret"
+      }
+    ]
+  },
+  {
+    "brand": "SMISKI",
+    "series": "Toilet Series",
+    "slug": "toilet-series",
+    "source_url": "https://smiski.com/e/products/toilet-series/",
+    "figures": [
+      {
+        "name": "Smiski Peek-A-Boo",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2017/10/hyokkoriski.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "Smiski Little (Smelly)",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2017/10/chibikusaski.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "Smiski Squatting",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2017/10/shagamiski.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "Smiski Helping Out",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2017/10/sashidashiski.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "Smiski Resting",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2017/10/koshikakeski.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "Smiski Holding In",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2017/10/gamanski.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "Toilet Series Secret",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2017/10/toilet_secret.png",
+        "rarity": "Secret",
+        "edition_type": "secret"
+      }
+    ]
+  },
+  {
+    "brand": "SMISKI",
+    "series": "Living Series",
+    "slug": "living",
+    "source_url": "https://smiski.com/e/products/living/",
+    "figures": [
+      {
+        "name": "Smiski Daydreaming",
+        "image_url": "https://aa243gcvbg.smartrelease.jp/wp-content/uploads/2018/08/05.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "Smiski Playing",
+        "image_url": "https://aa243gcvbg.smartrelease.jp/wp-content/uploads/2018/08/04.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "Smiski Hiding",
+        "image_url": "https://aa243gcvbg.smartrelease.jp/wp-content/uploads/2018/08/02.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "Smiski Nap Time",
+        "image_url": "https://aa243gcvbg.smartrelease.jp/wp-content/uploads/2018/08/03.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "Smiski Thinking",
+        "image_url": "https://aa243gcvbg.smartrelease.jp/wp-content/uploads/2018/08/01.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "Smiski Lifting",
+        "image_url": "https://aa243gcvbg.smartrelease.jp/wp-content/uploads/2018/08/06.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "Living Series Secret",
+        "image_url": null,
+        "rarity": "Secret",
+        "edition_type": "secret"
+      }
+    ]
+  },
+  {
+    "brand": "SMISKI",
+    "series": "Bed Series",
+    "slug": "bed-series",
+    "source_url": "https://smiski.com/e/products/bed-series/",
+    "figures": [
+      {
+        "name": "SMISKI before rest",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2019/07/img_bed_products_01.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "SMISKI Sleepy",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2019/07/img_bed_products_02.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "SMISKI co-sleeping",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2019/07/img_bed_products_03.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "SMISKI reading",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2019/07/img_bed_products_04.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "SMISKI at sleep",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2019/07/img_bed_products_05.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "SMISKI fussing",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2019/07/img_bed_products_06.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "Bed Series Secret",
+        "image_url": null,
+        "rarity": "Secret",
+        "edition_type": "secret"
+      }
+    ]
+  },
+  {
+    "brand": "SMISKI",
+    "series": "Yoga Series",
+    "slug": "yoga-series",
+    "source_url": "https://smiski.com/e/products/yoga-series/",
+    "figures": [
+      {
+        "name": "SMISKI Lotus Pose",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2019/09/img_yoga_01.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "SMISKI Twist Pose",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2019/09/img_yoga_02.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "SMISKI Shouldstand Pose",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2019/09/img_yoga_03.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "SMISKI Triangle Pose",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2019/09/img_yoga_04.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "SMISKI Tree Pose",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2019/09/img_yoga_05.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "SMISKI Ship Pose",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2019/09/img_yoga_06.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "Yoga Series Secret",
+        "image_url": null,
+        "rarity": "Secret",
+        "edition_type": "secret"
+      }
+    ]
+  },
+  {
+    "brand": "SMISKI",
+    "series": "Cheer Series",
+    "slug": "cheer",
+    "source_url": "https://smiski.com/e/products/cheer/",
+    "figures": [
+      {
+        "name": "Smiski Marching",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2020/12/img_cheer_01.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "Smiski on Drums",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2020/12/img_cheer_02.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "Smiski on your side",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2020/12/img_cheer_03.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "Smiski Dancing",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2020/12/img_cheer_04.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "Little Smiski Cheerieding",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2020/12/img_cheer_05.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "Smiski Cheering",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2020/12/img_cheer_06.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "Cheer Series Secret",
+        "image_url": null,
+        "rarity": "Secret",
+        "edition_type": "secret"
+      }
+    ]
+  },
+  {
+    "brand": "SMISKI",
+    "series": "Museum Series",
+    "slug": "museum",
+    "source_url": "https://smiski.com/e/products/museum/",
+    "figures": [
+      {
+        "name": "Smiski The Source",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2020/12/img_museum_products_01.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "Smiski Fuzin&Raijin",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2020/12/img_museum_products_02.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "Smiski Bacchus",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2020/12/img_museum_products_03.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "Smiski Vela’zquez",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2020/12/img_museum_products_04.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "Smiski Dali",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2020/12/img_museum_products_05.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "Smiski Pearl Earring",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2020/12/img_museum_products_06.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "Museum Series Secret",
+        "image_url": null,
+        "rarity": "Secret",
+        "edition_type": "secret"
+      }
+    ]
+  },
+  {
+    "brand": "SMISKI",
+    "series": "Work Series",
+    "slug": "work-series",
+    "source_url": "https://smiski.com/e/products/work-series/",
+    "figures": [
+      {
+        "name": "SMISKI Approving",
+        "image_url": "https://smiski.com/wp-content/uploads/2022/02/img_work_products_01.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "SMISKI Researching",
+        "image_url": "https://smiski.com/wp-content/uploads/2022/02/img_work_products_02.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "SMISKI Presenting",
+        "image_url": "https://smiski.com/wp-content/uploads/2022/02/img_work_products_03.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "SMISKI Good Idea",
+        "image_url": "https://smiski.com/wp-content/uploads/2022/02/img_work_products_04.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "SMISKI On the Rord",
+        "image_url": "https://smiski.com/wp-content/uploads/2022/02/img_work_products_05.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "Little SMISKI Group Think",
+        "image_url": "https://smiski.com/wp-content/uploads/2022/02/img_work_products_06.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "Work Series Secret",
+        "image_url": null,
+        "rarity": "Secret",
+        "edition_type": "secret"
+      }
+    ]
+  },
+  {
+    "brand": "SMISKI",
+    "series": "Dressing Series",
+    "slug": "dressing",
+    "source_url": "https://smiski.com/e/products/dressing/",
+    "figures": [
+      {
+        "name": "SMISKI Underpants",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2022/10/img_underpants_2.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "SMISKI Struggling",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2022/10/img_struggling.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "SMISKI Loose Pants",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2022/10/img_loose-pants.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "SMISKI Putting On Socks",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2022/10/img_putting-on-socks_2.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "SMISKI Sweater",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2022/10/img_sweater.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "SMISKI Tight Pants",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2022/10/img_tight-pants.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "Dressing Series Secret",
+        "image_url": null,
+        "rarity": "Secret",
+        "edition_type": "secret"
+      }
+    ]
+  },
+  {
+    "brand": "SMISKI",
+    "series": "Exercising Series",
+    "slug": "exercising",
+    "source_url": "https://smiski.com/e/products/exercising/",
+    "figures": [
+      {
+        "name": "SMISKI Doing Crunches",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2023/05/img_doingcrunches.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "SMISKI Aerobics",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2023/05/img_aerobics.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "Little SMISKI Balance",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2023/05/img_balance.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "SMISKI Dumbbell",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2023/05/img_dumbbell.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "SMISKI Hoop",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2023/05/img_hulahoop.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "SMISKI Stretch",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2023/05/img_stretch.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "Exercising Series Secret",
+        "image_url": null,
+        "rarity": "Secret",
+        "edition_type": "secret"
+      }
+    ]
+  },
+  {
+    "brand": "SMISKI",
+    "series": "Moving Series",
+    "slug": "moving",
+    "source_url": "https://smiski.com/e/products/moving/",
+    "figures": [
+      {
+        "name": "SMISKI Carrying Ladder",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2024/01/carrying-ladder.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "SMISKI Balancing Boxes",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2024/01/balancing-boxes.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "SMISKI Decorating",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2024/01/decorating.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "Little SMISKI Teamwork",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2024/01/teamwork.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "Green Thumb SMISKI",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2024/01/green-thumb.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "SMISKI Falling Down",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2024/01/falling-down.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "Moving Series Secret",
+        "image_url": null,
+        "rarity": "Secret",
+        "edition_type": "secret"
+      }
+    ]
+  },
+  {
+    "brand": "SMISKI",
+    "series": "Sunday Series",
+    "slug": "sunday",
+    "source_url": "https://smiski.com/e/products/sunday/",
+    "figures": [
+      {
+        "name": "SMISKI Blowing Bubbles",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2025/02/img_product_sunday01.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "SMISKI Paper Airplane",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2025/02/img_product_sunday02.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "SMISKI Sunbathing",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2025/02/img_product_sunday03.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "SMISKI Sing-Along",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2025/02/img_product_sunday04.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "SMISKI Skateboarding",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2025/02/img_product_sunday05.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "SMISKI Gardening",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2025/02/img_product_sunday06.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "Sunday Series Secret",
+        "image_url": null,
+        "rarity": "Secret",
+        "edition_type": "secret"
+      }
+    ]
+  },
+  {
+    "brand": "SMISKI",
+    "series": "HIPPERS",
+    "slug": "hippers",
+    "source_url": "https://smiski.com/e/products/hippers/",
+    "figures": [
+      {
+        "name": "SMISKI on His Smartphone",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2024/09/hippers_01.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "SMISKI Trying to Climb",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2024/09/hippers_02.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "SMISKI Looking Out",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2024/09/hippers_03.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "SMISKI Sticking",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2024/09/hippers_04.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "SMISKI Dozing",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2024/09/hippers_05.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "SMISKI Upside Down",
+        "image_url": "https://smiski.com/e/wp-content/uploads/2024/09/hippers_06.png",
+        "rarity": "Regular",
+        "edition_type": "standard"
+      },
+      {
+        "name": "HIPPERS Secret",
+        "image_url": null,
+        "rarity": "Secret",
+        "edition_type": "secret"
+      }
+    ]
+  }
+]
