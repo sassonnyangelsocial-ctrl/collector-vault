@@ -23,5 +23,17 @@ const figures = catalog.flatMap((item) => item.figures.map((figure) => ({
   image_source_url: figure.image_source_url,
 })))
 
-const rows = mode === 'figures' ? figures : series
-console.log(JSON.stringify({ total: rows.length, rows: rows.slice(start, start + count) }))
+const rows = mode === 'figures' ? figures : mode === 'series-figures'
+  ? catalog.slice(start, start + count).flatMap((item) => item.figures.map((figure) => ({
+      series_slug: item.slug,
+      name: figure.name,
+      slug: figure.slug,
+      rarity: figure.rarity,
+      edition_type: figure.edition_type,
+      sort_order: figure.sort_order,
+      image_url: figure.image_url,
+      image_source_url: figure.image_source_url,
+      official_lineup: Boolean(item.official_lineup),
+    })))
+  : series
+console.log(JSON.stringify({ total: rows.length, rows: mode === 'series-figures' ? rows : rows.slice(start, start + count) }))
