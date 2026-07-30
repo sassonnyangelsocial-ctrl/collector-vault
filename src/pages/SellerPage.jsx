@@ -5,9 +5,12 @@ import "./SellerPage.css";
 import OrdersDetailed from "../components/OrdersDetailed";
 import LiveWheel from "../components/LiveWheel";
 import PrivateLaunchStudio from "../components/PrivateLaunchStudio";
+import { Expenses, FinanceOverview, Shows } from "../components/SellerFinanceWorkspace";
 
 const sellerTabs = [
   ["overview", "Overview"],
+  ["shows", "Show analytics"],
+  ["expenses", "Expenses"],
   ["orders", "Purchase orders"],
   ["suppliers", "Suppliers"],
   ["sales", "Whatnot sales"],
@@ -25,25 +28,37 @@ export default function SellerPage({ session, isAdmin = false }) {
     [orders, setOrders] = useState([]),
     [suppliers, setSuppliers] = useState([]),
     [sales, setSales] = useState([]),
+    [shows, setShows] = useState([]),
+    [expenses, setExpenses] = useState([]),
+    [importRuns, setImportRuns] = useState([]),
     [message, setMessage] = useState(""),
     [loading, setLoading] = useState(true);
   async function load() {
-    const [o, p, s] = await Promise.all([
+    const userId = session.user.id;
+    const [o, p, s, sh, ex, ir] = await Promise.all([
       supabase
         .from("seller_purchase_orders")
         .select("*,supplier:seller_suppliers(name)")
+        .eq("user_id", userId)
         .order("created_at", { ascending: false }),
-      supabase.from("seller_suppliers").select("*").order("name"),
+      supabase.from("seller_suppliers").select("*").eq("user_id", userId).order("name"),
       supabase
         .from("seller_sales")
         .select("*")
+        .eq("user_id", userId)
         .order("sold_at", { ascending: false }),
+      supabase.from("seller_shows").select("*").eq("user_id", userId).order("started_at", { ascending: false }),
+      supabase.from("seller_expenses").select("*").eq("user_id", userId).order("expense_date", { ascending: false }),
+      supabase.from("seller_import_runs").select("*").eq("user_id", userId).order("imported_at", { ascending: false }).limit(10),
     ]);
-    const error = o.error || p.error || s.error;
+    const error = o.error || p.error || s.error || sh.error || ex.error || ir.error;
     if (error) setMessage(error.message);
     setOrders(o.data || []);
     setSuppliers(p.data || []);
     setSales(s.data || []);
+    setShows(sh.data || []);
+    setExpenses(ex.data || []);
+    setImportRuns(ir.data || []);
     setLoading(false);
   }
   useEffect(() => {
@@ -100,14 +115,16 @@ export default function SellerPage({ session, isAdmin = false }) {
       </div>
       {message && <p className="admin-message">{message}</p>}
       {tab === "overview" && (
-        <Overview
-          metrics={metrics}
+        <FinanceOverview
           orders={orders}
           sales={sales}
+          shows={shows}
+          expenses={expenses}
           setTab={setTab}
-          isAdmin={isAdmin}
         />
       )}{" "}
+      {tab === "shows" && <Shows shows={shows} expenses={expenses} />}{" "}
+      {tab === "expenses" && <Expenses expenses={expenses} shows={shows} userId={session.user.id} reload={load} notify={setMessage} />}{" "}
       {tab === "orders" && (
         <OrdersDetailed
           orders={orders}
@@ -128,6 +145,8 @@ export default function SellerPage({ session, isAdmin = false }) {
       {tab === "sales" && (
         <Sales
           sales={sales}
+          shows={shows}
+          importRuns={importRuns}
           userId={session.user.id}
           reload={load}
           notify={setMessage}
@@ -563,7 +582,7 @@ function Suppliers({ suppliers, userId, reload, notify }) {
   );
 }
 
-function Sales({ sales, userId, reload, notify }) {
+function Sales({ sales, shows, importRuns, userId, reload, notify }) {
   const [busy, setBusy] = useState(false);
   function importCsv(file) {
     if (!file) return;
@@ -584,49 +603,55 @@ function Sales({ sales, userId, reload, notify }) {
                 .replace(/[$,]/g, "")
                 .replace(/^\((.*)\)$/, "-$1"),
             ) || 0,
+          showUpserts = new Map(),
           rows = data
-            .map((r) => ({
+            .map((r, index) => {
+              const soldAt = pick(r, ["processed date", "order placed at utc", "transaction completed at utc", "date"]) || new Date().toISOString();
+              const showTitle = pick(r, ["show title", "show name", "livestream title", "live show", "show"]) || "Marketplace / unassigned";
+              const showExternal = pick(r, ["show id", "show_id", "livestream id", "live id", "show uuid"]) || `unassigned-${String(soldAt).slice(0, 7)}`;
+              const commission = Math.abs(num(pick(r, ["commission fee", "commission", "whatnot commission"]))), processing = Math.abs(num(pick(r, ["processing fee", "payment processing fee"]))), feeTax = Math.abs(num(pick(r, ["tax on fees", "taxes on fees", "fee tax"]))), promotion = Math.abs(num(pick(r, ["promotion fee", "promotions", "boost fee", "boosts"]))), shipping = Math.abs(num(pick(r, ["seller paid shipping", "shipping cost", "seller shipping"]))), adjustment = Math.abs(num(pick(r, ["shipping adjustment", "shipping adjustments", "surcharge"]))), refund = Math.abs(num(pick(r, ["refund", "refund amount", "refunded amount"])));
+              const row = {
               user_id: userId,
               platform: "Whatnot",
-              external_order_id: pick(r, ["order id", "order_id"]),
+              external_order_id: pick(r, ["order id", "order_id", "transaction id"]) || `import-${showExternal}-${index}`,
+              show_title: showTitle,
               buyer_handle: pick(r, ["buyer", "buyer username"]),
               product_name:
                 pick(r, ["product name", "product", "title"]) || "Whatnot sale",
-              sold_at:
-                pick(r, [
-                  "processed date",
-                  "order placed at utc",
-                  "transaction completed at utc",
-                ]) || new Date().toISOString(),
+              sold_at: soldAt,
               quantity: num(pick(r, ["quantity"])) || 1,
               gross_sales: num(
                 pick(r, ["subtotal", "sale price", "gross sales", "total"]),
               ),
-              platform_fees:
-                Math.abs(num(pick(r, ["commission fee", "commission"]))) +
-                Math.abs(
-                  num(pick(r, ["processing fee", "payment processing fee"])),
-                ),
-              shipping_cost: Math.abs(
-                num(pick(r, ["seller paid shipping", "shipping cost"])),
-              ),
+              platform_fees: commission + processing + feeTax + promotion,
+              commission_fee: commission, processing_fee: processing, fee_tax: feeTax, promotion_fee: promotion, refund_amount: refund,
+              shipping_cost: shipping, shipping_adjustment: adjustment,
               payout_amount: num(
                 pick(r, ["paid out amount", "earnings", "resulting earnings"]),
               ),
               status: pick(r, ["order status", "status"]) || "completed",
               raw_data: r,
-            }))
+              };
+              const show = showUpserts.get(showExternal) || {user_id:userId,platform:"Whatnot",external_show_id:showExternal,title:showTitle,started_at:soldAt,orders_count:0,items_sold:0,gross_sales:0,refunds:0,commission_fees:0,processing_fees:0,fee_taxes:0,seller_paid_shipping:0,shipping_adjustments:0,promotion_fees:0,payout_amount:0};
+              show.orders_count++; show.items_sold += row.quantity; show.gross_sales += row.gross_sales; show.refunds += refund; show.commission_fees += commission; show.processing_fees += processing; show.fee_taxes += feeTax; show.seller_paid_shipping += shipping; show.shipping_adjustments += adjustment; show.promotion_fees += promotion; show.payout_amount += row.payout_amount; showUpserts.set(showExternal, show);
+              return {...row, show_external_id:showExternal};
+            })
             .filter(
               (r) =>
                 r.external_order_id ||
                 r.gross_sales ||
                 r.product_name !== "Whatnot sale",
             ),
-          { error } = await supabase
+          { data: savedShows, error: showError } = await supabase.from("seller_shows").upsert([...showUpserts.values()], { onConflict: "user_id,platform,external_show_id" }).select("id,external_show_id"),
+          showIds = new Map((savedShows || []).map(x => [x.external_show_id, x.id])),
+          linkedRows = rows.map(({show_external_id, ...r}) => ({...r, show_id: showIds.get(show_external_id) || null})),
+          { error } = showError ? { error: showError } : await supabase
             .from("seller_sales")
-            .upsert(rows, { onConflict: "user_id,platform,external_order_id" });
+            .upsert(linkedRows, { onConflict: "user_id,platform,external_order_id" });
+        const lowerName = String(file.name || "").toLowerCase(), importType = lowerName.includes("weekly") ? "weekly_orders" : lowerName.includes("statement") ? "seller_statement" : lowerName.includes("ledger") ? "ledger" : "show_report";
+        await supabase.from("seller_import_runs").insert({user_id:userId,platform:"Whatnot",import_type:importType,file_name:file.name,rows_read:data.length,rows_imported:error?0:linkedRows.length,shows_imported:error?0:showUpserts.size,status:error?"failed":"completed",error_message:error?.message||null});
         notify(
-          error ? error.message : `Imported ${rows.length} Whatnot sales.`,
+          error ? error.message : `Imported ${linkedRows.length} sales across ${showUpserts.size} shows.`,
         );
         setBusy(false);
         if (!error) reload();
