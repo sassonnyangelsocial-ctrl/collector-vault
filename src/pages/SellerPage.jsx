@@ -152,7 +152,7 @@ export default function SellerPage({ session, isAdmin = false }) {
           notify={setMessage}
         />
       )}{" "}
-      {tab === "wheel" && <LiveWheel />}{" "}
+      {tab === "wheel" && <LiveWheel userId={session.user.id} />}{" "}
       {tab === "marketing" && isAdmin && <PrivateLaunchStudio session={session} />}
     </main>
   );
