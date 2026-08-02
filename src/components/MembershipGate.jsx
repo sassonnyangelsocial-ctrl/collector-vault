@@ -17,6 +17,10 @@ export default function MembershipGate({ session, children }) {
   useEffect(() => { load() }, [session.user.id])
 
   const current = membership && (membership.grandfathered || ['active', 'trialing'].includes(membership.status)) && (!membership.current_period_end || new Date(membership.current_period_end) > new Date())
+  const createdAt = new Date(session.user.created_at).getTime()
+  const promoStart = new Date('2026-08-02T04:00:00.000Z').getTime()
+  const promoEnd = new Date('2026-08-08T03:59:59.999Z').getTime()
+  const launchPromo = createdAt >= promoStart && createdAt <= promoEnd && Date.now() <= promoEnd && !membership?.stripe_subscription_id
   if (loading) return <div className="center">Checking membership...</div>
   if (current) return children
 
@@ -35,10 +39,10 @@ export default function MembershipGate({ session, children }) {
   }
 
   return <main className="membership-page">
-    <section className="membership-heading"><span className="eyebrow">Collector Vault membership</span><h1>Start your 7-day free trial</h1><p>Track your collection, build wishlists and trade lists, and follow verified restock and launch alerts.</p></section>
+    <section className="membership-heading"><span className="eyebrow">Collector Vault membership</span><h1>{launchPromo?'Your first month is free':'Start your 7-day free trial'}</h1><p>{launchPromo?'Launch offer unlocked: subscribe by Friday, August 7, and pay nothing for your first 30 days.':'Track your collection, build wishlists and trade lists, and follow verified restock and launch alerts.'}</p></section>
     <section className="pricing-grid">
-      <article className="price-card"><span>Monthly</span><strong>$4.99<small>/month</small></strong><p>Flexible access, billed monthly after your free trial.</p><button className="primary-button" onClick={() => checkout('month')}>Start monthly trial</button></article>
-      <article className="price-card featured"><span>Best value</span><strong>$49.99<small>/year</small></strong><p>Save compared with monthly billing. Cancel anytime.</p><button className="primary-button" onClick={() => checkout('year')}>Start yearly trial</button></article>
+      <article className="price-card"><span>Monthly</span><strong>$4.99<small>/month</small></strong><p>{launchPromo?'$0 today. Monthly billing begins after 30 free days.':'Flexible access, billed monthly after your free trial.'}</p><button className="primary-button" onClick={() => checkout('month')}>{launchPromo?'Claim free month':'Start monthly trial'}</button></article>
+      <article className="price-card featured"><span>Best value</span><strong>$49.99<small>/year</small></strong><p>{launchPromo?'$0 today. Annual billing begins after 30 free days.':'Save compared with monthly billing. Cancel anytime.'}</p><button className="primary-button" onClick={() => checkout('year')}>{launchPromo?'Claim free month':'Start yearly trial'}</button></article>
     </section>
     {message && <p className="form-message membership-message">{message}</p>}
     <button className="text-button" onClick={() => supabase.auth.signOut()}>Sign out</button>
