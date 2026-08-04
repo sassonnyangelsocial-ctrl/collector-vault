@@ -124,6 +124,7 @@ export default function LiveStreamStage({ userId }) {
     loadRooms();
   }
   async function saveWheelSetup() {
+    if (!isHost) return;
     const cleaned = cleanEntries(entriesText);
     const { error } = await supabase.from("live_wheel_rooms").update({
       entries: cleaned,
