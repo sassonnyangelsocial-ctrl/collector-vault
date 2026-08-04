@@ -24,7 +24,7 @@ export default function LiveStreamStage({ userId }) {
   const [prize, setPrize] = useState("");
   const [messages, setMessages] = useState([]);
   const [chatText, setChatText] = useState("");
-  const [displayName, setDisplayName] = useState("Collector");
+  const [displayName, setDisplayName] = useState(() => "Guest " + crypto.randomUUID().slice(0, 4));
   const [notice, setNotice] = useState("");
   const [viewerCount, setViewerCount] = useState(0);
   const [wheelActivity, setWheelActivity] = useState("");
@@ -46,8 +46,10 @@ export default function LiveStreamStage({ userId }) {
 
   useEffect(() => {
     loadRooms();
-    supabase.from("profiles").select("display_name,username").eq("id", userId)
-      .maybeSingle().then(({ data }) => setDisplayName(data?.display_name || data?.username || "Collector"));
+    if (userId) {
+      supabase.from("profiles").select("display_name,username").eq("id", userId)
+        .maybeSingle().then(({ data }) => setDisplayName(data?.display_name || data?.username || "Collector"));
+    }
   }, [userId]);
 
   useEffect(() => {
@@ -276,7 +278,7 @@ export default function LiveStreamStage({ userId }) {
     const body = chatText.trim().slice(0, 300);
     if (!body) return;
     const { error } = await supabase.from("live_wheel_chat_messages").insert({
-      room_id: room.id, sender_user_id: userId, participant_id: participantId.current,
+      room_id: room.id, sender_user_id: userId || null, participant_id: participantId.current,
       display_name: displayName.slice(0, 32), body,
     });
     if (error) setNotice(error.message);
@@ -289,10 +291,10 @@ export default function LiveStreamStage({ userId }) {
         <div><span className="eyebrow">Live wheel room</span><h2>Stream your giveaway live</h2><p>Hosts can share camera and microphone while viewers watch the wheel and chat.</p></div>
         <span className="live-pill">BETA</span>
       </div>
-      <div className="live-create">
+      {userId && <div className="live-create">
         <input value={title} onChange={(event) => setTitle(event.target.value)} maxLength="160" aria-label="Live room title"/>
         <button className="primary-button" onClick={createRoom}>Create host room</button>
-      </div>
+      </div>}
       <div className="live-room-list">
         <h3>Rooms live now</h3>
         {rooms.map((item) => <button key={item.id} onClick={() => setRoom(item)}>
@@ -327,7 +329,7 @@ export default function LiveStreamStage({ userId }) {
             <div className="shared-wheel-copy"><span className="eyebrow">Live giveaway wheel</span><h2>{room.prize || "Live giveaway"}</h2><p>{entries.length} entrants · {room.draw_status === "spinning" ? "Selecting a winner…" : "Everyone sees this wheel update live"}</p></div>
             <div className="shared-wheel-wrap">
               <div className="shared-wheel-pointer"/>
-              <div className="shared-prize-wheel" style={{ background: wheelGradient, transform: "rotate(" + Number(room.rotation || 0) + "deg)" }}>
+              <div className={"shared-prize-wheel" + (wheelActivity ? " shuffle-active" : "")} style={{ background: wheelGradient, transform: "rotate(" + Number(room.rotation || 0) + "deg)" }}>
                 {entries.map((name, index) => <span key={name + "-" + index} style={{ transform: "rotate(" + (index * 360 / entries.length + 180 / entries.length) + "deg)" }}><b>{name}</b></span>)}
               </div>
               <div className="shared-wheel-hub">{room.draw_status === "spinning" ? "…" : "LIVE"}</div>
@@ -341,6 +343,11 @@ export default function LiveStreamStage({ userId }) {
             </div>}
             {!isHost && <div className="viewer-wheel-controls" aria-label="Host-only wheel controls"><button disabled>Secure shuffle · host only</button><button disabled>Spin wheel · host only</button></div>}
             {!isHost && !entries.length && <p className="chat-empty">Waiting for the host to add entrants.</p>}
+            <section className="participant-panel">
+              <div><h3>Wheel participants</h3><span>{entries.length} total</span></div>
+              <ol>{entries.map((name, index) => <li key={name + "-participant-" + index}><b>{index + 1}</b><span>{name}</span></li>)}</ol>
+              {!entries.length && <p>No participants have been added yet.</p>}
+            </section>
           </article>
         </div>
         <aside className="live-chat">
@@ -349,6 +356,7 @@ export default function LiveStreamStage({ userId }) {
             {messages.map((message) => <div key={message.id}><b>{message.sender_user_id === room.host_user_id ? "HOST · " : ""}{message.display_name}</b><p>{message.body}</p></div>)}
             {!messages.length && <p className="chat-empty">Say hello when the stream begins.</p>}
           </div>
+          {!userId && <label className="guest-chat-name">Chat name<input value={displayName} onChange={(event) => setDisplayName(event.target.value)} minLength="2" maxLength="32"/></label>}
           <form onSubmit={sendMessage}><input value={chatText} onChange={(event) => setChatText(event.target.value)} placeholder="Write a message…" maxLength="300"/><button>Send</button></form>
         </aside>
       </div>

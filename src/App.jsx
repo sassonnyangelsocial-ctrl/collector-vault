@@ -5,6 +5,7 @@ import HomePage from './pages/HomePage'
 import MembershipGate from './components/MembershipGate'
 import InstallApp from './components/InstallApp'
 import AboutPage from './pages/AboutPage'
+import LiveStreamStage from './components/LiveStreamStage'
 
 export default function App() {
   const [session, setSession] = useState(null)
@@ -31,6 +32,7 @@ export default function App() {
   }, [])
 
   if (loading) return <div className="center">Opening Collector Vault…</div>
+  if (route.startsWith('live-wheel/')) return <main className="seller-page guest-live-page"><LiveStreamStage userId={session?.user?.id || null} /></main>
   if (route.startsWith('about') || ['features', 'tour', 'pricing', 'contact'].includes(route) || (!session && !route.startsWith('signin'))) return <><AboutPage session={session} /><InstallApp /></>
   return <>
     {session ? <MembershipGate session={session}><HomePage session={session} /></MembershipGate> : <AuthPage initialMode={route === 'signin-signup' ? 'signup' : 'login'} />}
