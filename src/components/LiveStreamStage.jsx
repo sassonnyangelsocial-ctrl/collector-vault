@@ -27,6 +27,7 @@ export default function LiveStreamStage({ userId }) {
   const [displayName, setDisplayName] = useState("Collector");
   const [notice, setNotice] = useState("");
   const [viewerCount, setViewerCount] = useState(0);
+  const [wheelActivity, setWheelActivity] = useState("");
   const localVideo = useRef(null);
   const remoteVideo = useRef(null);
   const localStream = useRef(null);
@@ -64,6 +65,7 @@ export default function LiveStreamStage({ userId }) {
       .on("broadcast", { event: "webrtc-offer" }, ({ payload }) => receiveOffer(payload))
       .on("broadcast", { event: "webrtc-answer" }, ({ payload }) => receiveAnswer(payload))
       .on("broadcast", { event: "webrtc-ice" }, ({ payload }) => receiveIce(payload))
+      .on("broadcast", { event: "wheel-shuffle" }, () => showWheelActivity("The host securely shuffled the entrants."))
       .on("presence", { event: "sync" }, () => {
         const people = Object.values(realtime.presenceState()).flat();
         setViewerCount(people.filter((person) => person.role === "viewer").length);
@@ -132,6 +134,28 @@ export default function LiveStreamStage({ userId }) {
       setRoom((current) => ({ ...current, entries: cleaned, prize: prize.trim() || "Live giveaway", winner: "", draw_status: "ready" }));
       setNotice("Wheel setup shared with every viewer.");
     }
+  }
+  function showWheelActivity(message) {
+    setWheelActivity(message);
+    window.setTimeout(() => setWheelActivity(""), 3500);
+  }
+  async function shuffleWheel() {
+    if (!isHost || entries.length < 2 || room.draw_status === "spinning") return;
+    const shuffled = [...entries];
+    for (let index = shuffled.length - 1; index > 0; index -= 1) {
+      const swapIndex = secureIndex(index + 1);
+      [shuffled[index], shuffled[swapIndex]] = [shuffled[swapIndex], shuffled[index]];
+    }
+    const { error } = await supabase.from("live_wheel_rooms").update({
+      entries: shuffled,
+      winner: "",
+      draw_status: "ready",
+    }).eq("id", room.id);
+    if (error) return setNotice(error.message);
+    setEntriesText(shuffled.join("\n"));
+    setRoom((current) => ({ ...current, entries: shuffled, winner: "", draw_status: "ready" }));
+    showWheelActivity("Entrants securely shuffled and shared live.");
+    await channel.current?.send({ type: "broadcast", event: "wheel-shuffle", payload: { room_id: room.id } });
   }
   async function spinWheel() {
     if (!isHost || entries.length < 2 || room.draw_status === "spinning") return;
@@ -308,12 +332,14 @@ export default function LiveStreamStage({ userId }) {
               </div>
               <div className="shared-wheel-hub">{room.draw_status === "spinning" ? "…" : "LIVE"}</div>
             </div>
+            {wheelActivity && <div className="wheel-live-activity" role="status">{wheelActivity}</div>}
             {room.winner && <div className="shared-winner"><small>Selected winner</small><strong>{room.winner}</strong></div>}
             {isHost && <div className="shared-wheel-host-controls">
               <label>Prize<input value={prize} onChange={(event) => setPrize(event.target.value)} maxLength="500"/></label>
               <label>Entrants — one unique name per line<textarea value={entriesText} onChange={(event) => setEntriesText(event.target.value)} rows="7"/></label>
-              <div><button onClick={saveWheelSetup}>Share wheel setup</button><button className="primary-button" onClick={spinWheel} disabled={entries.length < 2 || room.draw_status === "spinning"}>{room.draw_status === "spinning" ? "Spinning…" : "Spin live wheel"}</button></div>
+              <div><button onClick={saveWheelSetup}>Share wheel setup</button><button onClick={shuffleWheel} disabled={entries.length < 2 || room.draw_status === "spinning"}>Secure shuffle</button><button className="primary-button" onClick={spinWheel} disabled={entries.length < 2 || room.draw_status === "spinning"}>{room.draw_status === "spinning" ? "Spinning…" : "Spin live wheel"}</button></div>
             </div>}
+            {!isHost && <div className="viewer-wheel-controls" aria-label="Host-only wheel controls"><button disabled>Secure shuffle · host only</button><button disabled>Spin wheel · host only</button></div>}
             {!isHost && !entries.length && <p className="chat-empty">Waiting for the host to add entrants.</p>}
           </article>
         </div>
