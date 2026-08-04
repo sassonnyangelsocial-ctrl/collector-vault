@@ -6,8 +6,7 @@ export default async function handler(req, res) {
     const user = await authenticatedUser(req)
     if (!user) return res.status(401).json({ error: 'Please sign in again.' })
     const interval = req.body?.interval === 'year' ? 'year' : 'month'
-    const price = interval === 'year' ? process.env.STRIPE_YEARLY_PRICE_ID : process.env.STRIPE_MONTHLY_PRICE_ID
-    if (!price) return res.status(503).json({ error: 'Secure checkout is being connected. Please try again shortly.' })
+    const unitAmount = interval === 'year' ? 4999 : 499
 
     const db = getAdminSupabase()
     const stripe = getStripe()
@@ -20,7 +19,20 @@ export default async function handler(req, res) {
     }
     const base = appUrl(req)
     const checkout = await stripe.checkout.sessions.create({
-      mode: 'subscription', customer, line_items: [{ price, quantity: 1 }],
+      mode: 'subscription',
+      customer,
+      line_items: [{
+        price_data: {
+          currency: 'usd',
+          unit_amount: unitAmount,
+          recurring: { interval },
+          product_data: {
+            name: 'Collector Vault Membership',
+            description: 'Full access to collection tracking, wishlists, trades, alerts, and live wheel features.',
+          },
+        },
+        quantity: 1,
+      }],
       subscription_data: { trial_period_days: 7, metadata: { supabase_user_id: user.id } },
       metadata: { supabase_user_id: user.id, billing_interval: interval },
       allow_promotion_codes: true,
