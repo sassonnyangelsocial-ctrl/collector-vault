@@ -5,6 +5,7 @@ import AdminPage from "./AdminPage";
 import AlertsPage from "./AlertsPage";
 import SellerPage from "./SellerPage";
 import TradeHubPage from "./TradeHubPage";
+import LiveStreamStage from "../components/LiveStreamStage";
 
 const NAV_ITEMS = [
   ["dashboard", "Dashboard"],
@@ -14,6 +15,7 @@ const NAV_ITEMS = [
   ["diso", "DISO"],
   ["trade", "Trades"],
   ["matches", "Trade Chat"],
+  ["live", "Live Wheel"],
   ["alerts", "Alerts"],
   ["seller", "Seller Pro"],
 ];
@@ -73,6 +75,10 @@ export default function HomePage({ session }) {
         <SellerPage session={session} isAdmin={isAdmin} />
       ) : view === "matches" ? (
         <TradeHubPage session={session} />
+      ) : view === "live" ? (
+        <main className="seller-page">
+          <LiveStreamStage userId={session.user.id} />
+        </main>
       ) : (
         <CollectionPage session={session} view={view} onNavigate={setView} />
       )}
