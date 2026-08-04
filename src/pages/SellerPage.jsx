@@ -4,6 +4,7 @@ import { supabase } from "../lib/supabase";
 import "./SellerPage.css";
 import OrdersDetailed from "../components/OrdersDetailed";
 import LiveWheel from "../components/LiveWheel";
+import LiveStreamStage from "../components/LiveStreamStage";
 import PrivateLaunchStudio from "../components/PrivateLaunchStudio";
 import { Expenses, FinanceOverview, Shows } from "../components/SellerFinanceWorkspace";
 
@@ -152,7 +153,12 @@ export default function SellerPage({ session, isAdmin = false }) {
           notify={setMessage}
         />
       )}{" "}
-      {tab === "wheel" && <LiveWheel />}{" "}
+      {tab === "wheel" && (
+        <>
+          <LiveStreamStage userId={session.user.id} />
+          <LiveWheel userId={session.user.id} />
+        </>
+      )}{" "}
       {tab === "marketing" && isAdmin && <PrivateLaunchStudio session={session} />}
     </main>
   );
