@@ -22,7 +22,9 @@ const NAV_ITEMS = [
 
 export default function HomePage({ session }) {
   const [isAdmin, setIsAdmin] = useState(false);
-  const [view, setView] = useState("dashboard");
+  const [view, setView] = useState(() =>
+    window.location.hash.startsWith("#live-wheel/") ? "live" : "dashboard",
+  );
 
   useEffect(() => {
     supabase
@@ -32,6 +34,14 @@ export default function HomePage({ session }) {
       .maybeSingle()
       .then(({ data }) => setIsAdmin(Boolean(data)));
   }, [session.user.id]);
+
+  useEffect(() => {
+    const openSharedRoom = () => {
+      if (window.location.hash.startsWith("#live-wheel/")) setView("live");
+    };
+    window.addEventListener("hashchange", openSharedRoom);
+    return () => window.removeEventListener("hashchange", openSharedRoom);
+  }, []);
 
   return (
     <>

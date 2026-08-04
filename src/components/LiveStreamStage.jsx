@@ -6,12 +6,22 @@ const rtcConfig = { iceServers: [
   { urls: "stun:stun.l.google.com:19302" },
   { urls: "stun:stun1.l.google.com:19302" },
 ] };
+const wheelColors = ["#f26b8a", "#ffbd69", "#7dcfb6", "#7aa5ff", "#c99bff", "#ff8f70", "#6fd0e8", "#f6d365"];
 const makeRoomCode = () => crypto.randomUUID().replaceAll("-", "").slice(0, 12);
+const cleanEntries = (text) => [...new Set(text.split("\n").map((name) => name.trim()).filter(Boolean))].slice(0, 100);
+function secureIndex(length) {
+  const values = new Uint32Array(1);
+  const limit = Math.floor(0x100000000 / length) * length;
+  do crypto.getRandomValues(values); while (values[0] >= limit);
+  return values[0] % length;
+}
 
 export default function LiveStreamStage({ userId }) {
   const [rooms, setRooms] = useState([]);
   const [room, setRoom] = useState(null);
   const [title, setTitle] = useState("Collector Vault live giveaway");
+  const [entriesText, setEntriesText] = useState("");
+  const [prize, setPrize] = useState("");
   const [messages, setMessages] = useState([]);
   const [chatText, setChatText] = useState("");
   const [displayName, setDisplayName] = useState("Collector");
@@ -24,6 +34,14 @@ export default function LiveStreamStage({ userId }) {
   const peers = useRef(new Map());
   const participantId = useRef(crypto.randomUUID());
   const isHost = room?.host_user_id === userId;
+  const entries = Array.isArray(room?.entries) ? room.entries : [];
+  const wheelGradient = entries.length
+    ? "conic-gradient(" + entries.map((_, index) => {
+      const start = index * 360 / entries.length;
+      const end = (index + 1) * 360 / entries.length;
+      return wheelColors[index % wheelColors.length] + " " + start + "deg " + end + "deg";
+    }).join(",") + ")"
+    : "#eadde2";
 
   useEffect(() => {
     loadRooms();
@@ -33,6 +51,9 @@ export default function LiveStreamStage({ userId }) {
 
   useEffect(() => {
     if (!room) return undefined;
+    setEntriesText((room.entries || []).join("\n"));
+    setPrize(room.prize || "");
+    window.location.hash = "live-wheel/" + room.room_code;
     loadMessages(room.id);
     const realtime = supabase
       .channel("live-wheel-" + room.id)
@@ -65,6 +86,15 @@ export default function LiveStreamStage({ userId }) {
     };
   }, [room?.id, isHost]);
 
+  useEffect(() => {
+    const code = window.location.hash.match(/^#live-wheel\/([a-z0-9]{8,24})$/)?.[1];
+    if (!code || room) return;
+    supabase.from("live_wheel_rooms").select("*").eq("room_code", code).eq("is_live", true)
+      .maybeSingle().then(({ data }) => {
+        if (data) setRoom(data);
+      });
+  }, [room]);
+
   async function loadRooms() {
     const { data } = await supabase.from("live_wheel_rooms").select("*")
       .eq("is_live", true).order("started_at", { ascending: false });
@@ -88,6 +118,51 @@ export default function LiveStreamStage({ userId }) {
     setRoom(data);
     setNotice("Live room created. Start your camera when you are ready.");
     loadRooms();
+  }
+  async function saveWheelSetup() {
+    const cleaned = cleanEntries(entriesText);
+    const { error } = await supabase.from("live_wheel_rooms").update({
+      entries: cleaned,
+      prize: prize.trim() || "Live giveaway",
+      winner: "",
+      draw_status: "ready",
+    }).eq("id", room.id);
+    if (error) setNotice(error.message);
+    else {
+      setRoom((current) => ({ ...current, entries: cleaned, prize: prize.trim() || "Live giveaway", winner: "", draw_status: "ready" }));
+      setNotice("Wheel setup shared with every viewer.");
+    }
+  }
+  async function spinWheel() {
+    if (!isHost || entries.length < 2 || room.draw_status === "spinning") return;
+    const selectedIndex = secureIndex(entries.length);
+    const selected = entries[selectedIndex];
+    const currentRotation = Number(room.rotation || 0);
+    const slice = 360 / entries.length;
+    const target = 360 - (selectedIndex * slice + slice / 2);
+    const nextRotation = currentRotation + 1800 + ((target - (currentRotation % 360) + 360) % 360);
+    const sequence = Number(room.draw_sequence || 0) + 1;
+    const { error } = await supabase.from("live_wheel_rooms").update({
+      rotation: nextRotation,
+      winner: "",
+      draw_status: "spinning",
+      draw_sequence: sequence,
+    }).eq("id", room.id);
+    if (error) return setNotice(error.message);
+    setRoom((current) => ({ ...current, rotation: nextRotation, winner: "", draw_status: "spinning", draw_sequence: sequence }));
+    window.setTimeout(async () => {
+      const { error: winnerError } = await supabase.from("live_wheel_rooms").update({
+        winner: selected,
+        draw_status: "winner",
+      }).eq("id", room.id);
+      if (winnerError) setNotice(winnerError.message);
+      else setRoom((current) => ({ ...current, winner: selected, draw_status: "winner" }));
+    }, 4700);
+  }
+  async function copyInviteLink() {
+    const url = window.location.origin + "/#live-wheel/" + room.room_code;
+    await navigator.clipboard.writeText(url);
+    setNotice("Invite link copied. Send it to your viewers.");
   }
   function makePeer(target) {
     const peer = new RTCPeerConnection(rtcConfig);
@@ -168,6 +243,7 @@ export default function LiveStreamStage({ userId }) {
       is_live: false, draw_status: "ended", ended_at: new Date().toISOString(),
     }).eq("id", room.id);
     setRoom(null);
+    window.location.hash = "";
     setMessages([]);
     loadRooms();
   }
@@ -212,15 +288,35 @@ export default function LiveStreamStage({ userId }) {
         <div className="live-status"><span className={room.stream_status === "live" ? "live-dot on" : "live-dot"}/>{room.stream_status === "live" ? "LIVE" : "OFFLINE"} · {viewerCount} watching</div>
       </header>
       <div className="live-show-grid">
-        <article className="video-stage">
-          {isHost ? <video ref={localVideo} autoPlay muted playsInline/> : <video ref={remoteVideo} autoPlay playsInline/>}
-          {room.stream_status !== "live" && <div className="video-placeholder"><span>📹</span><strong>{isHost ? "Start your camera when ready" : "The host has not started video yet"}</strong></div>}
-          {isHost && <div className="stream-controls">
-            {room.stream_status === "live" ? <button className="stop-live" onClick={stopStream}>Stop camera & mic</button> : <button className="go-live" onClick={startStream}>Start camera & mic</button>}
-            <button onClick={endRoom}>End room</button>
-          </div>}
-          {!isHost && <button className="leave-room" onClick={() => setRoom(null)}>Leave room</button>}
-        </article>
+        <div className="live-main-column">
+          <article className="video-stage">
+            {isHost ? <video ref={localVideo} autoPlay muted playsInline/> : <video ref={remoteVideo} autoPlay playsInline/>}
+            {room.stream_status !== "live" && <div className="video-placeholder"><span>📹</span><strong>{isHost ? "Start your camera when ready" : "The host has not started video yet"}</strong></div>}
+            {isHost && <div className="stream-controls">
+              {room.stream_status === "live" ? <button className="stop-live" onClick={stopStream}>Stop camera & mic</button> : <button className="go-live" onClick={startStream}>Start camera & mic</button>}
+              <button onClick={copyInviteLink}>Copy invite link</button>
+              <button onClick={endRoom}>End room</button>
+            </div>}
+            {!isHost && <button className="leave-room" onClick={() => { setRoom(null); window.location.hash = ""; }}>Leave room</button>}
+          </article>
+          <article className="shared-wheel-stage">
+            <div className="shared-wheel-copy"><span className="eyebrow">Live giveaway wheel</span><h2>{room.prize || "Live giveaway"}</h2><p>{entries.length} entrants · {room.draw_status === "spinning" ? "Selecting a winner…" : "Everyone sees this wheel update live"}</p></div>
+            <div className="shared-wheel-wrap">
+              <div className="shared-wheel-pointer"/>
+              <div className="shared-prize-wheel" style={{ background: wheelGradient, transform: "rotate(" + Number(room.rotation || 0) + "deg)" }}>
+                {entries.map((name, index) => <span key={name + "-" + index} style={{ transform: "rotate(" + (index * 360 / entries.length + 180 / entries.length) + "deg)" }}><b>{name}</b></span>)}
+              </div>
+              <div className="shared-wheel-hub">{room.draw_status === "spinning" ? "…" : "LIVE"}</div>
+            </div>
+            {room.winner && <div className="shared-winner"><small>Selected winner</small><strong>{room.winner}</strong></div>}
+            {isHost && <div className="shared-wheel-host-controls">
+              <label>Prize<input value={prize} onChange={(event) => setPrize(event.target.value)} maxLength="500"/></label>
+              <label>Entrants — one unique name per line<textarea value={entriesText} onChange={(event) => setEntriesText(event.target.value)} rows="7"/></label>
+              <div><button onClick={saveWheelSetup}>Share wheel setup</button><button className="primary-button" onClick={spinWheel} disabled={entries.length < 2 || room.draw_status === "spinning"}>{room.draw_status === "spinning" ? "Spinning…" : "Spin live wheel"}</button></div>
+            </div>}
+            {!isHost && !entries.length && <p className="chat-empty">Waiting for the host to add entrants.</p>}
+          </article>
+        </div>
         <aside className="live-chat">
           <div className="chat-title"><b>Live chat</b><span>{messages.length} messages</span></div>
           <div className="chat-feed">
