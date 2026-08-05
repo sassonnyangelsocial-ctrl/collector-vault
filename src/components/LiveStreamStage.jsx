@@ -182,12 +182,20 @@ export default function LiveStreamStage({ userId }) {
     if (error) return setNotice(error.message);
     setRoom((current) => ({ ...current, rotation: nextRotation, winner: "", draw_status: "spinning", draw_sequence: sequence }));
     window.setTimeout(async () => {
+      const remaining = entries.filter((_, index) => index !== selectedIndex);
+      const finalWinner = remaining.length === 1 ? remaining[0] : "";
+      const nextStatus = finalWinner ? "winner" : "ready";
       const { error: winnerError } = await supabase.from("live_wheel_rooms").update({
-        winner: selected,
-        draw_status: "winner",
+        entries: remaining,
+        winner: finalWinner || selected,
+        draw_status: nextStatus,
       }).eq("id", room.id);
       if (winnerError) setNotice(winnerError.message);
-      else setRoom((current) => ({ ...current, winner: selected, draw_status: "winner" }));
+      else {
+        setEntriesText(remaining.join("\n"));
+        setRoom((current) => ({ ...current, entries: remaining, winner: finalWinner || selected, draw_status: nextStatus }));
+        showWheelActivity(finalWinner ? finalWinner + " is the last participant standing!" : selected + " was eliminated. Spin again.");
+      }
     }, 4700);
   }
   async function copyInviteLink() {
@@ -300,6 +308,16 @@ export default function LiveStreamStage({ userId }) {
       setNotice("Your browser blocked sound. Tap the audio button again or allow sound for this site.");
     }
   }
+  function toggleHostMic() {
+    const audioTrack = localStream.current?.getAudioTracks()[0];
+    if (!audioTrack) {
+      setNotice("Start the camera and microphone first.");
+      return;
+    }
+    audioTrack.enabled = !audioTrack.enabled;
+    setHostMicActive(audioTrack.enabled);
+    setNotice(audioTrack.enabled ? "Your microphone is live." : "Your microphone is muted.");
+  }
   async function endRoom() {
     await stopStream();
     await supabase.from("live_wheel_rooms").update({
@@ -357,7 +375,7 @@ export default function LiveStreamStage({ userId }) {
             {room.stream_status !== "live" && <div className="video-placeholder"><span>📹</span><strong>{isHost ? "Start your camera when ready" : "The host has not started video yet"}</strong></div>}
             {isHost && <div className="stream-controls">
               {room.stream_status === "live" ? <button className="stop-live" onClick={stopStream}>Stop camera & mic</button> : <button className="go-live" onClick={startStream}>Start camera & mic</button>}
-              {room.stream_status === "live" && <span className={hostMicActive ? "mic-status on" : "mic-status"}>{hostMicActive ? "Mic live" : "Mic off"}</span>}
+              {room.stream_status === "live" && <button className={hostMicActive ? "mic-status on" : "mic-status"} onClick={toggleHostMic}>{hostMicActive ? "Mic live · mute" : "Mic off · turn on"}</button>}
               <button onClick={copyInviteLink}>Copy invite link</button>
               <button onClick={endRoom}>End room</button>
             </div>}
@@ -365,7 +383,8 @@ export default function LiveStreamStage({ userId }) {
             {!isHost && <button className="leave-room" onClick={() => { setRoom(null); window.location.hash = ""; }}>Leave room</button>}
           </article>
           <article className="shared-wheel-stage">
-            <div className="shared-wheel-copy"><span className="eyebrow">Live giveaway wheel</span><h2>{room.prize || "Live giveaway"}</h2><p>{entries.length} entrants · {room.draw_status === "spinning" ? "Selecting a winner…" : "Everyone sees this wheel update live"}</p></div>
+            <div className="shared-wheel-copy"><span className="eyebrow">Last participant standing</span><h2>{room.prize || "Live giveaway"}</h2><p>{entries.length} participants remain · {room.draw_status === "spinning" ? "Eliminating one participant…" : entries.length > 1 ? "Spin until only one participant remains" : "Final result"}</p></div>
+            {isHost && <div className="round-action-bar"><button onClick={shuffleWheel} disabled={entries.length < 2 || room.draw_status === "spinning"}>Shuffle</button><button className="spin-now-button" onClick={spinWheel} disabled={entries.length < 2 || room.draw_status === "spinning"}>{room.draw_status === "spinning" ? "SPINNING…" : "SPIN / ELIMINATE"}</button></div>}
             <div className="shared-wheel-wrap">
               <div className="shared-wheel-pointer"/>
               <div className={"shared-prize-wheel" + (wheelActivity ? " shuffle-active" : "")} style={{ background: wheelGradient, transform: "rotate(" + Number(room.rotation || 0) + "deg)" }}>
@@ -374,11 +393,11 @@ export default function LiveStreamStage({ userId }) {
               <div className="shared-wheel-hub">{room.draw_status === "spinning" ? "…" : "LIVE"}</div>
             </div>
             {wheelActivity && <div className="wheel-live-activity" role="status">{wheelActivity}</div>}
-            {room.winner && <div className="shared-winner"><small>Selected winner</small><strong>{room.winner}</strong></div>}
+            {room.winner && <div className="shared-winner"><small>{room.draw_status === "winner" ? "Last participant standing · winner" : "Eliminated this round"}</small><strong>{room.winner}</strong></div>}
             {isHost && <div className="shared-wheel-host-controls">
               <label>Prize<input value={prize} onChange={(event) => setPrize(event.target.value)} maxLength="500"/></label>
               <label>Entrants — one unique name per line<textarea value={entriesText} onChange={(event) => setEntriesText(event.target.value)} rows="7"/></label>
-              <div><button onClick={saveWheelSetup}>Share wheel setup</button><button onClick={shuffleWheel} disabled={entries.length < 2 || room.draw_status === "spinning"}>Secure shuffle</button><button className="primary-button" onClick={spinWheel} disabled={entries.length < 2 || room.draw_status === "spinning"}>{room.draw_status === "spinning" ? "Spinning…" : "Spin live wheel"}</button></div>
+              <div><button onClick={saveWheelSetup}>Save participant list</button><button onClick={shuffleWheel} disabled={entries.length < 2 || room.draw_status === "spinning"}>Shuffle</button><button className="primary-button" onClick={spinWheel} disabled={entries.length < 2 || room.draw_status === "spinning"}>{room.draw_status === "spinning" ? "Spinning…" : "Spin / eliminate"}</button></div>
             </div>}
             {!isHost && <div className="viewer-wheel-controls" aria-label="Host-only wheel controls"><button disabled>Secure shuffle · host only</button><button disabled>Spin wheel · host only</button></div>}
             {!isHost && !entries.length && <p className="chat-empty">Waiting for the host to add entrants.</p>}
