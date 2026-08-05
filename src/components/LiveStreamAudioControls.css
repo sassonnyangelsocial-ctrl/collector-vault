@@ -1,0 +1,30 @@
+.mic-status {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  background: #fff;
+  color: #9b8791;
+  padding: 9px 12px;
+  font-size: 0.78rem;
+  font-weight: 900;
+}
+
+.mic-status.on,
+.viewer-audio.on {
+  background: #dcf7e5;
+  color: #176c37;
+}
+
+.viewer-audio {
+  position: absolute;
+  left: 14px;
+  bottom: 14px;
+  z-index: 3;
+  border: 0;
+  border-radius: 999px;
+  background: #fff;
+  color: #30262f;
+  padding: 11px 15px;
+  font-weight: 900;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
+}

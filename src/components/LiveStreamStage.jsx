@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { supabase } from "../lib/supabase";
 import "./LiveStreamStage.css";
+import "./LiveStreamAudioControls.css";
 
 const rtcConfig = { iceServers: [
   { urls: "stun:stun.l.google.com:19302" },
@@ -28,6 +29,9 @@ export default function LiveStreamStage({ userId }) {
   const [notice, setNotice] = useState("");
   const [viewerCount, setViewerCount] = useState(0);
   const [wheelActivity, setWheelActivity] = useState("");
+  const [viewerAudioReady, setViewerAudioReady] = useState(false);
+  const [viewerNeedsAudioTap, setViewerNeedsAudioTap] = useState(false);
+  const [hostMicActive, setHostMicActive] = useState(false);
   const localVideo = useRef(null);
   const remoteVideo = useRef(null);
   const localStream = useRef(null);
@@ -197,7 +201,16 @@ export default function LiveStreamStage({ userId }) {
       if (candidate) channel.current?.send({ type: "broadcast", event: "webrtc-ice", payload: { target, sender: participantId.current, candidate } });
     };
     peer.ontrack = ({ streams }) => {
-      if (remoteVideo.current) remoteVideo.current.srcObject = streams[0];
+      if (!remoteVideo.current) return;
+      remoteVideo.current.srcObject = streams[0];
+      remoteVideo.current.muted = false;
+      remoteVideo.current.volume = 1;
+      remoteVideo.current.play()
+        .then(() => {
+          setViewerAudioReady(streams[0].getAudioTracks().some((track) => track.enabled));
+          setViewerNeedsAudioTap(false);
+        })
+        .catch(() => setViewerNeedsAudioTap(true));
     };
     peer.onconnectionstatechange = () => {
       if (["failed", "closed", "disconnected"].includes(peer.connectionState)) {
@@ -234,7 +247,14 @@ export default function LiveStreamStage({ userId }) {
   }
   async function startStream() {
     try {
-      const stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
+      const stream = await navigator.mediaDevices.getUserMedia({
+        video: true,
+        audio: { echoCancellation: true, noiseSuppression: true, autoGainControl: true },
+      });
+      const audioTrack = stream.getAudioTracks()[0];
+      if (!audioTrack) throw new Error("No microphone was found. Check your browser microphone selection and try again.");
+      audioTrack.enabled = true;
+      setHostMicActive(true);
       localStream.current = stream;
       if (localVideo.current) localVideo.current.srcObject = stream;
       await supabase.from("live_wheel_rooms").update({
@@ -244,7 +264,7 @@ export default function LiveStreamStage({ userId }) {
       Object.values(channel.current?.presenceState() || {}).flat()
         .filter((person) => person.role === "viewer")
         .forEach((person) => callViewer(person.participant_id));
-      setNotice("You are live. Viewers can now watch and chat.");
+      setNotice("You are live. Camera and microphone are broadcasting.");
     } catch (error) {
       setNotice(error.name === "NotAllowedError" ? "Camera or microphone permission was denied." : error.message);
     }
@@ -252,6 +272,7 @@ export default function LiveStreamStage({ userId }) {
   async function stopStream() {
     localStream.current?.getTracks().forEach((track) => track.stop());
     localStream.current = null;
+    setHostMicActive(false);
     if (localVideo.current) localVideo.current.srcObject = null;
     stopConnections();
     await supabase.from("live_wheel_rooms").update({
@@ -263,6 +284,21 @@ export default function LiveStreamStage({ userId }) {
   function stopConnections() {
     peers.current.forEach((peer) => peer.close());
     peers.current.clear();
+  }
+  async function enableViewerAudio() {
+    if (!remoteVideo.current) return;
+    try {
+      remoteVideo.current.muted = false;
+      remoteVideo.current.volume = 1;
+      await remoteVideo.current.play();
+      const stream = remoteVideo.current.srcObject;
+      setViewerAudioReady(Boolean(stream?.getAudioTracks().some((track) => track.enabled)));
+      setViewerNeedsAudioTap(false);
+      setNotice("Host audio is on.");
+    } catch {
+      setViewerNeedsAudioTap(true);
+      setNotice("Your browser blocked sound. Tap the audio button again or allow sound for this site.");
+    }
   }
   async function endRoom() {
     await stopStream();
@@ -317,13 +353,15 @@ export default function LiveStreamStage({ userId }) {
       <div className="live-show-grid">
         <div className="live-main-column">
           <article className="video-stage">
-            {isHost ? <video ref={localVideo} autoPlay muted playsInline/> : <video ref={remoteVideo} autoPlay playsInline/>}
+            {isHost ? <video ref={localVideo} autoPlay muted playsInline/> : <video ref={remoteVideo} autoPlay playsInline onClick={enableViewerAudio}/>}
             {room.stream_status !== "live" && <div className="video-placeholder"><span>📹</span><strong>{isHost ? "Start your camera when ready" : "The host has not started video yet"}</strong></div>}
             {isHost && <div className="stream-controls">
               {room.stream_status === "live" ? <button className="stop-live" onClick={stopStream}>Stop camera & mic</button> : <button className="go-live" onClick={startStream}>Start camera & mic</button>}
+              {room.stream_status === "live" && <span className={hostMicActive ? "mic-status on" : "mic-status"}>{hostMicActive ? "Mic live" : "Mic off"}</span>}
               <button onClick={copyInviteLink}>Copy invite link</button>
               <button onClick={endRoom}>End room</button>
             </div>}
+            {!isHost && room.stream_status === "live" && <button className={viewerAudioReady ? "viewer-audio on" : "viewer-audio"} onClick={enableViewerAudio}>{viewerAudioReady && !viewerNeedsAudioTap ? "Host audio on" : "Tap to hear host"}</button>}
             {!isHost && <button className="leave-room" onClick={() => { setRoom(null); window.location.hash = ""; }}>Leave room</button>}
           </article>
           <article className="shared-wheel-stage">
