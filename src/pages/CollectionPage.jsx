@@ -4,6 +4,7 @@ import StatCard from '../components/StatCard'
 import FigureCard from '../components/FigureCard'
 import FigureDrawer from '../components/FigureDrawer'
 import CollectionShareTools from '../components/CollectionShareTools'
+import CatalogRequest from '../components/CatalogRequest'
 import './CollectionPage.css'
 import '../brand.css'
 
@@ -131,6 +132,7 @@ export default function CollectionPage({ session, view = 'dashboard', onNavigate
     <section className="brand-switcher" aria-label="Choose a collectible brand"><button className={brandFilter === 'all' ? 'active' : ''} onClick={() => { setBrandFilter('all'); setSeriesFilter('all') }}>All brands</button>{brands.map((brand) => <button key={brand} className={brandFilter === brand ? 'active' : ''} onClick={() => { setBrandFilter(brand); setSeriesFilter('all'); setBrowseAll(true) }}>{brand}</button>)}</section>
     {['iso', 'diso'].includes(view) && <section className="catalog-scope" aria-label={`${title} directory scope`}><button className={!browseAll && !query && seriesFilter === 'all' && brandFilter === 'all' ? 'active' : ''} onClick={() => { setBrowseAll(false); setQuery(''); setSeriesFilter('all'); setBrandFilter('all') }}>My {title}</button><button className={searchingWholeDirectory ? 'active' : ''} onClick={() => setBrowseAll(true)}>Browse full directory</button><span>{searchingWholeDirectory ? `Searching all ${figures.length} catalog collectibles` : `${stats[view]} saved to your ${title} list`}</span></section>}
     <section className="collection-tools"><input type="search" aria-label={`Search the full collectible directory for ${title}`} placeholder={['iso', 'diso'].includes(view) ? `Search every brand and series to add a ${title}...` : 'Search figures, series, brand, or rarity...'} value={query} onChange={(e) => setQuery(e.target.value)} /><select aria-label="Filter by series" value={seriesFilter} onChange={(e) => setSeriesFilter(e.target.value)}><option value="all">All series</option>{seriesNames.map((name) => <option value={name} key={name}>{name}</option>)}</select></section>
+    <CatalogRequest session={session} />
     <CollectionShareTools title={title} figures={shownFigures} states={states} includeUntracked={view === 'missing'} />
     {error && <p className="error-banner">{error}</p>}
     <div className="figure-grid">{shownFigures.map((figure) => <FigureCard key={figure.id} figure={figure} state={states[figure.id] || EMPTY} onOpen={setSelectedFigure} onSave={save} />)}</div>

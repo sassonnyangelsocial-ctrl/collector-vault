@@ -6,6 +6,7 @@ import AlertsPage from "./AlertsPage";
 import SellerPage from "./SellerPage";
 import TradeHubPage from "./TradeHubPage";
 import LiveStreamStage from "../components/LiveStreamStage";
+import OnboardingGuide from "../components/OnboardingGuide";
 
 const NAV_ITEMS = [
   ["dashboard", "Dashboard"],
@@ -75,13 +76,14 @@ export default function HomePage({ session }) {
           >
             About
           </button>
+          <button onClick={() => window.dispatchEvent(new Event("collector-vault:tour"))}>Quick tour</button>
           <button onClick={() => supabase.auth.signOut()}>Sign out</button>
         </div>
       </nav>
       {view === "admin" && isAdmin ? (
         <AdminPage session={session} />
       ) : view === "alerts" ? (
-        <AlertsPage />
+        <AlertsPage isAdmin={isAdmin} />
       ) : view === "seller" ? (
         <SellerPage session={session} isAdmin={isAdmin} />
       ) : view === "matches" ? (
@@ -93,6 +95,7 @@ export default function HomePage({ session }) {
       ) : (
         <CollectionPage session={session} view={view} onNavigate={setView} />
       )}
+      <OnboardingGuide userId={session.user.id} />
     </>
   );
 }

@@ -1,0 +1,9 @@
+.onboarding-backdrop { position: fixed; inset: 0; z-index: 900; display: grid; place-items: center; padding: 20px; background: rgba(43, 29, 37, .56); backdrop-filter: blur(8px); }
+.onboarding-card { width: min(560px, 100%); border: 1px solid rgba(255,255,255,.65); border-radius: 28px; padding: 30px; background: #fffafa; box-shadow: 0 30px 80px rgba(40, 24, 32, .28); }
+.onboarding-card h2 { margin: 8px 0; font-size: clamp(1.8rem, 5vw, 2.7rem); }
+.onboarding-card > p { color: var(--muted); font-size: 1.05rem; line-height: 1.65; }
+.onboarding-progress { display: flex; gap: 7px; margin-bottom: 24px; }
+.onboarding-progress span { height: 7px; flex: 1; border-radius: 999px; background: #eadde2; }
+.onboarding-progress span.active { background: var(--pink); }
+.onboarding-actions { display: flex; justify-content: flex-end; gap: 10px; align-items: center; margin-top: 24px; }
+@media (max-width: 520px) { .onboarding-card { padding: 24px 20px; } .onboarding-actions { flex-wrap: wrap; } .onboarding-actions .text-button { margin-right: auto; } }

@@ -1,0 +1,18 @@
+.release-calendar { margin: 24px 0; padding: 22px; border: 1px solid var(--line); border-radius: 24px; background: linear-gradient(145deg, #fff, #fff6f8); }
+.release-calendar-heading { display: flex; justify-content: space-between; gap: 20px; align-items: start; margin-bottom: 16px; }
+.release-calendar-heading h2 { margin: 4px 0; }
+.release-calendar-heading p { margin: 0; color: var(--muted); }
+.release-calendar-heading > strong { border-radius: 999px; padding: 8px 12px; background: #ffe7ef; color: var(--pink-dark); white-space: nowrap; }
+.release-list { display: grid; gap: 10px; }
+.release-card { display: grid; grid-template-columns: 82px 1fr auto; gap: 14px; align-items: center; padding: 13px; border: 1px solid var(--line); border-radius: 16px; background: #fff; }
+.release-card time { display: grid; text-align: center; padding: 8px; border-radius: 12px; background: #fff0f4; }
+.release-card time strong { font-size: 1.1rem; }
+.release-card time span, .release-card p { color: var(--muted); font-size: .82rem; }
+.release-card h3, .release-card p { margin: 4px 0 0; }
+.release-card button { border: 1px solid var(--line); border-radius: 999px; padding: 9px 12px; background: #fff; font-weight: 800; }
+.release-admin { margin-top: 16px; border-top: 1px solid var(--line); padding-top: 14px; }
+.release-admin summary { cursor: pointer; font-weight: 900; }
+.release-admin form { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-top: 12px; }
+.release-admin textarea { grid-column: 1 / -1; min-height: 90px; }
+.release-admin input, .release-admin select, .release-admin textarea { width: 100%; border: 1px solid var(--line); border-radius: 12px; padding: 10px; font: inherit; }
+@media (max-width: 720px) { .release-calendar-heading { display: grid; } .release-card { grid-template-columns: 70px 1fr; } .release-card button { grid-column: 1 / -1; } .release-admin form { grid-template-columns: 1fr; } }

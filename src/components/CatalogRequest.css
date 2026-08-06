@@ -1,0 +1,9 @@
+.catalog-request { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin: 0 0 16px; padding: 13px 15px; border: 1px dashed #e8a7bb; border-radius: 16px; background: #fff8fa; }
+.catalog-request > div { display: grid; margin-right: auto; }
+.catalog-request span { color: var(--muted); font-size: .84rem; }
+.catalog-request > button { border: 1px solid var(--line); border-radius: 999px; padding: 9px 13px; background: #fff; font-weight: 800; }
+.catalog-request form { width: 100%; display: grid; grid-template-columns: 1fr 1fr auto; gap: 9px; }
+.catalog-request input, .catalog-request textarea { border: 1px solid var(--line); border-radius: 12px; padding: 10px; font: inherit; }
+.catalog-request textarea { grid-column: 1 / -1; min-height: 80px; }
+.catalog-request form p { grid-column: 1 / -1; margin: 0; color: var(--pink-dark); font-weight: 750; }
+@media (max-width: 680px) { .catalog-request form { grid-template-columns: 1fr; } .catalog-request textarea, .catalog-request form p { grid-column: auto; } }
