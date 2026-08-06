@@ -1,0 +1,8 @@
+.collection-share-tools { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin: 0 0 18px; padding: 12px 14px; border: 1px solid var(--line); border-radius: 16px; background: #fff; }
+.collection-share-tools > div { display: grid; margin-right: auto; }
+.collection-share-tools span { color: var(--muted); font-size: .82rem; }
+.collection-share-tools button { border: 1px solid var(--line); border-radius: 999px; padding: 9px 13px; background: #fff7f9; color: var(--ink); font-weight: 800; }
+.collection-share-tools button:hover:not(:disabled) { border-color: var(--pink); color: var(--pink-dark); }
+.collection-share-tools button:disabled { cursor: not-allowed; opacity: .45; }
+.collection-share-tools small { width: 100%; color: var(--pink-dark); font-weight: 750; }
+@media (max-width: 640px) { .collection-share-tools > div { width: 100%; } .collection-share-tools button { flex: 1; } }

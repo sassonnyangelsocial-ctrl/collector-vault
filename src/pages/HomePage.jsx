@@ -10,6 +10,7 @@ import LiveStreamStage from "../components/LiveStreamStage";
 const NAV_ITEMS = [
   ["dashboard", "Dashboard"],
   ["collection", "Collection"],
+  ["missing", "Missing"],
   ["wishlist", "Wishlist"],
   ["iso", "ISO"],
   ["diso", "DISO"],

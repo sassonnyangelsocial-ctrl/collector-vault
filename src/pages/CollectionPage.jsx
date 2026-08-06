@@ -3,6 +3,7 @@ import { supabase } from '../lib/supabase'
 import StatCard from '../components/StatCard'
 import FigureCard from '../components/FigureCard'
 import FigureDrawer from '../components/FigureDrawer'
+import CollectionShareTools from '../components/CollectionShareTools'
 import './CollectionPage.css'
 import '../brand.css'
 
@@ -10,6 +11,7 @@ const EMPTY = { owned: false, quantity: 0, wishlist: false, iso: false, diso: fa
 
 const VIEW_COPY = {
   collection: ['My Collection', 'Everything you own and collect.'],
+  missing: ['Missing', 'Figures you still need to complete the catalog.'],
   wishlist: ['Wishlist', 'Figures you would love to add someday.'],
   iso: ['ISO', 'Figures you are actively in search of.'],
   diso: ['DISO', 'Your highest-priority, desperately-in-search-of figures.'],
@@ -81,6 +83,7 @@ export default function CollectionPage({ session, view = 'dashboard', onNavigate
     iso: figures.filter((f) => states[f.id]?.iso).length,
     diso: figures.filter((f) => states[f.id]?.diso).length,
     trade: figures.filter((f) => states[f.id]?.for_trade).length,
+    missing: figures.filter((f) => !states[f.id]?.owned).length,
   }), [figures, states])
 
   const brands = useMemo(() => [...new Set(figures.map((f) => f.series?.brand?.name).filter(Boolean))].sort(), [figures])
@@ -93,6 +96,7 @@ export default function CollectionPage({ session, view = 'dashboard', onNavigate
     if (view === 'iso') return state.iso
     if (view === 'diso') return state.diso
     if (view === 'trade') return state.for_trade
+    if (view === 'missing') return !state.owned
     return true
   }, [searchingWholeDirectory, states, view])
   const shownFigures = figures.filter((figure) => {
@@ -112,6 +116,7 @@ export default function CollectionPage({ session, view = 'dashboard', onNavigate
       <DashboardTile label="ISO" value={stats.iso} tone="blue" onClick={() => onNavigate('iso')} />
       <DashboardTile label="DISO" value={stats.diso} tone="orange" onClick={() => onNavigate('diso')} />
       <DashboardTile label="Ready to trade" value={stats.trade} tone="green" onClick={() => onNavigate('trade')} />
+      <DashboardTile label="Missing" value={stats.missing} tone="orange" onClick={() => onNavigate('missing')} />
     </section>
     <section className="dashboard-section"><div className="section-heading"><div><span className="eyebrow">Priority hunt</span><h2>Your DISO list</h2></div><button className="text-button" onClick={() => onNavigate('diso')}>View all</button></div>
       <div className="figure-grid compact-grid">{figures.filter((f) => states[f.id]?.diso).slice(0, 3).map((figure) => <FigureCard key={figure.id} figure={figure} state={states[figure.id] || EMPTY} onOpen={setSelectedFigure} onSave={save} />)}</div>
@@ -126,6 +131,7 @@ export default function CollectionPage({ session, view = 'dashboard', onNavigate
     <section className="brand-switcher" aria-label="Choose a collectible brand"><button className={brandFilter === 'all' ? 'active' : ''} onClick={() => { setBrandFilter('all'); setSeriesFilter('all') }}>All brands</button>{brands.map((brand) => <button key={brand} className={brandFilter === brand ? 'active' : ''} onClick={() => { setBrandFilter(brand); setSeriesFilter('all'); setBrowseAll(true) }}>{brand}</button>)}</section>
     {['iso', 'diso'].includes(view) && <section className="catalog-scope" aria-label={`${title} directory scope`}><button className={!browseAll && !query && seriesFilter === 'all' && brandFilter === 'all' ? 'active' : ''} onClick={() => { setBrowseAll(false); setQuery(''); setSeriesFilter('all'); setBrandFilter('all') }}>My {title}</button><button className={searchingWholeDirectory ? 'active' : ''} onClick={() => setBrowseAll(true)}>Browse full directory</button><span>{searchingWholeDirectory ? `Searching all ${figures.length} catalog collectibles` : `${stats[view]} saved to your ${title} list`}</span></section>}
     <section className="collection-tools"><input type="search" aria-label={`Search the full collectible directory for ${title}`} placeholder={['iso', 'diso'].includes(view) ? `Search every brand and series to add a ${title}...` : 'Search figures, series, brand, or rarity...'} value={query} onChange={(e) => setQuery(e.target.value)} /><select aria-label="Filter by series" value={seriesFilter} onChange={(e) => setSeriesFilter(e.target.value)}><option value="all">All series</option>{seriesNames.map((name) => <option value={name} key={name}>{name}</option>)}</select></section>
+    <CollectionShareTools title={title} figures={shownFigures} states={states} includeUntracked={view === 'missing'} />
     {error && <p className="error-banner">{error}</p>}
     <div className="figure-grid">{shownFigures.map((figure) => <FigureCard key={figure.id} figure={figure} state={states[figure.id] || EMPTY} onOpen={setSelectedFigure} onSave={save} />)}</div>
     {!shownFigures.length && <div className="empty-state"><h2>{searchingWholeDirectory ? 'No matching figures' : `No figures saved to ${title} yet`}</h2><p>{searchingWholeDirectory ? 'Try a different figure name, series, rarity, or series filter.' : `Search above or browse the full directory, then tap ${title} on any figure to add it.`}</p>{['iso', 'diso'].includes(view) ? <button className="primary-button" onClick={() => setBrowseAll(true)}>Browse full directory</button> : <button className="primary-button" onClick={() => onNavigate('collection')}>Browse collection</button>}</div>}

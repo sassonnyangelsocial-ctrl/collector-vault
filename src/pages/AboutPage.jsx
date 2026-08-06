@@ -3,13 +3,14 @@ import { supabase } from '../lib/supabase'
 import './AboutPage.css'
 
 const features = [
-  ['Multi-brand Collection Vault', 'Track Sonny Angel, SMISKI, and POP MART collectibles across owned, favorites, duplicates, wishlist, ISO, DISO, and trade lists.'],
+  ['Multi-brand Collection Vault', 'Track 3,400+ Sonny Angel, SMISKI, and POP MART collectibles across owned, missing, favorites, duplicates, wishlist, ISO, DISO, and trade lists.'],
   ['Search & price context', 'Search every brand and series, including Secrets and Robbys, with verified source links and current price context where available.'],
   ['Trade Chat', 'Opt into match discovery, find collectors whose lists line up with yours, and talk directly inside the app.'],
   ['Collector Alerts', 'Follow restocks, drops, launches, and inventory updates from stores and websites you choose.'],
   ['Seller Pro', 'Organize suppliers, purchase orders, cases, costs, inventory, sales, fees, expenses, and profit.'],
   ['Whatnot tools', 'Import your own Seller Hub CSV without sharing your Whatnot password.'],
-  ['Giveaway Wheel', 'Run free-entry promotional drawings and save private draw history.'],
+  ['Share & export', 'Copy, share, or download filtered collection, missing, wishlist, ISO, DISO, and trade lists without rebuilding a post.'],
+  ['Live Giveaway Studio', 'Host a synchronized elimination wheel with guest viewers, participant lists, shuffle and spin updates, live chat, and optional audio or video.'],
   ['Installable app', 'Add Collector Vault to a phone home screen for an app-like experience.'],
 ]
 
