@@ -73,9 +73,9 @@ function Subscribers({ session }) {
   return <section className="subscriber-admin">
     <div className="subscriber-stats">
       <article><strong>{data.summary.total}</strong><span>Total signups</span></article>
-      <article><strong>{data.summary.active}</strong><span>Active</span></article>
+      <article><strong>{data.summary.free}</strong><span>Free plan</span></article>
       <article><strong>{data.summary.trialing}</strong><span>In trial</span></article>
-      <article><strong>{data.summary.canceled}</strong><span>Canceled/unpaid</span></article>
+      <article><strong>{data.summary.active}</strong><span>Active Pro</span></article>
     </div>
     <div className="subscriber-toolbar"><div><h2>Customer accounts</h2><p>Authentication and subscription information only. Passwords and card details are never available here.</p></div><input type="search" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search customer email" /></div>
     <div className="subscriber-table-wrap"><table className="subscriber-table"><thead><tr><th>Email</th><th>Joined</th><th>Last sign-in</th><th>Status</th><th>Plan</th><th>Trial/renewal</th></tr></thead><tbody>{shown.map((item) => <tr key={item.id}><td><strong>{item.email || 'No email'}</strong><small>{item.email_confirmed_at ? 'Verified' : 'Not verified'}</small></td><td>{date(item.created_at)}</td><td>{date(item.last_sign_in_at)}</td><td><span className={`subscriber-status ${item.status}`}>{item.status.replaceAll('_', ' ')}</span></td><td>{item.grandfathered ? 'Complimentary' : item.billing_interval || 'No paid plan'}</td><td>{date(item.current_period_end || item.trial_end)}</td></tr>)}</tbody></table>{!shown.length && <div className="empty-panel"><h3>No matching customers</h3><p>Try a different email search.</p></div>}</div>

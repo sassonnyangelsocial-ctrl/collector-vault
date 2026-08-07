@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { supabase } from '../lib/supabase'
-import { apiUrl, isNativeApp } from '../lib/runtime'
+import { apiUrl } from '../lib/runtime'
+import { hasProAccess } from '../lib/membership'
 
 export default function MembershipGate({ session, children }) {
   const [membership, setMembership] = useState(null)
@@ -16,15 +17,8 @@ export default function MembershipGate({ session, children }) {
 
   useEffect(() => { load() }, [session.user.id])
 
-  const current = membership && (membership.grandfathered || ['active', 'trialing'].includes(membership.status)) && (!membership.current_period_end || new Date(membership.current_period_end) > new Date())
+  const current = hasProAccess(membership)
   if (loading) return <div className="center">Checking membership...</div>
-  if (current) return children
-
-  if (isNativeApp) return <main className="membership-page">
-    <section className="membership-heading"><span className="eyebrow">Collector Vault membership</span><h1>Membership required</h1><p>In-app membership purchasing is being prepared for this store release. If you already subscribed, sign in with the same account to continue.</p></section>
-    {message && <p className="form-message membership-message">{message}</p>}
-    <button className="text-button" onClick={() => supabase.auth.signOut()}>Sign out</button>
-  </main>
 
   async function checkout(interval) {
     setMessage('Opening secure checkout...')
@@ -34,13 +28,5 @@ export default function MembershipGate({ session, children }) {
     window.location.assign(result.url)
   }
 
-  return <main className="membership-page">
-    <section className="membership-heading"><span className="eyebrow">Collector Vault membership</span><h1>Start your 7-day free trial</h1><p>Track your collection, build wishlists and trade lists, and follow verified restock and launch alerts.</p></section>
-    <section className="pricing-grid">
-      <article className="price-card"><span>Monthly</span><strong>$4.99<small>/month</small></strong><p>Flexible access, billed monthly after your free trial.</p><button className="primary-button" onClick={() => checkout('month')}>Start monthly trial</button></article>
-      <article className="price-card featured"><span>Best value</span><strong>$49.99<small>/year</small></strong><p>Save compared with monthly billing. Cancel anytime.</p><button className="primary-button" onClick={() => checkout('year')}>Start yearly trial</button></article>
-    </section>
-    {message && <p className="form-message membership-message">{message}</p>}
-    <button className="text-button" onClick={() => supabase.auth.signOut()}>Sign out</button>
-  </main>
+  return children({ isPro: current, membership, checkout, message })
 }

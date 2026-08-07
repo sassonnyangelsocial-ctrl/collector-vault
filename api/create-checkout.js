@@ -10,7 +10,7 @@ export default async function handler(req, res) {
 
     const db = getAdminSupabase()
     const stripe = getStripe()
-    const { data: membership } = await db.from('memberships').select('stripe_customer_id').eq('user_id', user.id).maybeSingle()
+    const { data: membership } = await db.from('memberships').select('stripe_customer_id,stripe_subscription_id,trial_end').eq('user_id', user.id).maybeSingle()
     let customer = membership?.stripe_customer_id
     if (!customer) {
       const created = await stripe.customers.create({ email: user.email, metadata: { supabase_user_id: user.id } })
@@ -27,13 +27,13 @@ export default async function handler(req, res) {
           unit_amount: unitAmount,
           recurring: { interval },
           product_data: {
-            name: 'Collector Vault Membership',
-            description: 'Full access to collection tracking, wishlists, trades, alerts, and live wheel features.',
+            name: 'Collector Vault Pro',
+            description: 'Trade Match and private chat, verified alerts, live wheel hosting, Seller Pro, Whatnot import, and premium tools.',
           },
         },
         quantity: 1,
       }],
-      subscription_data: { trial_period_days: 7, metadata: { supabase_user_id: user.id } },
+      subscription_data: { ...(!membership?.trial_end && !membership?.stripe_subscription_id ? { trial_period_days: 7 } : {}), metadata: { supabase_user_id: user.id } },
       metadata: { supabase_user_id: user.id, billing_interval: interval },
       allow_promotion_codes: true,
       success_url: `${base}/?membership=success`, cancel_url: `${base}/?membership=canceled`,

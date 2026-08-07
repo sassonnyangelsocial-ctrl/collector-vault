@@ -7,22 +7,25 @@ import SellerPage from "./SellerPage";
 import TradeHubPage from "./TradeHubPage";
 import LiveStreamStage from "../components/LiveStreamStage";
 import OnboardingGuide from "../components/OnboardingGuide";
+import UpgradePage from "../components/UpgradePage";
 
 const NAV_ITEMS = [
-  ["dashboard", "Dashboard"],
-  ["collection", "Collection"],
-  ["missing", "Missing"],
-  ["wishlist", "Wishlist"],
-  ["iso", "ISO"],
-  ["diso", "DISO"],
-  ["trade", "Trades"],
-  ["matches", "Trade Chat"],
-  ["live", "Live Wheel"],
-  ["alerts", "Alerts"],
-  ["seller", "Seller Pro"],
+  ["dashboard", "Dashboard", false],
+  ["collection", "Collection", false],
+  ["missing", "Missing", false],
+  ["wishlist", "Wishlist", false],
+  ["iso", "ISO", false],
+  ["diso", "DISO", false],
+  ["trade", "Trades", false],
+  ["matches", "Trade Chat", true],
+  ["live", "Live Wheel", true],
+  ["alerts", "Alerts", true],
+  ["seller", "Seller Pro", true],
 ];
 
-export default function HomePage({ session }) {
+const PRO_VIEWS = new Set(NAV_ITEMS.filter(([, , pro]) => pro).map(([id]) => id));
+
+export default function HomePage({ session, isPro, checkout, message }) {
   const [isAdmin, setIsAdmin] = useState(false);
   const [view, setView] = useState(() =>
     window.location.hash.startsWith("#live-wheel/") ? "live" : "dashboard",
@@ -52,13 +55,13 @@ export default function HomePage({ session }) {
           Collector Vault
         </button>
         <div className="nav-actions">
-          {NAV_ITEMS.map(([id, label]) => (
+          {NAV_ITEMS.map(([id, label, pro]) => (
             <button
               key={id}
               className={view === id ? "active" : ""}
               onClick={() => setView(id)}
             >
-              {label}
+              {label}{pro && !isPro ? <small className="pro-nav-badge">PRO</small> : null}
             </button>
           ))}
           {isAdmin && (
@@ -80,7 +83,9 @@ export default function HomePage({ session }) {
           <button onClick={() => supabase.auth.signOut()}>Sign out</button>
         </div>
       </nav>
-      {view === "admin" && isAdmin ? (
+      {PRO_VIEWS.has(view) && !isPro ? (
+        <UpgradePage checkout={checkout} message={message} featureName={NAV_ITEMS.find(([id]) => id === view)?.[1] || 'this feature'} />
+      ) : view === "admin" && isAdmin ? (
         <AdminPage session={session} />
       ) : view === "alerts" ? (
         <AlertsPage isAdmin={isAdmin} />
@@ -95,6 +100,7 @@ export default function HomePage({ session }) {
       ) : (
         <CollectionPage session={session} view={view} onNavigate={setView} />
       )}
+      <div className={`plan-pill ${isPro ? 'pro' : 'free'}`}>{isPro ? 'Collector Vault Pro' : 'Free plan'}{!isPro && <button onClick={() => setView('matches')}>Upgrade</button>}</div>
       <OnboardingGuide userId={session.user.id} />
     </>
   );

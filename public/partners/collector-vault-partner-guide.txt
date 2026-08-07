@@ -7,8 +7,9 @@ Partnerships: https://collector-vault-one.vercel.app/partners
 
 Collector Vault is a web-based collection and seller platform for tracking collectibles, organizing wishlist, ISO, DISO, duplicate and trade lists, following collector alerts, managing seller workflows, and hosting synchronized live giveaway wheels.
 
-CURRENT MEMBERSHIP
-7-day free trial. $4.99 monthly or $49.99 yearly after the trial. Cancel anytime.
+CURRENT PLANS
+Free forever: complete catalog, collection tracking, quantities and duplicates, missing, wishlist, ISO, DISO, trade lists, social sharing, and CSV export. No card required.
+Collector Vault Pro: Trade Match and chat, verified alerts and release calendars, Live Wheel hosting, Seller Pro, Whatnot CSV import, and premium analytics and automation as released. A one-time 7-day Pro trial is available, then $4.99 monthly or $49.99 yearly. Cancel anytime.
 
 FEATURES PARTNERS MAY DEMONSTRATE
 - Collection dashboard and catalog search

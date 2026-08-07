@@ -47,7 +47,7 @@ export default function App() {
   if (route === 'partners') return <><PartnersPage session={session} /><InstallApp /></>
   if (route.startsWith('about') || ['features', 'tour', 'pricing', 'contact'].includes(route) || (!session && !route.startsWith('signin'))) return <><AboutPage session={session} /><InstallApp /></>
   return <>
-    {session ? <MembershipGate session={session}><HomePage session={session} /></MembershipGate> : <AuthPage initialMode={route === 'signin-signup' ? 'signup' : 'login'} />}
+    {session ? <MembershipGate session={session}>{(membership) => <HomePage session={session} {...membership} />}</MembershipGate> : <AuthPage initialMode={route === 'signin-signup' ? 'signup' : 'login'} />}
     <InstallApp />
   </>
 }

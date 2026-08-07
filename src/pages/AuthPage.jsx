@@ -25,19 +25,19 @@ export default function AuthPage({ initialMode = 'login' }) {
   return (
     <main className="auth-page">
       <section className="auth-intro">
-        <span className="eyebrow">Track · Collect · Trade</span>
+        <span className="eyebrow">Free forever · Upgrade when ready</span>
         <h1>Collector Vault</h1>
-        <p>Your complete collection, wishlist, duplicates, and trade list in one place.</p>
+        <p>Create your free vault and track your complete collection, missing figures, wishlist, duplicates, ISO, DISO, and trades. No card required.</p>
         <button className="text-button" type="button" onClick={() => { window.location.hash = 'about' }}>← Explore everything Collector Vault offers</button>
       </section>
 
       <form className="auth-card" onSubmit={submit}>
-        <h2>{mode === 'login' ? 'Welcome back' : 'Create your vault'}</h2>
+        <h2>{mode === 'login' ? 'Welcome back' : 'Create your free vault'}</h2>
         <input type="email" placeholder="Email" value={email} onChange={(event) => setEmail(event.target.value)} required />
         <input type="password" placeholder="Password" value={password} onChange={(event) => setPassword(event.target.value)} required />
         {message && <p className="form-message">{message}</p>}
         <button className="primary-button" disabled={submitting}>
-          {submitting ? 'Please wait…' : mode === 'login' ? 'Sign in' : 'Create account'}
+          {submitting ? 'Please wait…' : mode === 'login' ? 'Sign in' : 'Create free account'}
         </button>
         <button type="button" className="text-button" onClick={() => setMode(mode === 'login' ? 'signup' : 'login')}>
           {mode === 'login' ? 'Need an account? Sign up' : 'Already have an account? Sign in'}

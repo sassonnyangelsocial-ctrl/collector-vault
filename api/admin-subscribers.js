@@ -39,7 +39,7 @@ export default async function handler(req, res) {
         created_at: item.created_at,
         last_sign_in_at: item.last_sign_in_at,
         email_confirmed_at: item.email_confirmed_at,
-        status: membership?.status || 'registered',
+        status: membership?.status || 'free',
         billing_interval: membership?.billing_interval || null,
         current_period_end: membership?.current_period_end || null,
         trial_end: membership?.trial_end || null,
@@ -52,6 +52,7 @@ export default async function handler(req, res) {
     return res.json({
       summary: {
         total: subscribers.length,
+        free: subscribers.filter((item) => item.status === 'free').length,
         active: subscribers.filter((item) => item.status === 'active').length,
         trialing: subscribers.filter((item) => item.status === 'trialing').length,
         paying_or_billable: subscribers.filter((item) => paidStatuses.has(item.status)).length,

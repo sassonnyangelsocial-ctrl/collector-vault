@@ -13,7 +13,7 @@ const facts = [
   'Sonny Angel, SMISKI, and POP MART catalog support',
   'Wishlist, ISO, DISO, trade, alert, and Seller Pro tools',
   'Live synchronized giveaway wheel with host controls and viewer chat',
-  '7-day free trial; $4.99 monthly or $49.99 yearly',
+  'Free collection plan; optional Pro at $4.99 monthly or $49.99 yearly',
   'Independent platform; not affiliated with collectible manufacturers',
 ]
 
