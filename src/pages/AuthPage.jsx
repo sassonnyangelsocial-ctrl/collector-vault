@@ -7,6 +7,7 @@ export default function AuthPage({ initialMode = 'login' }) {
   const [password, setPassword] = useState('')
   const [message, setMessage] = useState('')
   const [submitting, setSubmitting] = useState(false)
+  const [marketingOptIn, setMarketingOptIn] = useState(false)
 
   async function submit(event) {
     event.preventDefault()
@@ -16,7 +17,16 @@ export default function AuthPage({ initialMode = 'login' }) {
     const result =
       mode === 'login'
         ? await supabase.auth.signInWithPassword({ email, password })
-        : await supabase.auth.signUp({ email, password })
+        : await supabase.auth.signUp({
+            email,
+            password,
+            options: {
+              data: {
+                marketing_opt_in: marketingOptIn,
+                marketing_opt_in_at: marketingOptIn ? new Date().toISOString() : null,
+              },
+            },
+          })
 
     setMessage(result.error?.message || 'Account created. Check your email if confirmation is enabled.')
     setSubmitting(false)
@@ -35,6 +45,7 @@ export default function AuthPage({ initialMode = 'login' }) {
         <h2>{mode === 'login' ? 'Welcome back' : 'Create your free vault'}</h2>
         <input type="email" placeholder="Email" value={email} onChange={(event) => setEmail(event.target.value)} required />
         <input type="password" placeholder="Password" value={password} onChange={(event) => setPassword(event.target.value)} required />
+        {mode === 'signup' && <label className="marketing-opt-in"><input type="checkbox" checked={marketingOptIn} onChange={(event) => setMarketingOptIn(event.target.checked)} /><span>Email me Collector Vault launches, collector tips, and occasional offers. Optional; unsubscribe anytime.</span></label>}
         {message && <p className="form-message">{message}</p>}
         <button className="primary-button" disabled={submitting}>
           {submitting ? 'Please wait…' : mode === 'login' ? 'Sign in' : 'Create free account'}
