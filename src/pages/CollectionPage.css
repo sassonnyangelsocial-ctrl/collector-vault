@@ -3,3 +3,24 @@
 .catalog-scope button.active { border-color: var(--pink); background: #ffe8ef; color: var(--pink-dark); }
 .catalog-scope span { margin-left: auto; color: var(--muted); font-size: .88rem; }
 @media (max-width: 580px) { .catalog-scope span { width: 100%; margin-left: 0; } }
+
+.series-directory { display: grid; gap: 24px; }
+.series-group { padding: 20px; border: 1px solid var(--line); border-radius: 24px; background: rgba(255,255,255,.72); box-shadow: 0 10px 28px rgba(72,45,58,.06); }
+.series-group-header { display: flex; justify-content: space-between; align-items: end; gap: 18px; }
+.series-group-header h2 { margin: 3px 0 0; font-size: clamp(1.35rem,3vw,2rem); }
+.series-brand { color: var(--pink-dark); font-size: .72rem; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; }
+.series-progress-copy { display: grid; gap: 2px; text-align: right; }
+.series-progress-copy span { color: var(--muted); font-size: .86rem; }
+.series-progress { height: 8px; margin: 13px 0 18px; overflow: hidden; border-radius: 999px; background: #f2e5e9; }
+.series-progress div { height: 100%; border-radius: inherit; background: linear-gradient(90deg,#55bd7a,var(--pink)); }
+.series-figure { position: relative; min-width: 0; }
+.ownership-status { position: absolute; z-index: 2; top: 24px; left: 24px; padding: 6px 10px; border: 1px solid; border-radius: 999px; font-size: .72rem; font-weight: 900; box-shadow: 0 3px 10px rgba(48,38,47,.1); }
+.ownership-status.owned { color: #176c37; border-color: #8bd6a5; background: #dcf7e5; }
+.ownership-status.missing { color: #875615; border-color: #efc274; background: #fff3d7; }
+
+@media (max-width: 580px) {
+  .series-group { padding: 14px; }
+  .series-group-header { align-items: start; }
+  .series-progress-copy { text-align: right; font-size: .85rem; }
+  .ownership-status { top: 22px; left: 22px; }
+}

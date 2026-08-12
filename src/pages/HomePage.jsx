@@ -8,10 +8,13 @@ import TradeHubPage from "./TradeHubPage";
 import LiveStreamStage from "../components/LiveStreamStage";
 import OnboardingGuide from "../components/OnboardingGuide";
 import UpgradePage from "../components/UpgradePage";
+import EmailPreferences from "../components/EmailPreferences";
+import IncomingPage from "./IncomingPage";
 
 const NAV_ITEMS = [
   ["dashboard", "Dashboard", false],
   ["collection", "Collection", false],
+  ["incoming", "Incoming", false],
   ["missing", "Missing", false],
   ["wishlist", "Wishlist", false],
   ["iso", "ISO", false],
@@ -21,6 +24,7 @@ const NAV_ITEMS = [
   ["live", "Live Wheel", true],
   ["alerts", "Alerts", true],
   ["seller", "Seller Pro", true],
+  ["email", "Email settings", false],
 ];
 
 const PRO_VIEWS = new Set(NAV_ITEMS.filter(([, , pro]) => pro).map(([id]) => id));
@@ -91,6 +95,10 @@ export default function HomePage({ session, isPro, checkout, message }) {
         <AlertsPage isAdmin={isAdmin} />
       ) : view === "seller" ? (
         <SellerPage session={session} isAdmin={isAdmin} />
+      ) : view === "email" ? (
+        <EmailPreferences session={session} />
+      ) : view === "incoming" ? (
+        <IncomingPage session={session} />
       ) : view === "matches" ? (
         <TradeHubPage session={session} />
       ) : view === "live" ? (

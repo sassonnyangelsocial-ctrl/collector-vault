@@ -104,6 +104,15 @@ export default function CollectionPage({ session, view = 'dashboard', onNavigate
     const text = `${figure.name} ${(figure.aliases || []).join(' ')} ${figure.series?.name || ''} ${figure.series?.brand?.name || ''} ${figure.rarity || ''}`.toLowerCase().includes(query.toLowerCase())
     return text && (brandFilter === 'all' || figure.series?.brand?.name === brandFilter) && (seriesFilter === 'all' || figure.series?.name === seriesFilter) && matchesView(figure)
   })
+  const seriesGroups = Object.values(shownFigures.reduce((groups, figure) => {
+    const brand = figure.series?.brand?.name || 'Other'
+    const series = figure.series?.name || 'Uncategorized'
+    const key = `${brand}::${series}`
+    if (!groups[key]) groups[key] = { key, brand, series, figures: [], owned: 0 }
+    groups[key].figures.push(figure)
+    if (states[figure.id]?.owned) groups[key].owned += 1
+    return groups
+  }, {})).sort((a, b) => a.brand.localeCompare(b.brand) || a.series.localeCompare(b.series))
   const completion = figures.length ? Math.round((stats.owned / figures.length) * 100) : 0
 
   if (loading) return <div className="center compact">Loading your vault...</div>
@@ -114,6 +123,7 @@ export default function CollectionPage({ session, view = 'dashboard', onNavigate
     <section className="dashboard-grid">
       <button className="dashboard-hero" onClick={() => onNavigate('collection')}><span>Collection progress</span><strong>{completion}%</strong><p>{stats.owned} of {figures.length} unique figures owned</p><div className="completion-bar"><div style={{ width: `${completion}%` }} /></div></button>
       <DashboardTile label="Wishlist" value={stats.wishlist} tone="pink" onClick={() => onNavigate('wishlist')} />
+      <DashboardTile label="Incoming" value="Track" tone="orange" onClick={() => onNavigate('incoming')} />
       <DashboardTile label="ISO" value={stats.iso} tone="blue" onClick={() => onNavigate('iso')} />
       <DashboardTile label="DISO" value={stats.diso} tone="orange" onClick={() => onNavigate('diso')} />
       <DashboardTile label="Ready to trade" value={stats.trade} tone="green" onClick={() => onNavigate('trade')} />
@@ -135,7 +145,24 @@ export default function CollectionPage({ session, view = 'dashboard', onNavigate
     <CatalogRequest session={session} />
     <CollectionShareTools title={title} figures={shownFigures} states={states} includeUntracked={view === 'missing'} />
     {error && <p className="error-banner">{error}</p>}
-    <div className="figure-grid">{shownFigures.map((figure) => <FigureCard key={figure.id} figure={figure} state={states[figure.id] || EMPTY} onOpen={setSelectedFigure} onSave={save} />)}</div>
+    <div className="series-directory">{seriesGroups.map((group) => {
+      const missing = group.figures.length - group.owned
+      const percent = group.figures.length ? Math.round((group.owned / group.figures.length) * 100) : 0
+      return <section className="series-group" key={group.key} aria-labelledby={`series-${group.key.replace(/[^a-z0-9]/gi, '-')}`}>
+        <header className="series-group-header">
+          <div><span className="series-brand">{group.brand}</span><h2 id={`series-${group.key.replace(/[^a-z0-9]/gi, '-')}`}>{group.series}</h2></div>
+          <div className="series-progress-copy"><strong>{group.owned} of {group.figures.length} owned</strong><span>{missing} missing · {percent}% complete</span></div>
+        </header>
+        <div className="series-progress" aria-label={`${percent}% of ${group.series} owned`}><div style={{ width: `${percent}%` }} /></div>
+        <div className="figure-grid">{group.figures.map((figure) => {
+          const state = states[figure.id] || EMPTY
+          return <div className="series-figure" key={figure.id}>
+            <span className={`ownership-status ${state.owned ? 'owned' : 'missing'}`}>{state.owned ? 'Owned' : 'Missing'}</span>
+            <FigureCard figure={figure} state={state} onOpen={setSelectedFigure} onSave={save} />
+          </div>
+        })}</div>
+      </section>
+    })}</div>
     {!shownFigures.length && <div className="empty-state"><h2>{searchingWholeDirectory ? 'No matching figures' : `No figures saved to ${title} yet`}</h2><p>{searchingWholeDirectory ? 'Try a different figure name, series, rarity, or series filter.' : `Search above or browse the full directory, then tap ${title} on any figure to add it.`}</p>{['iso', 'diso'].includes(view) ? <button className="primary-button" onClick={() => setBrowseAll(true)}>Browse full directory</button> : <button className="primary-button" onClick={() => onNavigate('collection')}>Browse collection</button>}</div>}
     {selectedFigure && <FigureDrawer figure={selectedFigure} state={states[selectedFigure.id] || EMPTY} onClose={() => setSelectedFigure(null)} onSave={save} />}
   </main>
