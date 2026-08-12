@@ -17,6 +17,11 @@
 .ownership-status { position: absolute; z-index: 2; top: 24px; left: 24px; padding: 6px 10px; border: 1px solid; border-radius: 999px; font-size: .72rem; font-weight: 900; box-shadow: 0 3px 10px rgba(48,38,47,.1); }
 .ownership-status.owned { color: #176c37; border-color: #8bd6a5; background: #dcf7e5; }
 .ownership-status.missing { color: #875615; border-color: #efc274; background: #fff3d7; }
+.ownership-status.incoming { color: #265aa3; border-color: #9dc2f8; background: #e4efff; }
+.hunt-filter { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 12px; }
+.hunt-filter button { border: 1px solid var(--line); border-radius: 999px; padding: 9px 13px; background: #fff; font-weight: 850; }
+.hunt-filter button.active { border-color: var(--pink); background: #ffe8ef; color: var(--pink-dark); }
+.incoming-button.active,.drawer-action.incoming.active { color: #265aa3; background: #e4efff; border-color: #9dc2f8; }
 
 @media (max-width: 580px) {
   .series-group { padding: 14px; }

@@ -20,6 +20,7 @@ export default function FigureDrawer({ figure, state, onClose, onSave }) {
       <button className={`drawer-action wishlist ${state.wishlist ? 'active' : ''}`} onClick={() => onSave(figure, { wishlist: !state.wishlist })}>Wishlist</button>
       <button className={`drawer-action iso ${state.iso ? 'active' : ''}`} onClick={() => onSave(figure, { iso: !state.iso, diso: state.iso ? false : state.diso })}>ISO — in search of</button>
       <button className={`drawer-action diso ${state.diso ? 'active' : ''}`} onClick={() => onSave(figure, { diso: !state.diso, iso: !state.diso || state.iso })}>DISO — highest priority</button>
+      <button className={`drawer-action incoming ${state.incoming ? 'active' : ''}`} onClick={() => onSave(figure, { incoming: !state.incoming })}>Incoming — purchased or on the way</button>
       <button className={`drawer-action trade ${state.for_trade ? 'active' : ''}`} onClick={() => onSave(figure, { for_trade: !state.for_trade })}>Ready to trade</button>
     </section>
     <section className="drawer-section"><h3>Quantity</h3><div className="drawer-quantity"><button onClick={() => onSave(figure, { quantity: Math.max(0, quantity - 1) })}>−</button><strong>{quantity}</strong><button onClick={() => onSave(figure, { quantity: quantity + 1 })}>+</button></div>{quantity > 1 && <p className="duplicate-note">You have {quantity - 1} duplicate{quantity > 2 ? 's' : ''}.</p>}</section>

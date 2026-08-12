@@ -9,16 +9,13 @@ import LiveStreamStage from "../components/LiveStreamStage";
 import OnboardingGuide from "../components/OnboardingGuide";
 import UpgradePage from "../components/UpgradePage";
 import EmailPreferences from "../components/EmailPreferences";
-import IncomingPage from "./IncomingPage";
 
 const NAV_ITEMS = [
   ["dashboard", "Dashboard", false],
   ["collection", "Collection", false],
-  ["incoming", "Incoming", false],
   ["missing", "Missing", false],
   ["wishlist", "Wishlist", false],
-  ["iso", "ISO", false],
-  ["diso", "DISO", false],
+  ["hunt", "ISO · DISO · Incoming", false],
   ["trade", "Trades", false],
   ["matches", "Trade Chat", true],
   ["live", "Live Wheel", true],
@@ -97,8 +94,6 @@ export default function HomePage({ session, isPro, checkout, message }) {
         <SellerPage session={session} isAdmin={isAdmin} />
       ) : view === "email" ? (
         <EmailPreferences session={session} />
-      ) : view === "incoming" ? (
-        <IncomingPage session={session} />
       ) : view === "matches" ? (
         <TradeHubPage session={session} />
       ) : view === "live" ? (

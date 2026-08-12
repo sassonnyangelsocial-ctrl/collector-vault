@@ -15,6 +15,7 @@ export default function FigureCard({ figure, state, onOpen, onSave }) {
       <button className={`wishlist-button ${state.wishlist ? 'active' : ''}`} onClick={(event) => act(event, { wishlist: !state.wishlist })}>Wishlist</button>
       <button className={`iso-button ${state.iso ? 'active' : ''}`} onClick={(event) => act(event, { iso: !state.iso, diso: state.iso ? false : state.diso })}>ISO</button>
       <button className={`diso-button ${state.diso ? 'active' : ''}`} onClick={(event) => act(event, { diso: !state.diso, iso: !state.diso || state.iso })}>DISO</button>
+      <button className={`incoming-button ${state.incoming ? 'active' : ''}`} onClick={(event) => act(event, { incoming: !state.incoming })}>Incoming</button>
       <button className={`trade-button ${state.for_trade ? 'active' : ''}`} onClick={(event) => act(event, { for_trade: !state.for_trade })}>Trade</button>
     </div>
   </article>
