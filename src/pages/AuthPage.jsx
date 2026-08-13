@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { supabase } from '../lib/supabase'
 
-export default function AuthPage({ initialMode = 'login' }) {
+export default function AuthPage({ initialMode = 'login', inviteCode = '' }) {
   const [mode, setMode] = useState(initialMode)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -24,6 +24,7 @@ export default function AuthPage({ initialMode = 'login' }) {
               data: {
                 marketing_opt_in: marketingOptIn,
                 marketing_opt_in_at: marketingOptIn ? new Date().toISOString() : null,
+                collector_vault_invite: /^[a-z0-9]{10,32}$/.test(inviteCode) ? inviteCode : null,
               },
             },
           })
@@ -43,6 +44,7 @@ export default function AuthPage({ initialMode = 'login' }) {
 
       <form className="auth-card" onSubmit={submit}>
         <h2>{mode === 'login' ? 'Welcome back' : 'Create your free vault'}</h2>
+        {mode === 'signup' && inviteCode && <p className="form-message invite-welcome">A Collector Vault subscriber invited you. Create your free account to join them.</p>}
         <input type="email" placeholder="Email" value={email} onChange={(event) => setEmail(event.target.value)} required />
         <input type="password" placeholder="Password" value={password} onChange={(event) => setPassword(event.target.value)} required />
         {mode === 'signup' && <label className="marketing-opt-in"><input type="checkbox" checked={marketingOptIn} onChange={(event) => setMarketingOptIn(event.target.checked)} /><span>Email me Collector Vault launches, collector tips, and occasional offers. Optional; unsubscribe anytime.</span></label>}

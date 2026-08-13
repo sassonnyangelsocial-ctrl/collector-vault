@@ -46,8 +46,9 @@ export default function App() {
   if (route.startsWith('live-wheel/')) return <main className="seller-page guest-live-page"><LiveStreamStage userId={session?.user?.id || null} /></main>
   if (route === 'partners') return <><PartnersPage session={session} /><InstallApp /></>
   if (route.startsWith('about') || ['features', 'tour', 'pricing', 'contact'].includes(route) || (!session && !route.startsWith('signin'))) return <><AboutPage session={session} /><InstallApp /></>
+  const inviteCode = new URLSearchParams(window.location.search).get('invite') || ''
   return <>
-    {session ? <MembershipGate session={session}>{(membership) => <HomePage session={session} {...membership} />}</MembershipGate> : <AuthPage initialMode={route === 'signin-signup' ? 'signup' : 'login'} />}
+    {session ? <MembershipGate session={session}>{(membership) => <HomePage session={session} {...membership} />}</MembershipGate> : <AuthPage initialMode={route === 'signin-signup' || Boolean(inviteCode) ? 'signup' : 'login'} inviteCode={inviteCode} />}
     <InstallApp />
   </>
 }

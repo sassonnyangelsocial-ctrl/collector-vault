@@ -1,0 +1,9 @@
+.subscriber-invite { margin-bottom: 18px; }
+.subscriber-invite h2 { margin: 5px 0; }
+.subscriber-invite p { color: var(--muted); }
+.invite-link-row { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; gap: 9px; align-items: center; }
+.invite-link-row button { white-space: nowrap; }
+
+@media (max-width: 580px) {
+  .invite-link-row { grid-template-columns: 1fr; }
+}
