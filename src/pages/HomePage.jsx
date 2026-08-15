@@ -17,7 +17,7 @@ const NAV_ITEMS = [
   ["wishlist", "Wishlist", false],
   ["hunt", "ISO · DISO · Incoming", false],
   ["trade", "Trades", false],
-  ["matches", "Trade Chat", true],
+  ["matches", "Trade Chat", false],
   ["live", "Live Wheel", true],
   ["alerts", "Alerts", true],
   ["seller", "Seller Pro", true],

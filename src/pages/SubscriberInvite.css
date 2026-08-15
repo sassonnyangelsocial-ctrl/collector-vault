@@ -3,7 +3,9 @@
 .subscriber-invite p { color: var(--muted); }
 .invite-link-row { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; gap: 9px; align-items: center; }
 .invite-link-row button { white-space: nowrap; }
+.invite-email-form { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 9px; margin-top: 12px; }
+.subscriber-card a, .subscriber-card small { display: block; overflow-wrap: anywhere; }
 
 @media (max-width: 580px) {
-  .invite-link-row { grid-template-columns: 1fr; }
+  .invite-link-row, .invite-email-form { grid-template-columns: 1fr; }
 }

@@ -44,6 +44,9 @@ export default async function handler(req, res) {
         current_period_end: membership?.current_period_end || null,
         trial_end: membership?.trial_end || null,
         grandfathered: Boolean(membership?.grandfathered),
+        marketing_opt_in: item.user_metadata?.marketing_opt_in === true,
+        marketing_opt_in_at: item.user_metadata?.marketing_opt_in_at || null,
+        marketing_unsubscribed_at: item.user_metadata?.marketing_unsubscribed_at || null,
       }
     }).sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
 
@@ -57,6 +60,7 @@ export default async function handler(req, res) {
         trialing: subscribers.filter((item) => item.status === 'trialing').length,
         paying_or_billable: subscribers.filter((item) => paidStatuses.has(item.status)).length,
         canceled: subscribers.filter((item) => ['canceled', 'unpaid', 'incomplete_expired'].includes(item.status)).length,
+        marketing_opted_in: subscribers.filter((item) => item.marketing_opt_in).length,
       },
       subscribers,
     })
