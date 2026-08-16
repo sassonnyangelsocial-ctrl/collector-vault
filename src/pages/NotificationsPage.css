@@ -1,0 +1,7 @@
+.notifications-page { max-width: 1240px; margin: 0 auto; padding: 34px 24px 88px; }
+.notifications-page > .page-header { margin-bottom: 28px; }
+.notification-section + .notification-section { margin-top: 42px; }
+.notifications-page .email-preferences-page, .notifications-page .alerts-page { max-width: none; margin: 0; padding: 0; }
+.notifications-page .email-preferences-card { max-width: 760px; }
+.notifications-page .alerts-page > .page-header { margin-bottom: 22px; }
+@media (max-width: 680px) { .notifications-page { padding: 24px 16px 72px; } }

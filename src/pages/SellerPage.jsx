@@ -7,6 +7,7 @@ import LiveWheel from "../components/LiveWheel";
 import LiveStreamStage from "../components/LiveStreamStage";
 import PrivateLaunchStudio from "../components/PrivateLaunchStudio";
 import { Expenses, FinanceOverview, Shows } from "../components/SellerFinanceWorkspace";
+import SellerSpreadsheetWorkspace from "../components/SellerSpreadsheetWorkspace";
 
 const sellerTabs = [
   ["overview", "Overview"],
@@ -14,8 +15,9 @@ const sellerTabs = [
   ["expenses", "Expenses"],
   ["orders", "Purchase orders"],
   ["suppliers", "Suppliers"],
+  ["sheets", "Lists & sheets"],
   ["sales", "Whatnot sales"],
-  ["wheel", "Giveaway draw"],
+  ["wheel", "Live Wheel"],
 ];
 const adminTabs = [...sellerTabs, ["marketing", "Launch studio"]];
 const money = (value) =>
@@ -146,6 +148,7 @@ export default function SellerPage({ session, isAdmin = false }) {
           notify={setMessage}
         />
       )}{" "}
+      {tab === "sheets" && <SellerSpreadsheetWorkspace userId={session.user.id} notify={setMessage} />}{" "}
       {tab === "sales" && (
         <Sales
           sales={sales}

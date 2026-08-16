@@ -30,6 +30,7 @@ export function FinanceOverview({ sales, expenses, orders, shows, setTab }) {
         <button className="seller-action" onClick={() => setTab('shows')}>Review show profitability</button>
         <button className="seller-action" onClick={() => setTab('expenses')}>Log supplies or another expense</button>
         <button className="seller-action" onClick={() => setTab('orders')}>Log inventory purchase order</button>
+        <button className="seller-action" onClick={() => setTab('sheets')}>Create an inventory or packing sheet</button>
       </article>
     </section>
   </>;

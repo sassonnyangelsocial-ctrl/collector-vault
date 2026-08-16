@@ -2,26 +2,22 @@ import { useEffect, useState } from "react";
 import { supabase } from "../lib/supabase";
 import CollectionPage from "./CollectionPage";
 import AdminPage from "./AdminPage";
-import AlertsPage from "./AlertsPage";
+import NotificationsPage from "./NotificationsPage";
 import SellerPage from "./SellerPage";
 import TradeHubPage from "./TradeHubPage";
 import LiveStreamStage from "../components/LiveStreamStage";
 import OnboardingGuide from "../components/OnboardingGuide";
 import UpgradePage from "../components/UpgradePage";
-import EmailPreferences from "../components/EmailPreferences";
 
 const NAV_ITEMS = [
   ["dashboard", "Dashboard", false],
   ["collection", "Collection", false],
   ["missing", "Missing", false],
-  ["wishlist", "Wishlist", false],
-  ["hunt", "ISO · DISO · Incoming", false],
+  ["iso-diso", "ISO/DISO", false],
   ["trade", "Trades", false],
   ["matches", "Trade Chat", false],
-  ["live", "Live Wheel", true],
-  ["alerts", "Alerts", true],
+  ["notifications", "Notifications", false],
   ["seller", "Seller Pro", true],
-  ["email", "Email settings", false],
 ];
 
 const PRO_VIEWS = new Set(NAV_ITEMS.filter(([, , pro]) => pro).map(([id]) => id));
@@ -88,18 +84,16 @@ export default function HomePage({ session, isPro, checkout, message }) {
         <UpgradePage checkout={checkout} message={message} featureName={NAV_ITEMS.find(([id]) => id === view)?.[1] || 'this feature'} />
       ) : view === "admin" && isAdmin ? (
         <AdminPage session={session} />
-      ) : view === "alerts" ? (
-        <AlertsPage isAdmin={isAdmin} />
+      ) : view === "notifications" ? (
+        <NotificationsPage session={session} isAdmin={isAdmin} />
       ) : view === "seller" ? (
         <SellerPage session={session} isAdmin={isAdmin} />
-      ) : view === "email" ? (
-        <EmailPreferences session={session} />
-      ) : view === "matches" ? (
-        <TradeHubPage session={session} />
       ) : view === "live" ? (
         <main className="seller-page">
           <LiveStreamStage userId={session.user.id} />
         </main>
+      ) : view === "matches" ? (
+        <TradeHubPage session={session} />
       ) : (
         <CollectionPage session={session} view={view} onNavigate={setView} />
       )}

@@ -29,7 +29,7 @@ export default function EmailPreferences({ session }) {
   }
 
   return (
-    <main className="email-preferences-page">
+    <section className="email-preferences-page">
       <section className="email-preferences-card">
         <span className="eyebrow">Email preferences</span>
         <h1>Choose what reaches your inbox.</h1>
@@ -41,6 +41,6 @@ export default function EmailPreferences({ session }) {
         <p className="email-address-note">Preference for <strong>{session.user.email}</strong></p>
         {message && <p className="form-message" role="status">{message}</p>}
       </section>
-    </main>
+    </section>
   )
 }
