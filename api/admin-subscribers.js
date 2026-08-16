@@ -26,7 +26,7 @@ export default async function handler(req, res) {
 
     const ids = users.map((item) => item.id)
     const { data: memberships, error: membershipError } = ids.length
-      ? await db.from('memberships').select('user_id,status,billing_interval,current_period_end,trial_end,grandfathered,created_at').in('user_id', ids)
+      ? await db.from('memberships').select('user_id,status,billing_interval,current_period_end,trial_end,grandfathered,complimentary_access,created_at').in('user_id', ids)
       : { data: [], error: null }
     if (membershipError) throw membershipError
 
@@ -44,6 +44,7 @@ export default async function handler(req, res) {
         current_period_end: membership?.current_period_end || null,
         trial_end: membership?.trial_end || null,
         grandfathered: Boolean(membership?.grandfathered),
+        complimentary_access: Boolean(membership?.complimentary_access),
         marketing_opt_in: item.user_metadata?.marketing_opt_in === true,
         marketing_opt_in_at: item.user_metadata?.marketing_opt_in_at || null,
         marketing_unsubscribed_at: item.user_metadata?.marketing_unsubscribed_at || null,
