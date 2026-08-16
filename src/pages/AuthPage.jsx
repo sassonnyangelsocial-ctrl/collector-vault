@@ -30,7 +30,14 @@ export default function AuthPage({ initialMode = 'login', inviteCode = '' }) {
             },
           })
 
-    setMessage(result.error?.message || 'Account created. Check your email if confirmation is enabled.')
+    setMessage(
+      result.error?.message ||
+      (mode === 'signup'
+        ? result.data?.session
+          ? 'Account created. Welcome to Collector Vault!'
+          : 'Account created. Check your email to finish signing in.'
+        : 'Signed in successfully.'),
+    )
     setSubmitting(false)
   }
 
