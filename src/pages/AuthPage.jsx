@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { supabase } from '../lib/supabase'
 
 export default function AuthPage({ initialMode = 'login', inviteCode = '' }) {
-  const complimentaryPromoActive = Date.now() >= Date.parse('2026-08-16T04:00:00Z') && Date.now() < Date.parse('2026-08-18T04:00:00Z')
+  const complimentaryPromoActive = Date.now() >= Date.parse('2026-08-15T04:00:00Z') && Date.now() < Date.parse('2026-08-17T04:00:00Z')
   const [mode, setMode] = useState(initialMode)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -45,7 +45,7 @@ export default function AuthPage({ initialMode = 'login', inviteCode = '' }) {
 
       <form className="auth-card" onSubmit={submit}>
         <h2>{mode === 'login' ? 'Welcome back' : 'Create your free vault'}</h2>
-        {mode === 'signup' && complimentaryPromoActive && <p className="form-message invite-welcome"><strong>Two-day collector offer:</strong> Sign up August 16 or 17 and receive one complimentary year of Collector Vault Pro.</p>}
+        {mode === 'signup' && complimentaryPromoActive && <p className="form-message invite-welcome"><strong>Two-day collector offer:</strong> Sign up August 15 or 16 and receive one complimentary year of Collector Vault Pro.</p>}
         {mode === 'signup' && inviteCode && <p className="form-message invite-welcome">A Collector Vault subscriber invited you. Create your free account to join them.</p>}
         <input type="email" placeholder="Email" value={email} onChange={(event) => setEmail(event.target.value)} required />
         <input type="password" placeholder="Password" value={password} onChange={(event) => setPassword(event.target.value)} required />
