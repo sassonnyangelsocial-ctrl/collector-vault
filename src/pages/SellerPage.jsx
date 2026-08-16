@@ -65,6 +65,9 @@ export default function SellerPage({ session, isAdmin = false }) {
   useEffect(() => {
     load();
   }, []);
+  useEffect(() => {
+    if (!isAdmin && tab === "marketing") setTab("overview");
+  }, [isAdmin, tab]);
   const metrics = useMemo(() => {
     const revenue = sales.reduce((n, x) => n + Number(x.gross_sales || 0), 0),
       fees = sales.reduce(
@@ -89,7 +92,7 @@ export default function SellerPage({ session, isAdmin = false }) {
   }, [orders, sales]);
   if (loading)
     return <div className="center compact">Opening Seller Pro...</div>;
-  const tabs = isAdmin ? adminTabs : sellerTabs;
+  const tabs = isAdmin === true ? adminTabs : sellerTabs;
   return (
     <main className="seller-page">
       <header className="seller-hero">
@@ -159,7 +162,7 @@ export default function SellerPage({ session, isAdmin = false }) {
           <LiveWheel userId={session.user.id} />
         </>
       )}{" "}
-      {tab === "marketing" && isAdmin && <PrivateLaunchStudio session={session} />}
+      {tab === "marketing" && isAdmin === true && <PrivateLaunchStudio session={session} />}
     </main>
   );
 }
