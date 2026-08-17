@@ -4,8 +4,12 @@
 .invite-link-row { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; gap: 9px; align-items: center; }
 .invite-link-row button { white-space: nowrap; }
 .invite-email-form { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 9px; margin-top: 12px; }
+.invite-social-row { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 12px; }
+.invite-social-row button { border-color: #f1b7c9; background: #fff4f7; color: #a73e62; }
+.invite-social-note { display: block; margin-top: 8px; color: var(--muted); font-size: .82rem; }
 .subscriber-card a, .subscriber-card small { display: block; overflow-wrap: anywhere; }
 
 @media (max-width: 580px) {
   .invite-link-row, .invite-email-form { grid-template-columns: 1fr; }
+  .invite-social-row button { flex: 1 1 180px; }
 }
