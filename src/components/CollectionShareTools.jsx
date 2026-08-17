@@ -1,11 +1,12 @@
 import { useMemo, useState } from 'react'
 import { collectionCsv, collectionRows, collectionText } from '../lib/collectionExport'
+import { supabase } from '../lib/supabase'
 import './CollectionShareTools.css'
 
 export default function CollectionShareTools({ title, figures, states, includeUntracked = false }) {
   const [status, setStatus] = useState('')
   const rows = useMemo(() => collectionRows(figures, states, { includeUntracked }), [figures, includeUntracked, states])
-  const text = useMemo(() => collectionText(title, rows), [rows, title])
+  let text = useMemo(() => collectionText(title, rows), [rows, title])
 
   function showStatus(message) {
     setStatus(message)
@@ -34,9 +35,37 @@ export default function CollectionShareTools({ title, figures, states, includeUn
     }
   }
 
+  function createInviteCode() {
+    return crypto.randomUUID().replaceAll('-', '').slice(0, 16)
+  }
+
+  async function getInviteLink() {
+    const { data: auth } = await supabase.auth.getUser()
+    const userId = auth.user?.id
+    if (!userId) return `${window.location.origin}/#signin-signup`
+
+    const { data: existing, error: existingError } = await supabase
+      .from('subscriber_invite_links')
+      .select('code')
+      .eq('user_id', userId)
+      .maybeSingle()
+    if (existingError) throw existingError
+
+    const code = existing?.code || createInviteCode()
+    if (!existing?.code) {
+      const { error: createError } = await supabase
+        .from('subscriber_invite_links')
+        .insert({ user_id: userId, code })
+      if (createError) throw createError
+    }
+    return `${window.location.origin}/?invite=${encodeURIComponent(code)}#signin-signup`
+  }
+
   async function shareList() {
-    if (!navigator.share) return copyList()
     try {
+      const inviteLink = await getInviteLink()
+      text = `${text}\n\nBuild your own free Collector Vault: ${inviteLink}`
+      if (!navigator.share) return copyList()
       await navigator.share({ title: `Collector Vault — ${title}`, text })
       showStatus('Share opened')
     } catch (error) {
@@ -111,7 +140,7 @@ export default function CollectionShareTools({ title, figures, states, includeUn
   return <section className="collection-share-tools" aria-label="Share or export this list">
     <div><strong>Share or export</strong><span>{rows.length} figure{rows.length === 1 ? '' : 's'} in this list</span></div>
     <button type="button" onClick={copyList} disabled={!rows.length}>Copy list</button>
-    <button type="button" onClick={shareList} disabled={!rows.length}>Share</button>
+    <button type="button" onClick={shareList} disabled={!rows.length}>Share + invite</button>
     <button type="button" onClick={downloadSocialImage} disabled={!rows.length}>Social image</button>
     <button type="button" onClick={downloadCsv} disabled={!rows.length}>Download CSV</button>
     {status && <small role="status">{status}</small>}
