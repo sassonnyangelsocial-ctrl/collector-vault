@@ -1,11 +1,12 @@
 import { useState } from 'react'
 import { supabase } from '../lib/supabase'
 
-export default function AuthPage({ initialMode = 'login', inviteCode = '' }) {
+export default function AuthPage({ initialMode = 'login', inviteCode = '', onPasswordReset }) {
   const complimentaryPromoActive = Date.now() >= Date.parse('2026-08-15T04:00:00Z') && Date.now() < Date.parse('2026-08-17T04:00:00Z')
   const [mode, setMode] = useState(initialMode)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [passwordConfirmation, setPasswordConfirmation] = useState('')
   const [message, setMessage] = useState('')
   const [submitting, setSubmitting] = useState(false)
   const [marketingOptIn, setMarketingOptIn] = useState(false)
@@ -14,6 +15,31 @@ export default function AuthPage({ initialMode = 'login', inviteCode = '' }) {
     event.preventDefault()
     setSubmitting(true)
     setMessage('')
+
+    if (mode === 'forgot') {
+      await supabase.auth.resetPasswordForEmail(email, {
+        redirectTo: `${window.location.origin}/?password-reset=1`,
+      })
+      setMessage('If that email has a Collector Vault account, a password-reset link is on its way.')
+      setSubmitting(false)
+      return
+    }
+
+    if (mode === 'recovery') {
+      if (password !== passwordConfirmation) {
+        setMessage('The new passwords do not match.')
+        setSubmitting(false)
+        return
+      }
+      const { error } = await supabase.auth.updateUser({ password })
+      setMessage(error?.message || 'Your password has been updated. You are signed in.')
+      setSubmitting(false)
+      if (!error) {
+        window.history.replaceState({}, '', window.location.pathname)
+        onPasswordReset?.()
+      }
+      return
+    }
 
     const result =
       mode === 'login'
@@ -41,6 +67,8 @@ export default function AuthPage({ initialMode = 'login', inviteCode = '' }) {
     setSubmitting(false)
   }
 
+  const heading = mode === 'recovery' ? 'Choose a new password' : mode === 'forgot' ? 'Reset your password' : mode === 'login' ? 'Welcome back' : 'Create your free vault'
+
   return (
     <main className="auth-page">
       <section className="auth-intro">
@@ -51,19 +79,24 @@ export default function AuthPage({ initialMode = 'login', inviteCode = '' }) {
       </section>
 
       <form className="auth-card" onSubmit={submit}>
-        <h2>{mode === 'login' ? 'Welcome back' : 'Create your free vault'}</h2>
+        <h2>{heading}</h2>
+        {mode === 'recovery' && <p className="auth-helper">Choose a new password for your Collector Vault account.</p>}
+        {mode === 'forgot' && <p className="auth-helper">Enter your email and we’ll send a secure reset link if an account exists.</p>}
         {mode === 'signup' && complimentaryPromoActive && <p className="form-message invite-welcome"><strong>Two-day collector offer:</strong> Sign up August 15 or 16 and receive one complimentary year of Collector Vault Pro.</p>}
         {mode === 'signup' && inviteCode && <p className="form-message invite-welcome">A Collector Vault subscriber invited you. Create your free account to join them.</p>}
-        <input type="email" placeholder="Email" value={email} onChange={(event) => setEmail(event.target.value)} required />
-        <input type="password" placeholder="Password" value={password} onChange={(event) => setPassword(event.target.value)} required />
+        {mode !== 'recovery' && <input type="email" placeholder="Email" value={email} onChange={(event) => setEmail(event.target.value)} required />}
+        {mode !== 'forgot' && <input type="password" placeholder={mode === 'recovery' ? 'New password (8+ characters)' : 'Password'} value={password} onChange={(event) => setPassword(event.target.value)} minLength={mode === 'recovery' ? 8 : undefined} required />}
+        {mode === 'recovery' && <input type="password" placeholder="Confirm new password" value={passwordConfirmation} onChange={(event) => setPasswordConfirmation(event.target.value)} minLength="8" required />}
         {mode === 'signup' && <label className="marketing-opt-in"><input type="checkbox" checked={marketingOptIn} onChange={(event) => setMarketingOptIn(event.target.checked)} /><span>Email me Collector Vault launches, collector tips, and occasional offers. Optional; unsubscribe anytime.</span></label>}
-        {message && <p className="form-message">{message}</p>}
+        {message && <p className="form-message" role="status">{message}</p>}
         <button className="primary-button" disabled={submitting}>
-          {submitting ? 'Please wait…' : mode === 'login' ? 'Sign in' : 'Create free account'}
+          {submitting ? 'Please wait…' : mode === 'recovery' ? 'Save new password' : mode === 'forgot' ? 'Email reset link' : mode === 'login' ? 'Sign in' : 'Create free account'}
         </button>
-        <button type="button" className="text-button" onClick={() => setMode(mode === 'login' ? 'signup' : 'login')}>
+        {mode === 'login' && <button type="button" className="text-button" onClick={() => { setMode('forgot'); setMessage('') }}>Forgot or want to reset your password?</button>}
+        {mode === 'forgot' && <button type="button" className="text-button" onClick={() => { setMode('login'); setMessage('') }}>Return to sign in</button>}
+        {['login', 'signup'].includes(mode) && <button type="button" className="text-button" onClick={() => setMode(mode === 'login' ? 'signup' : 'login')}>
           {mode === 'login' ? 'Need an account? Sign up' : 'Already have an account? Sign in'}
-        </button>
+        </button>}
       </form>
     </main>
   )
