@@ -17,9 +17,7 @@ export default function AuthPage({ initialMode = 'login', inviteCode = '', onPas
     setMessage('')
 
     if (mode === 'forgot') {
-      await supabase.auth.resetPasswordForEmail(email, {
-        redirectTo: `${window.location.origin}/?password-reset=1`,
-      })
+      await supabase.auth.resetPasswordForEmail(email)
       setMessage('If that email has a Collector Vault account, a password-reset link is on its way.')
       setSubmitting(false)
       return

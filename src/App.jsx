@@ -14,15 +14,11 @@ function getRoute() {
   return window.location.pathname.replace(/^\/+|\/+$/g, '')
 }
 
-function isPasswordRecovery() {
-  return new URLSearchParams(window.location.search).get('password-reset') === '1'
-}
-
 export default function App() {
   const [session, setSession] = useState(null)
   const [loading, setLoading] = useState(true)
   const [route, setRoute] = useState(getRoute)
-  const [passwordRecovery, setPasswordRecovery] = useState(isPasswordRecovery)
+  const [passwordRecovery, setPasswordRecovery] = useState(false)
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data }) => {
