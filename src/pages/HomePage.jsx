@@ -5,6 +5,7 @@ import AdminPage from "./AdminPage";
 import AlertsPage from "./AlertsPage";
 import SellerPage from "./SellerPage";
 import TradeHubPage from "./TradeHubPage";
+import GuidebookPage from "./GuidebookPage";
 
 const NAV_ITEMS = [
   ["dashboard", "Dashboard"],
@@ -15,6 +16,7 @@ const NAV_ITEMS = [
   ["trade", "Trades"],
   ["matches", "Trade Chat"],
   ["alerts", "Alerts"],
+  ["guidebook", "Guidebook"],
   ["seller", "Seller Pro"],
 ];
 
@@ -71,6 +73,8 @@ export default function HomePage({ session }) {
         <AlertsPage />
       ) : view === "seller" ? (
         <SellerPage session={session} isAdmin={isAdmin} />
+      ) : view === "guidebook" ? (
+        <GuidebookPage />
       ) : view === "matches" ? (
         <TradeHubPage session={session} />
       ) : (
